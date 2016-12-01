@@ -6,21 +6,64 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprite0</sprite>
-    <sprite>sprites\sprite1</sprite>
-    <sprite>sprites\sprite2</sprite>
+    <sprites name="TEST_SPRITE">
+      <sprite>sprites\Test_battle</sprite>
+      <sprite>sprites\Test_castle</sprite>
+      <sprite>sprites\Test_army</sprite>
+    </sprites>
+    <sprites name="Units">
+      <sprites name="Warriors">
+        <sprites name="Squire">
+          <sprite>sprites\SPR_Squire_stand</sprite>
+          <sprite>sprites\SPR_Squire_portret</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Fighters">
+        <sprites name="Fighter">
+          <sprite>sprites\SPR_Fighter_stand</sprite>
+          <sprite>sprites\SPR_Fighter_portret</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Mages">
+        <sprites name="Apprentice">
+          <sprite>sprites\SPR_Apprentice_stand</sprite>
+          <sprite>sprites\SPR_Apprentice_portret</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Healers">
+        <sprites name="Acolyte">
+          <sprite>sprites\SPR_Acolyte_stand</sprite>
+          <sprite>sprites\SPR_Acolyte_portret</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Rangers">
+        <sprites name="Scout">
+          <sprite>sprites\SPR_Scout_stand</sprite>
+          <sprite>sprites\SPR_Scout_portret</sprite>
+        </sprites>
+      </sprites>
+      <sprite>sprites\SPR_No_unit_portret</sprite>
+    </sprites>
+    <sprites name="Menu">
+      <sprite>sprites\new</sprite>
+      <sprite>sprites\quit</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\background0</background>
-    <background>background\background1</background>
+    <background>background\BG_menu</background>
+    <background>background\BG_level_1</background>
+    <background>background\BG_level_2</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\FNT_Arial_36</font>
+  </fonts>
   <objects name="objects">
-    <objects name="Melee">
-      <object>objects\Soldier</object>
+    <objects name="Warriors">
+      <object>objects\Squire</object>
     </objects>
-    <objects name="Range">
-      <object>objects\Archer</object>
+    <objects name="Fighters">
+      <object>objects\Fighter</object>
     </objects>
     <objects name="Mages">
       <object>objects\Apprentice</object>
@@ -28,17 +71,34 @@
     <objects name="Healers">
       <object>objects\Acolyte</object>
     </objects>
-    <objects name="Test">
-      <object>objects\object4</object>
+    <objects name="Rangers">
+      <object>objects\Scout</object>
     </objects>
-    <objects name="buttons">
-      <object>objects\quit</object>
-      <object>objects\New_game</object>
+    <objects name="Main_menu_buttons">
+      <object>objects\Start_game_button</object>
+      <object>objects\End_game_button</object>
     </objects>
+    <objects name="Game flow">
+      <object>objects\Game_flow</object>
+      <object>objects\Battle_initial</object>
+      <object>objects\Battle_progress</object>
+      <object>objects\Army_managment</object>
+    </objects>
+    <objects name="TEST_OBJECTS">
+      <object>objects\Test_button_battle</object>
+      <object>objects\Test_button_castle</object>
+      <object>objects\Test_button_army</object>
+    </objects>
+    <object>objects\No_unit</object>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
-    <room>rooms\Main_menu</room>
-    <room>rooms\Test</room>
+    <room>rooms\RM_Main_Menu</room>
+    <room>rooms\RM_TEST_ROOM</room>
+    <room>rooms\RM_Battle_Room</room>
+    <room>rooms\RM_Castle</room>
+    <room>rooms\RM_Army_Management</room>
+    <room>rooms\RM_Castle_Managment</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
