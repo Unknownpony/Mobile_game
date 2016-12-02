@@ -56,7 +56,7 @@ for (i=0; i&lt;5; i+=1)
 //Initial army of the user
 //Barracks 5 slots
 Statues[0] = "No_unit"  //Unit name
-Statues[1] = 100       //HP
+Statues[1] = 0       //HP
 Statues[2] = 0         //XP
 for (i=0; i&lt;4; i+=1)
 {
@@ -73,6 +73,11 @@ for (i=0; i&lt;2; i+=1)
         Army[i,j] = Statues   //Unit name
     }   
 }
+
+test[0] = "Squire"
+test[1] = 100       
+test[2] = 0         
+Army[1,0] = test
 </string>
           </argument>
         </arguments>
