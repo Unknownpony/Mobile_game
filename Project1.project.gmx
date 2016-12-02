@@ -48,6 +48,7 @@
       <sprite>sprites\new</sprite>
       <sprite>sprites\quit</sprite>
     </sprites>
+    <sprite>sprites\sprite16</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\BG_menu</background>
@@ -74,9 +75,10 @@
     <objects name="Rangers">
       <object>objects\Scout</object>
     </objects>
-    <objects name="Main_menu_buttons">
-      <object>objects\Start_game_button</object>
-      <object>objects\End_game_button</object>
+    <objects name="Buttons">
+      <object>objects\Start</object>
+      <object>objects\End</object>
+      <object>objects\Back</object>
     </objects>
     <objects name="Game flow">
       <object>objects\Game_flow</object>
@@ -91,7 +93,6 @@
     </objects>
     <object>objects\No_unit</object>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\RM_Main_Menu</room>
     <room>rooms\RM_TEST_ROOM</room>
