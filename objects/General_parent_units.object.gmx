@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="6" enumb="11">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,42 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initial Army
+            <string>///Put focuse on the instance
 
-ref_of_clicked_instance = 0
-mouse_clear(mb_any);
-
-//Draw current units in Army
-for (i=0; i&lt;3; i+=1)
+if ( focuse == 1)
 {
-    for (j=0; j&lt;4; j+=1)
-    {
-        Unit = Game_flow.Army[i,j]    //Unit name
-        if(i&lt;&gt;2)
-            inst_army_id[i,j] = instance_create(40+i*120,460-j*120,asset_get_index(Unit[0]))
-        else
-            inst_army_id[i,j] = instance_create(680,460-j*120,asset_get_index(Unit[0]))
-        inst_army_id[i,j].sprite_index = asset_get_index("SPR_" + Unit[0] + "_portret")
-    }   
+    focuse = 0
 }
 
-//Draw Shop
-inst_shop_id[0] = instance_create(1000,75,Squire)
-inst_shop_id[0].sprite_index = asset_get_index("SPR_Squire_portret")
-inst_shop_id[1] = instance_create(1000,200,Fighter)
-inst_shop_id[1].sprite_index = asset_get_index("SPR_Fighter_portret")
-inst_shop_id[2] = instance_create(1000,325,Apprentice)
-inst_shop_id[2].sprite_index = asset_get_index("SPR_Apprentice_portret")
-inst_shop_id[3] = instance_create(1000,450,Acolyte)
-inst_shop_id[3].sprite_index = asset_get_index("SPR_Acolyte_portret")
-inst_shop_id[4] = instance_create(1000,575,Scout)
-inst_shop_id[4].sprite_index = asset_get_index("SPR_Scout_portret")
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="6" enumb="10">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -77,10 +54,41 @@ inst_shop_id[4].sprite_index = asset_get_index("SPR_Scout_portret")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Manage army and baracks
-draw_set_font(FNT_Arial_36)
-draw_text(10,30, " YOUR ARMY")
-draw_text(520,30, " YOUR BARACKS")
+            <string>///Put focuse on the instance
+
+if( focuse == 0 and room_get_name(room) == "RM_Army_Management" )
+{
+    focuse = 1
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Frame around instance if Focuse
+
+if (focuse == 1)
+{
+    draw_rectangle_colour(x-5, y-5, x+101, y+101, c_black, c_black, c_black, c_black, true)
+}
 
 
 </string>
