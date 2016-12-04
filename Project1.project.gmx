@@ -56,8 +56,13 @@
     <background>background\BG_level_2</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\Shop_release.gml</script>
+    <script>scripts\Check_Position.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\FNT_Arial_36</font>
+    <font>fonts\FNT_Gold</font>
   </fonts>
   <objects name="objects">
     <objects name="Warriors">
@@ -91,6 +96,7 @@
       <object>objects\Test_button_castle</object>
       <object>objects\Test_button_army</object>
     </objects>
+    <object>objects\General_parent_units</object>
     <object>objects\No_unit</object>
   </objects>
   <rooms name="rooms">
