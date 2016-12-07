@@ -16,58 +16,64 @@
         <sprites name="Squire">
           <sprite>sprites\SPR_Squire_stand</sprite>
           <sprite>sprites\SPR_Squire_portret</sprite>
+          <sprite>sprites\SPR_Squire_full_body</sprite>
         </sprites>
       </sprites>
       <sprites name="Fighters">
         <sprites name="Fighter">
           <sprite>sprites\SPR_Fighter_stand</sprite>
           <sprite>sprites\SPR_Fighter_portret</sprite>
+          <sprite>sprites\SPR_Fighter_full_body</sprite>
         </sprites>
       </sprites>
       <sprites name="Mages">
         <sprites name="Apprentice">
           <sprite>sprites\SPR_Apprentice_stand</sprite>
           <sprite>sprites\SPR_Apprentice_portret</sprite>
+          <sprite>sprites\SPR_Apprentice_full_body</sprite>
         </sprites>
       </sprites>
       <sprites name="Healers">
         <sprites name="Acolyte">
           <sprite>sprites\SPR_Acolyte_stand</sprite>
           <sprite>sprites\SPR_Acolyte_portret</sprite>
+          <sprite>sprites\SPR_Acolyte_full_body</sprite>
         </sprites>
       </sprites>
       <sprites name="Rangers">
         <sprites name="Scout">
           <sprite>sprites\SPR_Scout_stand</sprite>
           <sprite>sprites\SPR_Scout_portret</sprite>
+          <sprite>sprites\SPR_Scout_full_body</sprite>
         </sprites>
       </sprites>
       <sprite>sprites\SPR_No_unit_portret</sprite>
     </sprites>
     <sprites name="Menu">
-      <sprite>sprites\new</sprite>
-      <sprite>sprites\quit</sprite>
+      <sprite>sprites\SPR_New</sprite>
+      <sprite>sprites\SPR_Quit</sprite>
+      <sprite>sprites\SPR_Back</sprite>
+      <sprite>sprites\SPR_Army</sprite>
+      <sprite>sprites\SPR_Buy_building</sprite>
+      <sprite>sprites\SPR_Map</sprite>
+      <sprite>sprites\SPR_Tavern</sprite>
+      <sprite>sprites\SPR_Test</sprite>
+      <sprite>sprites\SPR_Waypoint</sprite>
     </sprites>
-    <sprite>sprites\sprite16</sprite>
-    <sprite>sprites\sprite17</sprite>
-    <sprite>sprites\sprite18</sprite>
-    <sprite>sprites\sprite19</sprite>
-    <sprite>sprites\sprite20</sprite>
-    <sprite>sprites\sprite21</sprite>
-    <sprite>sprites\sprite22</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\BG_menu</background>
     <background>background\BG_level_1</background>
     <background>background\BG_level_2</background>
-    <background>background\BG_Global_Map</background>
     <background>background\BG_castle</background>
+    <background>background\BG_global_map</background>
     <background>background\BG_tavern</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\Shop_release.gml</script>
-    <script>scripts\Check_Position.gml</script>
+    <script>scripts\SCR_Shop_release.gml</script>
+    <script>scripts\SCR_Check_Position.gml</script>
+    <script>scripts\SCR_Buy_unit.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\FNT_Arial_36</font>
@@ -93,15 +99,14 @@
       <object>objects\Start</object>
       <object>objects\End</object>
       <object>objects\Back</object>
-      <object>objects\Test</object>
-      <object>objects\Tavern</object>
       <object>objects\Army</object>
       <object>objects\Buy_Building</object>
       <object>objects\Map</object>
+      <object>objects\Tavern</object>
+      <object>objects\Test</object>
     </objects>
     <objects name="Game flow">
       <object>objects\Game_flow</object>
-      <object>objects\Battle_initial</object>
       <object>objects\Battle_progress</object>
       <object>objects\Army_managment</object>
     </objects>
@@ -110,8 +115,10 @@
       <object>objects\Test_button_castle</object>
       <object>objects\Test_button_army</object>
     </objects>
-    <object>objects\General_parent_units</object>
-    <object>objects\No_unit</object>
+    <objects name="General and inherance parents">
+      <object>objects\General_parent_units</object>
+      <object>objects\No_unit</object>
+    </objects>
     <objects name="Map objects">
       <object>objects\Waypoint</object>
     </objects>
@@ -120,12 +127,12 @@
     <room>rooms\RM_Main_Menu</room>
     <room>rooms\RM_TEST_ROOM</room>
     <room>rooms\RM_Battle_Room</room>
-    <room>rooms\RM_Castle</room>
     <room>rooms\RM_Army_Management</room>
     <room>rooms\RM_Castle_Managment</room>
-    <room>rooms\RM_Global_Map</room>
     <room>rooms\RM_Building_room</room>
-    <room>rooms\RM_tavern</room>
+    <room>rooms\RM_Tavern</room>
+    <room>rooms\RM_Castle</room>
+    <room>rooms\RM_Global_Map</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
