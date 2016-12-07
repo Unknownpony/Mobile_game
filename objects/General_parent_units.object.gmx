@@ -57,9 +57,9 @@ if ( focuse == 1)
             <string>///Put focuse on the instance
 
 if( focuse == 0 and room_get_name(room) == "RM_Army_Management" )
-{
     focuse = 1
-}
+     
+
 
 </string>
           </argument>
@@ -88,9 +88,17 @@ if( focuse == 0 and room_get_name(room) == "RM_Army_Management" )
 if (focuse == 1)
 {
     draw_rectangle_colour(x-5, y-5, x+101, y+101, c_black, c_black, c_black, c_black, true)
+    
+    //Draw Stats
+    if(view_visible[1]==1 and object_get_name(object_index)&lt;&gt;"No_unit")
+    {
+           draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_full_body"), 0, 1500, 80);
+           draw_rectangle_colour(1800, 50, 2560, 700, c_gray, c_gray, c_gray, c_gray, false); 
+           draw_text(2130,70,"Put lore here")
+    }   
 }
 
-
+ 
 </string>
           </argument>
         </arguments>

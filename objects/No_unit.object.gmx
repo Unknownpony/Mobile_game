@@ -61,7 +61,7 @@ switch (bought_unit)
         sprite_index = asset_get_index("SPR_Squire_portret")
         if(x == 160)
             column = 1
-        else if(x == 680)
+        else if(x == 1000)
             column = 2
                 
         switch (y)
@@ -74,14 +74,14 @@ switch (bought_unit)
         new_unit[0]="Squire"
         new_unit[1]=0
         new_unit[2]=0
-        Game_flow.Army[column,row] = new_unit
+        Game_flow.army[column,row] = new_unit
     break;
     case 2: 
         instance_change(Fighter,true)
         sprite_index = asset_get_index("SPR_Fighter_portret")
         if(x == 160)
             column = 1
-        else if(x == 680)
+        else if(x == 1000)
             column = 2
                 
         switch (y)
@@ -94,14 +94,14 @@ switch (bought_unit)
         new_unit[0]="Fighter"
         new_unit[1]=0
         new_unit[2]=0
-        Game_flow.Army[column,row] = new_unit
+        Game_flow.army[column,row] = new_unit
     break;
     case 3: 
         instance_change(Apprentice,true)
         sprite_index = asset_get_index("SPR_Apprentice_portret")
         if(x == 160)
             column = 1
-        else if(x == 680)
+        else if(x == 1000)
             column = 2
                 
         switch (y)
@@ -114,14 +114,14 @@ switch (bought_unit)
         new_unit[0]="Apprentice"
         new_unit[1]=0
         new_unit[2]=0
-        Game_flow.Army[column,row] = new_unit
+        Game_flow.army[column,row] = new_unit
     break;
     case 4: 
         instance_change(Acolyte,true)
         sprite_index = asset_get_index("SPR_Acolyte_portret")
         if(x == 160)
             column = 1
-        else if(x == 680)
+        else if(x == 1000)
             column = 2
                 
         switch (y)
@@ -134,14 +134,14 @@ switch (bought_unit)
         new_unit[0]="Acolyte"
         new_unit[1]=0
         new_unit[2]=0
-        Game_flow.Army[column,row] = new_unit
+        Game_flow.army[column,row] = new_unit
     break;
     case 5: 
         instance_change(Scout,true)
         sprite_index = asset_get_index("SPR_Scout_portret")
         if(x == 160)
             column = 1
-        else if(x == 680)
+        else if(x == 1000)
             column = 2
                 
         switch (y)
@@ -154,7 +154,7 @@ switch (bought_unit)
         new_unit[0]="Scout"
         new_unit[1]=0
         new_unit[2]=0
-        Game_flow.Army[column,row] = new_unit
+        Game_flow.army[column,row] = new_unit
     break;
     //default: STATEMENT;
 }

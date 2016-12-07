@@ -26,13 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>/// Main resources, stats and initialization of Amry and Castle
-Current_level = 1
-Level = 1
-Gold = 300
-Crystal = 0
+current_level = 1
+max_level_user_reached = 1
+level = 1
+gold = 300
+crystal = 0
 
 //Global variables
-global.selected=0
+global.selected = 0
 
 //Castle buildings initialization with 0 everywhere (no buildings build)
 //First variable is buidling type
@@ -52,44 +53,33 @@ for (i=0; i&lt;5; i+=1)
 {
     for (j=0; j&lt;3; j+=1)
     {
-        Castle[i,j] = 0;
+        castle[i,j] = 0;
     }   
 }
 
 //Initial army of the user
-//Barracks 5 slots
-Statues[0] = "No_unit" //Unit name
-Statues[1] = 0         //HP
-Statues[2] = 0         //XP
+statues[0] = "No_unit" //Unit name
+statues[1] = 0         //HP
+statues[2] = 0         //XP
 
 //Initial army of the user
-//Army 2 on 4  slots
+//Army 2 on 4  and barack 1 on 4 slots overall 3 on 4 slots
 
 for (i=0; i&lt;3; i+=1)
 {
     for (j=0; j&lt;4; j+=1)
     {
-        Army[i,j] = Statues   //Unit name
+        army[i,j] = statues   
     }   
 }
 
 //All units in array
-All_unit[0,0]="Squire"
-All_unit[1,0]="Fighter"
-All_unit[2,0]="Apprentice"
-All_unit[3,0]="Acolyte"
-All_unit[4,0]="Scout"
-All_unit[5,0]="No_unit"
-
-//test, delete later
-test[0] = "Squire"
-test[1] = 100       
-test[2] = 0         
-Army[1,0] = test
-test1[0] = "Scout"
-test1[1] = 100       
-test1[2] = 0  
-Army[1,3] = test1
+all_unit[0,0]="Squire"
+all_unit[1,0]="Fighter"
+all_unit[2,0]="Apprentice"
+all_unit[3,0]="Acolyte"
+all_unit[4,0]="Scout"
+all_unit[5,0]="No_unit"
 
 </string>
           </argument>
@@ -115,7 +105,7 @@ Army[1,3] = test1
             <kind>1</kind>
             <string>/// Draw gold score
 draw_set_font(FNT_Gold)
-draw_text(550, 0, "Gold:" + string(Gold))
+draw_text(550, 0, "Gold:" + string(gold))
 </string>
           </argument>
         </arguments>

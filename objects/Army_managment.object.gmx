@@ -35,25 +35,25 @@ for (i=0; i&lt;3; i+=1)
 {
     for (j=0; j&lt;4; j+=1)
     {
-        Unit = Game_flow.Army[i,j]    //Unit name
+        unit = Game_flow.army[i,j]    //Unit name
         if(i&lt;&gt;2)
-            inst_army_id[i,j] = instance_create(40+i*120,460-j*120,asset_get_index(Unit[0]))
+            inst_army_id[i,j] = instance_create(40+i*120,460-j*120,asset_get_index(unit[0]))
         else
-            inst_army_id[i,j] = instance_create(680,460-j*120,asset_get_index(Unit[0]))
-        inst_army_id[i,j].sprite_index = asset_get_index("SPR_" + Unit[0] + "_portret")
+            inst_army_id[i,j] = instance_create(1000,460-j*120,asset_get_index(unit[0]))
+        inst_army_id[i,j].sprite_index = asset_get_index("SPR_" + unit[0] + "_portret")
     }   
 }
 
 //Draw Shop
-inst_shop_id[0] = instance_create(1000,75,Squire)
+inst_shop_id[0] = instance_create(1380,75,Squire)
 inst_shop_id[0].sprite_index = asset_get_index("SPR_Squire_portret")
-inst_shop_id[1] = instance_create(1000,200,Fighter)
+inst_shop_id[1] = instance_create(1380,200,Fighter)
 inst_shop_id[1].sprite_index = asset_get_index("SPR_Fighter_portret")
-inst_shop_id[2] = instance_create(1000,325,Apprentice)
+inst_shop_id[2] = instance_create(1380,325,Apprentice)
 inst_shop_id[2].sprite_index = asset_get_index("SPR_Apprentice_portret")
-inst_shop_id[3] = instance_create(1000,450,Acolyte)
+inst_shop_id[3] = instance_create(1380,450,Acolyte)
 inst_shop_id[3].sprite_index = asset_get_index("SPR_Acolyte_portret")
-inst_shop_id[4] = instance_create(1000,575,Scout)
+inst_shop_id[4] = instance_create(1380,575,Scout)
 inst_shop_id[4].sprite_index = asset_get_index("SPR_Scout_portret")
 </string>
           </argument>
@@ -80,9 +80,7 @@ inst_shop_id[4].sprite_index = asset_get_index("SPR_Scout_portret")
             <string>///Manage army and baracks
 draw_set_font(FNT_Arial_36)
 draw_text(10,30, " YOUR ARMY")
-draw_text(520,30, " YOUR BARACKS")
-
-
+draw_text(860,30, " YOUR BARACKS")
 </string>
           </argument>
         </arguments>
