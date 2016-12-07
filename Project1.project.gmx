@@ -49,11 +49,20 @@
       <sprite>sprites\quit</sprite>
     </sprites>
     <sprite>sprites\sprite16</sprite>
+    <sprite>sprites\sprite17</sprite>
+    <sprite>sprites\sprite18</sprite>
+    <sprite>sprites\sprite19</sprite>
+    <sprite>sprites\sprite20</sprite>
+    <sprite>sprites\sprite21</sprite>
+    <sprite>sprites\sprite22</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\BG_menu</background>
     <background>background\BG_level_1</background>
     <background>background\BG_level_2</background>
+    <background>background\BG_Global_Map</background>
+    <background>background\BG_castle</background>
+    <background>background\BG_tavern</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -84,6 +93,11 @@
       <object>objects\Start</object>
       <object>objects\End</object>
       <object>objects\Back</object>
+      <object>objects\Test</object>
+      <object>objects\Tavern</object>
+      <object>objects\Army</object>
+      <object>objects\Buy_Building</object>
+      <object>objects\Map</object>
     </objects>
     <objects name="Game flow">
       <object>objects\Game_flow</object>
@@ -98,6 +112,9 @@
     </objects>
     <object>objects\General_parent_units</object>
     <object>objects\No_unit</object>
+    <objects name="Map objects">
+      <object>objects\Waypoint</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\RM_Main_Menu</room>
@@ -106,6 +123,9 @@
     <room>rooms\RM_Castle</room>
     <room>rooms\RM_Army_Management</room>
     <room>rooms\RM_Castle_Managment</room>
+    <room>rooms\RM_Global_Map</room>
+    <room>rooms\RM_Building_room</room>
+    <room>rooms\RM_tavern</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

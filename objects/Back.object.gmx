@@ -39,13 +39,13 @@ switch (Current_room)
         }
         else
         {
-            room_goto(RM_TEST_ROOM); 
+            room_goto(RM_Castle); 
         }
         break;
     case "RM_Castle": 
         room_goto(RM_Main_Menu); 
         break;   
-    default: room_goto(RM_TEST_ROOM);
+    default: room_goto(RM_Castle);
 }
  
 </string>
