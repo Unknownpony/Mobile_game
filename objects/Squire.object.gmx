@@ -124,11 +124,14 @@ if(select=1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Shop room script
+            <string>///Army managment room script
 
-if(room_get_name(room) == "RM_Army_Management" and view_visible[1]=1)
+if(room_get_name(room) == "RM_Army_Management" and global.selected=0 and view_visible[0]=1)
 {
-    Army_managment.ref_of_clicked_instance.bought_unit = SCR_Buy_unit(object_get_name(object_index),50)
+    temp_x = x
+    temp_y = y
+    select = 1
+    global.selected = 1    
 }
 </string>
           </argument>
@@ -150,14 +153,11 @@ if(room_get_name(room) == "RM_Army_Management" and view_visible[1]=1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Army managment room script
+            <string>///Shop room script
 
-if(room_get_name(room) == "RM_Army_Management" and global.selected=0 and view_visible[0]=1)
+if(room_get_name(room) == "RM_Army_Management" and view_visible[1]=1)
 {
-    temp_x = x
-    temp_y = y
-    select = 1
-    global.selected = 1    
+    Army_managment.ref_of_clicked_instance.bought_unit = SCR_Buy_unit(object_get_name(object_index),50)
 }
 </string>
           </argument>
