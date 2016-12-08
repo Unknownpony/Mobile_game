@@ -96,14 +96,14 @@
       <object>objects\Scout</object>
     </objects>
     <objects name="Buttons">
-      <object>objects\Start</object>
-      <object>objects\End</object>
-      <object>objects\Back</object>
-      <object>objects\Army</object>
-      <object>objects\Buy_Building</object>
-      <object>objects\Map</object>
-      <object>objects\Tavern</object>
-      <object>objects\Test</object>
+      <object>objects\BT_Start</object>
+      <object>objects\BT_End</object>
+      <object>objects\BT_Back</object>
+      <object>objects\BT_Army</object>
+      <object>objects\BT_Buy_Building</object>
+      <object>objects\BT_Map</object>
+      <object>objects\BT_Tavern</object>
+      <object>objects\BT_Test</object>
     </objects>
     <objects name="Game flow">
       <object>objects\Game_flow</object>
@@ -125,13 +125,13 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\RM_Main_Menu</room>
+    <room>rooms\RM_Castle</room>
     <room>rooms\RM_TEST_ROOM</room>
     <room>rooms\RM_Battle_Room</room>
     <room>rooms\RM_Army_Management</room>
     <room>rooms\RM_Castle_Managment</room>
     <room>rooms\RM_Building_room</room>
     <room>rooms\RM_Tavern</room>
-    <room>rooms\RM_Castle</room>
     <room>rooms\RM_Global_Map</room>
   </rooms>
   <help>

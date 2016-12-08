@@ -51,10 +51,10 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="Start" x="512" y="332" name="inst_BF493230" locked="0" code="" scaleX="1.08000004291534" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="End" x="544" y="448" name="inst_E7050D16" locked="0" code="" scaleX="1.08000004291534" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="BT_Start" x="512" y="332" name="inst_BF493230" locked="0" code="" scaleX="1.08000004291534" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="BT_End" x="544" y="448" name="inst_E7050D16" locked="0" code="" scaleX="1.08000004291534" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Game_flow" x="128" y="224" name="inst_C7B06ED1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Test" x="512" y="224" name="inst_1E5B5E64" locked="0" code="" scaleX="1.0900000333786" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="BT_Test" x="512" y="224" name="inst_1E5B5E64" locked="0" code="" scaleX="1.0900000333786" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
