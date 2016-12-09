@@ -1,4 +1,4 @@
-///Release the object script
+///SCR_Shop_release()
 
 //This script check the fix position of the portret of units
 //It swap x and y position of those object

@@ -75,6 +75,15 @@
     <script>scripts\SCR_Shop_release.gml</script>
     <script>scripts\SCR_Check_Position.gml</script>
     <script>scripts\SCR_Buy_unit.gml</script>
+    <scripts name="simple function script">
+      <script>scripts\SCR_Assigne_array3d_value.gml</script>
+      <script>scripts\SCR_Save_to_array3D.gml</script>
+      <script>scripts\SCR_Sort_array.gml</script>
+    </scripts>
+    <scripts name="Battle scripts">
+      <script>scripts\SCR_IsAlive.gml</script>
+      <script>scripts\SCR_Call_battle.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\FNT_Arial_36</font>
@@ -97,12 +106,12 @@
       <object>objects\Scout</object>
     </objects>
     <objects name="Buttons">
-      <object>objects\BT_Start</object>
-      <object>objects\BT_End</object>
-      <object>objects\BT_Back</object>
       <object>objects\BT_Army</object>
+      <object>objects\BT_Back</object>
       <object>objects\BT_Buy_Building</object>
+      <object>objects\BT_End</object>
       <object>objects\BT_Map</object>
+      <object>objects\BT_Start</object>
       <object>objects\BT_Tavern</object>
       <object>objects\BT_Test</object>
     </objects>
@@ -128,13 +137,13 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\RM_Main_Menu</room>
-    <room>rooms\RM_Castle</room>
     <room>rooms\RM_TEST_ROOM</room>
     <room>rooms\RM_Battle_Room</room>
     <room>rooms\RM_Army_Management</room>
     <room>rooms\RM_Castle_Managment</room>
     <room>rooms\RM_Building_room</room>
-    <room>rooms\RM_Tavern</room>
+    <room>rooms\RM_Castle</room>
+    <room>rooms\RM_tavern</room>
     <room>rooms\RM_Global_Map</room>
   </rooms>
   <help>

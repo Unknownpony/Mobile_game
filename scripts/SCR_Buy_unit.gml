@@ -1,4 +1,4 @@
-///BUY_UNIT(Object_name, int) - return value for basic object or 
+///SCR_Buy_unit(Object_name, int) - return value for basic object or 
 //Arguments of this function
 bought_unit_name = argument0
 g = argument1

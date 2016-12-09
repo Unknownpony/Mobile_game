@@ -1,4 +1,4 @@
-///Check_Position(begin_x,end_x,begin_y,end_y,current_position_x,current_position_y,temp_x,temp_y)
+///SCR_Check_Position(begin_x,end_x,begin_y,end_y,current_position_x,current_position_y,temp_x,temp_y)
 //Arguments for the function
 begin_x = argument0
 end_x = argument1
