@@ -26,12 +26,19 @@
           <argument>
             <kind>1</kind>
             <string>///Initial instance
-
+max_hp = 100
 hp = 100
 xp = 0
+ad = 0
+ar = 0
+md = 0
+mr = 0
+in = 55
+position = 0
 xp_to_level_up = 200
 focuse = 0
 select = 0
+active_turn = 0
 </string>
           </argument>
         </arguments>
@@ -132,6 +139,11 @@ if(room_get_name(room) == "RM_Army_Management" and global.selected=0 and view_vi
     temp_y = y
     select = 1
     global.selected = 1    
+}
+else if(room_get_name(room) == "RM_Battle_Room" and active_turn==1)
+{
+    Battle_progress.queue_turn++
+    active_turn=0    
 }
 </string>
           </argument>

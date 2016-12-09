@@ -25,21 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch (Game_flow.level)
-{
-    //Level 1
-    case 1: 
-        room_set_background(RM_Battle_Room,0,1,0,BG_level_1,160,0,0,0,0,0,0.8); 
-        room_goto(RM_Battle_Room)
-        break;
-    //Level 2
-    case 2: 
-        room_set_background(RM_Battle_Room,0,1,0,BG_level_2,160,0,0,0,0,0,0.8); 
-        room_goto(RM_Battle_Room)
-        break;
-    default: 
-        level=0;
-}
+            <string>//call battle
+
+SCR_Call_battle(1, BG_level_1)
 </string>
           </argument>
         </arguments>

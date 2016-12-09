@@ -56,7 +56,7 @@ if ( focuse == 1)
             <kind>1</kind>
             <string>///Put focuse on the instance
 
-if( focuse == 0 and room_get_name(room) == "RM_Army_Management" )
+if(focuse == 0 and room_get_name(room) == "RM_Army_Management")
     focuse = 1
      
 
@@ -97,8 +97,15 @@ if (focuse == 1)
            draw_text(2130,70,"Put lore here")
     }   
 }
+else if (active_turn == 1)
+{
+        if(image_xscale==1)
+            draw_rectangle_colour(x-5, y-5, x+149, y+149, c_black, c_black, c_black, c_black, true)  
+        else
+            draw_rectangle_colour(x+5, y+5, x-149, y+149, c_black, c_black, c_black, c_black, true)  
+} 
 
- 
+
 </string>
           </argument>
         </arguments>

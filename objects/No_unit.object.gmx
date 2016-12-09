@@ -28,6 +28,7 @@
             <string>///Variables of No_units object
 focuse=0
 bought_unit=0
+active_turn = 0
 </string>
           </argument>
         </arguments>
