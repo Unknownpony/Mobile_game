@@ -59,6 +59,7 @@
       <sprite>sprites\SPR_Tavern</sprite>
       <sprite>sprites\SPR_Test</sprite>
       <sprite>sprites\SPR_Waypoint</sprite>
+      <sprite>sprites\SPR_Player</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -109,6 +110,7 @@
       <object>objects\Game_flow</object>
       <object>objects\Battle_progress</object>
       <object>objects\Army_managment</object>
+      <object>objects\ScaleView</object>
     </objects>
     <objects name="TEST_OBJECTS">
       <object>objects\Test_button_battle</object>
@@ -120,7 +122,8 @@
       <object>objects\No_unit</object>
     </objects>
     <objects name="Map objects">
-      <object>objects\Waypoint</object>
+      <object>objects\MO_Player</object>
+      <object>objects\MO_Waypoint</object>
     </objects>
   </objects>
   <rooms name="rooms">
