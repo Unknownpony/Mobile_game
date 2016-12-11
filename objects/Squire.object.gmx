@@ -29,16 +29,17 @@
 max_hp = 100
 hp = 100
 xp = 0
-ad = 0
+ad = 50
 ar = 0
 md = 0
 mr = 0
-in = 50
+in = 51
 position = 0
 xp_to_level_up = 200
 focuse = 0
 select = 0
 active_turn = 0
+type_of_attack=0
 
 </string>
           </argument>
@@ -68,6 +69,38 @@ if(select=1)
     x=mouse_x-sprite_width/2
     y=mouse_y-sprite_height/2
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Attack in object turn
+
+if(room_get_name(room) == "RM_Battle_Room" and active_turn == 1)
+    switch (type_of_attack)
+    {
+        case 0: 
+        {
+            SCR_One_melee_attack(position, Battle_progress.inst_id)
+        }
+        break;
+    }
+ 
 </string>
           </argument>
         </arguments>

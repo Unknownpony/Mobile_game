@@ -79,7 +79,7 @@ for (i=0; i&lt;3; i+=1)
     }   
 }
 
-test[0] = "Scout"
+test[0] = "Squire"
 army[0,0] = test //Unit name
 
 
@@ -91,6 +91,9 @@ all_unit[3,0]="Acolyte"
 all_unit[4,0]="Scout"
 all_unit[5,0]="No_unit"
 
+
+all_enemies[0] = Orc
+all_enemies[1] = Orc_shaman
 </string>
           </argument>
         </arguments>
