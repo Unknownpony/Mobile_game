@@ -17,6 +17,7 @@
           <sprite>sprites\SPR_Squire_stand</sprite>
           <sprite>sprites\SPR_Squire_portret</sprite>
           <sprite>sprites\SPR_Squire_full_body</sprite>
+          <sprite>sprites\SPR_Squire_half_body</sprite>
         </sprites>
       </sprites>
       <sprites name="Fighters">
@@ -24,6 +25,7 @@
           <sprite>sprites\SPR_Fighter_stand</sprite>
           <sprite>sprites\SPR_Fighter_portret</sprite>
           <sprite>sprites\SPR_Fighter_full_body</sprite>
+          <sprite>sprites\SPR_Fighter_half_body</sprite>
         </sprites>
       </sprites>
       <sprites name="Mages">
@@ -31,6 +33,7 @@
           <sprite>sprites\SPR_Apprentice_stand</sprite>
           <sprite>sprites\SPR_Apprentice_portret</sprite>
           <sprite>sprites\SPR_Apprentice_full_body</sprite>
+          <sprite>sprites\SPR_Apprentice_half_body</sprite>
         </sprites>
       </sprites>
       <sprites name="Healers">
@@ -38,6 +41,7 @@
           <sprite>sprites\SPR_Acolyte_stand</sprite>
           <sprite>sprites\SPR_Acolyte_portret</sprite>
           <sprite>sprites\SPR_Acolyte_full_body</sprite>
+          <sprite>sprites\SPR_Acolyte_half_body</sprite>
         </sprites>
       </sprites>
       <sprites name="Rangers">
@@ -45,6 +49,7 @@
           <sprite>sprites\SPR_Scout_stand</sprite>
           <sprite>sprites\SPR_Scout_portret</sprite>
           <sprite>sprites\SPR_Scout_full_body</sprite>
+          <sprite>sprites\SPR_Scout_half_body</sprite>
         </sprites>
       </sprites>
       <sprite>sprites\SPR_No_unit_portret</sprite>
@@ -61,6 +66,20 @@
       <sprite>sprites\SPR_Waypoint</sprite>
       <sprite>sprites\SPR_Player</sprite>
     </sprites>
+    <sprites name="Enemy">
+      <sprites name="Orcs">
+        <sprites name="Orc">
+          <sprite>sprites\SPR_Orc_portret</sprite>
+          <sprite>sprites\SPR_Orc_stand</sprite>
+          <sprite>sprites\SPR_Orc_half_body</sprite>
+        </sprites>
+        <sprites name="Orc Shaman">
+          <sprite>sprites\SPR_Orc_shaman_portret</sprite>
+          <sprite>sprites\SPR_Orc_shaman_stand</sprite>
+          <sprite>sprites\SPR_Orc_shaman_half_body</sprite>
+        </sprites>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\BG_menu</background>
@@ -72,6 +91,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\SCR_Call_battle.gml</script>
     <script>scripts\SCR_Shop_release.gml</script>
     <script>scripts\SCR_Check_Position.gml</script>
     <script>scripts\SCR_Buy_unit.gml</script>
@@ -82,28 +102,45 @@
     </scripts>
     <scripts name="Battle scripts">
       <script>scripts\SCR_IsAlive.gml</script>
-      <script>scripts\SCR_Call_battle.gml</script>
+      <script>scripts\SCR_One_melee_attack.gml</script>
+      <script>scripts\SCR_Animation_dmg_calculation.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\FNT_Arial_36</font>
     <font>fonts\FNT_Gold</font>
+    <font>fonts\FNT_Arial_15</font>
   </fonts>
   <objects name="objects">
-    <objects name="Warriors">
-      <object>objects\Squire</object>
+    <objects name="Player_units">
+      <objects name="Warriors">
+        <object>objects\Squire</object>
+      </objects>
+      <objects name="Fighters">
+        <object>objects\Fighter</object>
+      </objects>
+      <objects name="Mages">
+        <object>objects\Apprentice</object>
+      </objects>
+      <objects name="Rangers">
+        <object>objects\Scout</object>
+      </objects>
+      <objects name="Healers">
+        <object>objects\Acolyte</object>
+      </objects>
+      <objects name="General">
+        <object>objects\General_parent_units</object>
+        <object>objects\No_unit</object>
+      </objects>
     </objects>
-    <objects name="Fighters">
-      <object>objects\Fighter</object>
-    </objects>
-    <objects name="Mages">
-      <object>objects\Apprentice</object>
-    </objects>
-    <objects name="Healers">
-      <object>objects\Acolyte</object>
-    </objects>
-    <objects name="Rangers">
-      <object>objects\Scout</object>
+    <objects name="Enemy units">
+      <objects name="Orcs">
+        <object>objects\Orc</object>
+        <object>objects\Orc_shaman</object>
+      </objects>
+      <objects name="General">
+        <object>objects\General_parent_enemy</object>
+      </objects>
     </objects>
     <objects name="Buttons">
       <object>objects\BT_Army</object>
@@ -125,10 +162,6 @@
       <object>objects\Test_button_battle</object>
       <object>objects\Test_button_castle</object>
       <object>objects\Test_button_army</object>
-    </objects>
-    <objects name="General and inherance parents">
-      <object>objects\General_parent_units</object>
-      <object>objects\No_unit</object>
     </objects>
     <objects name="Map objects">
       <object>objects\MO_Player</object>
