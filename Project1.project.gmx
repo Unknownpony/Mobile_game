@@ -18,6 +18,7 @@
           <sprite>sprites\SPR_Squire_portret</sprite>
           <sprite>sprites\SPR_Squire_full_body</sprite>
           <sprite>sprites\SPR_Squire_half_body</sprite>
+          <sprite>sprites\SPR_Squire_attack</sprite>
         </sprites>
       </sprites>
       <sprites name="Fighters">
@@ -72,11 +73,13 @@
           <sprite>sprites\SPR_Orc_portret</sprite>
           <sprite>sprites\SPR_Orc_stand</sprite>
           <sprite>sprites\SPR_Orc_half_body</sprite>
+          <sprite>sprites\SPR_Orc_get_dmg</sprite>
         </sprites>
         <sprites name="Orc Shaman">
           <sprite>sprites\SPR_Orc_shaman_portret</sprite>
           <sprite>sprites\SPR_Orc_shaman_stand</sprite>
           <sprite>sprites\SPR_Orc_shaman_half_body</sprite>
+          <sprite>sprites\SPR_Orc_shaman_get_dmg</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -91,19 +94,42 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\SCR_Call_battle.gml</script>
-    <script>scripts\SCR_Shop_release.gml</script>
-    <script>scripts\SCR_Check_Position.gml</script>
-    <script>scripts\SCR_Buy_unit.gml</script>
     <scripts name="simple function script">
       <script>scripts\SCR_Assigne_array3d_value.gml</script>
       <script>scripts\SCR_Save_to_array3D.gml</script>
       <script>scripts\SCR_Sort_array.gml</script>
     </scripts>
     <scripts name="Battle scripts">
-      <script>scripts\SCR_IsAlive.gml</script>
-      <script>scripts\SCR_One_melee_attack.gml</script>
-      <script>scripts\SCR_Animation_dmg_calculation.gml</script>
+      <scripts name="Targeting">
+        <script>scripts\SCR_Target_one_enemy_melee.gml</script>
+        <script>scripts\SCR_Target_one_enemy_range.gml</script>
+        <script>scripts\SCR_Target_all_enemy.gml</script>
+        <script>scripts\SCR_Target_one_teammate_melee.gml</script>
+        <script>scripts\SCR_Target_one_teammate_range.gml</script>
+        <script>scripts\SCR_Target_all_teammates.gml</script>
+        <script>scripts\SCR_Enemy_target_clean.gml</script>
+        <script>scripts\SCR_Teammates_target_clean.gml</script>
+        <script>scripts\SCR_Choice_target_system.gml</script>
+      </scripts>
+      <scripts name="Animation and calculation">
+        <script>scripts\SCR_Type_of_attack.gml</script>
+        <script>scripts\SCR_IsAlive.gml</script>
+        <script>scripts\SCR_DMG_Calculation.gml</script>
+        <script>scripts\SCR_Heals_Calculation.gml</script>
+        <script>scripts\SCR_Death_animation.gml</script>
+        <script>scripts\SCR_Attack_animation.gml</script>
+        <script>scripts\SCR_Get_dmg_animation.gml</script>
+      </scripts>
+      <scripts name="AI">
+        <script>scripts\SRC_AI_enemy.gml</script>
+        <script>scripts\SRC_List_of_targets.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="Room scripts">
+      <script>scripts\SCR_Call_battle.gml</script>
+      <script>scripts\SCR_Shop_release.gml</script>
+      <script>scripts\SCR_Check_Position.gml</script>
+      <script>scripts\SCR_Buy_unit.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

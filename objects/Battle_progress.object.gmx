@@ -79,12 +79,16 @@ switch(SCR_IsAlive(inst_id))
     break;
     case 1: 
     {
-        //Defeat
+        //victory
+        show_message("You are victorious")
+        room_goto("RM_TEST_ROOM")
     }
     break;
-    default: 
+    case 2: 
     {
-        //victory
+         //Defeat
+        show_message("You have been defeated")
+        room_goto("RM_TEST_ROOM")
     }
 }
  

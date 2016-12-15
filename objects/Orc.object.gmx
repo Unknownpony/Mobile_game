@@ -7,48 +7,7 @@
   <persistent>0</persistent>
   <parentName>General_parent_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Initial Squire
-max_hp = 120
-hp = 120
-xp = 0
-ad = 0
-ar = 0
-md = 0
-mr = 0
-in = 50
-position = 0
-xp_to_level_up = 200
-focuse = 0
-select = 0
-active_turn = 0
-type_of_attack=0
-
-targeted = 0
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-  </events>
+  <events/>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

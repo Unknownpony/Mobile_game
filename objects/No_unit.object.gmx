@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>General_parent_units</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Variables of No_units object
+            <string>///Initial No Unit
+ 
 focuse=0
 bought_unit=0
 active_turn = 0
@@ -165,6 +166,63 @@ switch (bought_unit)
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Put focuse on the instance
+
+if(focuse == 1)
+    focuse = 0
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Put focuse on the instance
+
+if(focuse == 0)
+    focuse = 1
+     
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
@@ -190,6 +248,60 @@ if(global.selected = 0 )
     view_visible[1] = 1
     Army_managment.ref_of_clicked_instance = id
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Frame around instance if Focuse
+
+if (focuse == 1 and room_get_name(room) == "RM_Army_Management")
+{
+    draw_rectangle_colour(x-5, y-5, x+101, y+101, c_black, c_black, c_black, c_black, true)
+    
+    //Draw Stats
+    if(view_visible[1]==1 and object_get_name(object_index)&lt;&gt;"No_unit")
+    {
+           draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_full_body"), 0, 1500, 80);
+           draw_rectangle_colour(1800, 50, 2560, 700, c_gray, c_gray, c_gray, c_gray, false); 
+           draw_text(2130,70,"Put lore here")
+    }   
+}
+else 
+if(focuse == 1 and room_get_name(room) == "RM_Battle_Room")
+{
+    draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_half_body"),0,0,0)   
+    draw_set_font(FNT_Arial_15)
+    draw_text(10,181,"HP: " + string(hp) + " / " + string(max_hp))      
+    draw_text(10,201,"XP:  " + string(xp)) 
+    draw_text(10,221,"AD:  " + string(ad)) 
+    draw_text(10,241,"AR:  " + string(ar)) 
+    draw_text(10,261,"MD:  " + string(md)) 
+    draw_text(10,281,"MR:  " + string(mr)) 
+    draw_text(10,301,"IN:  " + string(in))  
+} 
+
+if(active_turn == 1)
+{
+    draw_rectangle_colour(x-5, y-5, x+149, y+149, c_black, c_black, c_black, c_black, true)  
+}    
 </string>
           </argument>
         </arguments>

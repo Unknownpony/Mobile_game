@@ -8,6 +8,200 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initial units
+
+switch (object_get_name(object_index))
+{
+    case "Squire": 
+    {
+        max_hp = 100
+        hp = 100
+        xp = 0
+        ad = 30
+        ar = 0
+        md = 0
+        mr = 0
+        in = 51
+        position = 0
+        xp_to_level_up = 200
+        focuse = 0
+        select = 0
+        active_turn = 0
+        type_of_attack = 0
+        targeted = 0
+    } break;
+    case "Fighter": 
+    {
+        max_hp = 90
+        hp = 90
+        xp = 0
+        ad = 25
+        ar = 0
+        md = 0
+        mr = 0
+        in = 55
+        position = 0
+        xp_to_level_up = 200
+        focuse = 0
+        select = 0
+        active_turn = 0
+        type_of_attack=0
+        targeted = 0
+    } break;
+    case "Apprentice": 
+    {
+        max_hp = 60
+        hp = 60
+        xp = 0
+        ad = 15
+        ar = 0
+        md = 0
+        mr = 0
+        in = 40
+        position = 0
+        xp_to_level_up = 200
+        focuse = 0
+        select = 0
+        active_turn = 0
+        type_of_attack=1
+        targeted = 0
+    } break;
+    case "Acolyte": 
+    {
+        max_hp = 40
+        hp = 40
+        xp = 0
+        ad = 0
+        ar = 0
+        md = 20
+        mr = 0
+        in = 20
+        position = 0
+        xp_to_level_up = 200
+        focuse = 0
+        select = 0
+        active_turn = 0
+        type_of_attack=0
+        targeted = 0
+    } break;
+    case "Scout": 
+    {
+        max_hp = 50
+        hp = 50
+        xp = 0
+        ad = 20
+        ar = 0
+        md = 0
+        mr = 0
+        in = 60
+        position = 0
+        xp_to_level_up = 200
+        focuse = 0
+        select = 0
+        active_turn = 0
+        type_of_attack=0
+        targeted = 0
+    } break;
+}
+ 
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move around the room with mouse
+if(select=1)
+{
+    x=mouse_x-sprite_width/2
+    y=mouse_y-sprite_height/2
+}
+        
+if(floor(image_index) == 15)
+    sprite_index = SPR_Squire_stand
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="56">
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>SCR_Shop_release</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="11">
       <action>
         <libid>1</libid>
@@ -28,7 +222,11 @@
             <string>///Put focuse on the instance
 
 if(focuse == 1)
+{
     focuse = 0
+    if(room_get_name(room) == "RM_Battle_Room")
+        SCR_Teammates_target_clean()
+}
 
 
 </string>
@@ -58,6 +256,93 @@ if(focuse == 1)
 if(focuse == 0)
     focuse = 1
      
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Army managment room script
+
+if(room_get_name(room) == "RM_Army_Management" and global.selected=0 and view_visible[0]=1)
+{
+    temp_x = x
+    temp_y = y
+    select = 1
+    global.selected = 1    
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Shop room script
+
+if(room_get_name(room) == "RM_Army_Management" and view_visible[1]=1)
+{
+    Army_managment.ref_of_clicked_instance.bought_unit = SCR_Buy_unit(object_get_name(object_index),50)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Heals
+
+if(room_get_name(room) == "RM_Battle_Room" and targeted = 1)
+    SCR_Type_of_attack()
+ 
+
+
+
 
 
 </string>
@@ -107,13 +392,17 @@ if(focuse == 1 and room_get_name(room) == "RM_Battle_Room")
     draw_text(10,241,"AR:  " + string(ar)) 
     draw_text(10,261,"MD:  " + string(md)) 
     draw_text(10,281,"MR:  " + string(mr)) 
-    draw_text(10,301,"IN:  " + string(in))  
+    draw_text(10,301,"IN:  " + string(in)) 
+    SCR_Choice_target_system() 
 } 
 
 if(active_turn == 1)
 {
     draw_rectangle_colour(x-5, y-5, x+149, y+149, c_black, c_black, c_black, c_black, true)  
-}    
+}   
+
+if(targeted == 1 and room_get_name(room) == "RM_Battle_Room")
+    draw_rectangle_colour(x-5, y-5, x+149, y+149, c_green, c_green, c_green, c_green, true)  
 </string>
           </argument>
         </arguments>

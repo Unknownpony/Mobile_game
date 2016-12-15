@@ -8,6 +8,100 @@
   <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initial units
+
+switch (object_get_name(object_index))
+{
+    case "Orc": 
+    {
+        max_hp = 120
+        hp = 120
+        xp = 0
+        ad = 30
+        ar = 0
+        md = 0
+        mr = 0
+        in = 10
+        position = 0
+        xp_to_level_up = 200
+        focuse = 0
+        select = 0
+        active_turn = 0
+        type_of_attack = 0
+        targeted = 0
+    } break;
+    case "Orc_shaman": 
+    {
+        max_hp = 90
+        hp = 90
+        xp = 0
+        ad = 25
+        ar = 0
+        md = 0
+        mr = 0
+        in = 10
+        position = 0
+        xp_to_level_up = 200
+        focuse = 0
+        select = 0
+        active_turn = 0
+        type_of_attack=0
+        targeted = 0
+    } break;
+}
+ 
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///End aniamtion    
+if(floor(image_index) == 15)
+    sprite_index = SPR_Orc_stand
+
+if(active_turn == 1)
+    SRC_AI_enemy(id)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="11">
       <action>
         <libid>1</libid>
@@ -28,8 +122,10 @@
             <string>///Put focuse on the instance
 
 if(focuse == 1)
+{
     focuse = 0
-
+    SCR_Enemy_target_clean()
+}
 
 </string>
           </argument>
@@ -84,17 +180,11 @@ if(focuse == 0)
             <kind>1</kind>
             <string>///Attack
 
-if(targeted==1)
-{
-    SCR_Animation_dmg_calculation(Battle_progress.active_unit,id)
-    Battle_progress.queue_turn++
-    Battle_progress.active_unit.active_turn=0 
-    for(i=0; i&lt;array_length_1d(Battle_progress.inst_id)-1; i+=1)
-    { 
-        if(Battle_progress.inst_id[i].position&gt;8)
-            Battle_progress.inst_id[i].targeted=0
-    }
-}
+SCR_Type_of_attack()
+ 
+
+
+
 
 
 </string>
@@ -131,16 +221,17 @@ if(focuse == 1 and room_get_name(room) == "RM_Battle_Room" )
     draw_text(1130,241,"AR:  " + string(ar)) 
     draw_text(1130,261,"MD:  " + string(md)) 
     draw_text(1130,281,"MR:  " + string(mr)) 
-    draw_text(1130,301,"IN:  " + string(in))  
-    if(targeted = 1)
-        draw_rectangle_colour(x-5, y-5, x+149, y+149, c_red, c_red, c_red, c_red, true) 
+    draw_text(1130,301,"IN:  " + string(in)) 
+    SCR_Choice_target_system()    
 }
-
 
 if(active_turn == 1)
 {
     draw_rectangle_colour(x-5, y-5, x+149, y+149, c_black, c_black, c_black, c_black, true)  
-}    
+}   
+
+if(targeted==1)  
+    draw_rectangle_colour(x-5, y-5, x+149, y+149, c_red, c_red, c_red, c_red, true) 
 </string>
           </argument>
         </arguments>
