@@ -22,9 +22,7 @@ temp_unit=0
 //Next it swap the objects position in presistance Game_flow Army variable
 if(mouse_x>=begin_x and mouse_x<=end_x and mouse_y>=begin_y and mouse_y<=end_y and !(mouse_x>=temp_x and mouse_x<=temp_x+97 and mouse_y>=temp_y and mouse_y<=temp_y+95))
 {   
-        //Check the colision of mouse and object below. If htere is no colision -4 is return
-           
-        
+        //Check the colision of mouse and object below. If htere is no colision -4 is return       
         while (below_object==-4)
         {
             below_object = collision_point( mouse_x, mouse_y, asset_get_index(Game_flow.all_unit[i,0]), false, true )   
@@ -36,7 +34,7 @@ if(mouse_x>=begin_x and mouse_x<=end_x and mouse_y>=begin_y and mouse_y<=end_y a
         below_object.x = temp_x
         below_object.y = temp_y 
         
-        //Check the position of garbed object in Army variable    
+        //Check the position of grabed object in Army variable    
         if(temp_x == 160)
             grabed_position_column = 1
         else if(temp_x == 1000)

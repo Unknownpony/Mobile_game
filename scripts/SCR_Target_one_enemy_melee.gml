@@ -3,6 +3,16 @@
 pos = argument0
 arr = argument1
 check = 0
+
+//Check current position of the object and based on it it determinante
+//which object can be attacked
+//position of the objects in battle
+//player | enemy
+//  4 8  |  12 16 
+//  3 6  |  11 15
+//  2 6  |  10 14
+//  1 5  |   9 13
+//Based on it check which object can be mark for the hit with position_meeting
 switch (pos)
 {
     case 1: 

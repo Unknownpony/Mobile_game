@@ -2,6 +2,7 @@
 
 active = argument0
 
+//Based on which enemy active unit is currently active chose AI system and targeting
 switch(object_get_name(active.object_index))
 {
     case "Orc": 

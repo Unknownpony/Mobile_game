@@ -19,6 +19,7 @@
           <sprite>sprites\SPR_Squire_full_body</sprite>
           <sprite>sprites\SPR_Squire_half_body</sprite>
           <sprite>sprites\SPR_Squire_attack</sprite>
+          <sprite>sprites\SPR_Squire_dead</sprite>
         </sprites>
       </sprites>
       <sprites name="Fighters">
@@ -27,6 +28,7 @@
           <sprite>sprites\SPR_Fighter_portret</sprite>
           <sprite>sprites\SPR_Fighter_full_body</sprite>
           <sprite>sprites\SPR_Fighter_half_body</sprite>
+          <sprite>sprites\SPR_Fighter_dead</sprite>
         </sprites>
       </sprites>
       <sprites name="Mages">
@@ -35,6 +37,7 @@
           <sprite>sprites\SPR_Apprentice_portret</sprite>
           <sprite>sprites\SPR_Apprentice_full_body</sprite>
           <sprite>sprites\SPR_Apprentice_half_body</sprite>
+          <sprite>sprites\SPR_Apprentice_dead</sprite>
         </sprites>
       </sprites>
       <sprites name="Healers">
@@ -43,6 +46,7 @@
           <sprite>sprites\SPR_Acolyte_portret</sprite>
           <sprite>sprites\SPR_Acolyte_full_body</sprite>
           <sprite>sprites\SPR_Acolyte_half_body</sprite>
+          <sprite>sprites\SPR_Acolyte_dead</sprite>
         </sprites>
       </sprites>
       <sprites name="Rangers">
@@ -51,6 +55,7 @@
           <sprite>sprites\SPR_Scout_portret</sprite>
           <sprite>sprites\SPR_Scout_full_body</sprite>
           <sprite>sprites\SPR_Scout_half_body</sprite>
+          <sprite>sprites\SPR_Scout_dead</sprite>
         </sprites>
       </sprites>
       <sprite>sprites\SPR_No_unit_portret</sprite>
@@ -74,12 +79,14 @@
           <sprite>sprites\SPR_Orc_stand</sprite>
           <sprite>sprites\SPR_Orc_half_body</sprite>
           <sprite>sprites\SPR_Orc_get_dmg</sprite>
+          <sprite>sprites\SPR_Orc_dead</sprite>
         </sprites>
         <sprites name="Orc Shaman">
           <sprite>sprites\SPR_Orc_shaman_portret</sprite>
           <sprite>sprites\SPR_Orc_shaman_stand</sprite>
           <sprite>sprites\SPR_Orc_shaman_half_body</sprite>
           <sprite>sprites\SPR_Orc_shaman_get_dmg</sprite>
+          <sprite>sprites\SPR_Orc_shaman_dead</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -95,9 +102,8 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="simple function script">
-      <script>scripts\SCR_Assigne_array3d_value.gml</script>
-      <script>scripts\SCR_Save_to_array3D.gml</script>
       <script>scripts\SCR_Sort_array.gml</script>
+      <script>scripts\SCR_Delete_obj_with_0_HP.gml</script>
     </scripts>
     <scripts name="Battle scripts">
       <scripts name="Targeting">

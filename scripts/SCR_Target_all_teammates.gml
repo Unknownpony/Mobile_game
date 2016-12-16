@@ -2,6 +2,7 @@
 
 arr = argument0
 
+//Mark all player units
 for(i=0; i<array_length_1d(arr); i+=1)
     if(arr[i].position<8)
         arr[i].targeted = 1

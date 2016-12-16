@@ -1,5 +1,6 @@
 ///SCR_Choice_target_system()
 
+//Based on which active object is currently active it choses target system.
 switch(object_get_name(Battle_progress.active_unit.object_index))
     {
         case "Squire": 

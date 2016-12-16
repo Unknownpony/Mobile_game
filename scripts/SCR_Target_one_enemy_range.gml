@@ -2,6 +2,8 @@
 
 arr = argument0
 
+
+//Mark which enemy unit can be hit
 for(i=0; i<array_length_1d(arr); i+=1)
     if(arr[i].position>8)
         if(position_meeting(mouse_x, mouse_y, arr[i]) == 1)

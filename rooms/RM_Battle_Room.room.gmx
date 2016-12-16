@@ -55,10 +55,8 @@ switch (Game_flow.level)
         Battle_progress.inst_id[n] = instance_create(832,720-4*144,Orc);
         Battle_progress.inst_id[n].position = 12
         n++
-        Battle_progress.inst_id[n] = instance_create(976,720-3*144,Orc_shaman);
-        Battle_progress.inst_id[n].position = 15
-        break;
     //Level 2
+    break;
     case 2: 
         //Enemy army for this level
         Battle_progress.inst_id[n] = instance_create(832,720-1*144,Orc);

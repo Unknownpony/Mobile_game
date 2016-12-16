@@ -28,13 +28,13 @@
             <string>MO_Player.x = mouse_x -30;
 MO_Player.y = mouse_y -22;
 
+//Check if objects MO_Player and MO_Waypoint have colision
+if(place_meeting(x, y, MO_Player) == 1)
+    image_blend = c_dkgray;                 //if yes then change image_blending to dkgray
+else
+    image_blend = c_white                   //if not get back to orgianl sprite color.
 
-inst_FD0E4AEB.object_index[].image_blend = c_dkgray;
-inst_6A2CDC4B.image_blend = c_dkgray;
-inst_0B312AB8.image_blend = c_dkgray;
-inst_51CDAF62.image_blend = c_dkgray;
-inst_BC5F06B2.image_blend = c_dkgray;
-//instance_deactivate_object(MO_Waypoint);
+
 </string>
           </argument>
         </arguments>

@@ -1,4 +1,4 @@
-///SCR_Call_battle(level, background)
+///SCR_Call_battle(level, background) - call battle room
 
 Game_flow.level = argument0
 bg_name = argument1

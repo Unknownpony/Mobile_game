@@ -1,5 +1,6 @@
 ///SCR_Type_of_attack()
 
+//Based on which active object is currently active it choses which attack is perform
 switch(object_get_name(Battle_progress.active_unit.object_index))
 {
     case "Squire": 

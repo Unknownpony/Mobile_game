@@ -10,5 +10,8 @@ target.hp -= (player.ad - target.ar) - (player.md - target.mr)
 if(target.hp <=0)
 {
     target.hp = 0
+    target.targeted=0
+    Battle_progress.queue_turn--
+    Battle_progress.inst_id = SCR_Delete_obj_with_0_HP(Battle_progress.inst_id)
     SCR_Death_animation(target)
 }
