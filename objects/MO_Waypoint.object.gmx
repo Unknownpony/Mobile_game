@@ -27,6 +27,14 @@
             <kind>1</kind>
             <string>MO_Player.x = mouse_x -30;
 MO_Player.y = mouse_y -22;
+
+
+inst_FD0E4AEB.object_index[].image_blend = c_dkgray;
+inst_6A2CDC4B.image_blend = c_dkgray;
+inst_0B312AB8.image_blend = c_dkgray;
+inst_51CDAF62.image_blend = c_dkgray;
+inst_BC5F06B2.image_blend = c_dkgray;
+//instance_deactivate_object(MO_Waypoint);
 </string>
           </argument>
         </arguments>

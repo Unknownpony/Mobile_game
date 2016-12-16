@@ -192,6 +192,7 @@
     <objects name="Map objects">
       <object>objects\MO_Player</object>
       <object>objects\MO_Waypoint</object>
+      <object>objects\GUI_map</object>
     </objects>
   </objects>
   <rooms name="rooms">
