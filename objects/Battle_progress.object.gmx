@@ -30,6 +30,9 @@ inst_id = 0
 new_turn = 1
 queue_turn = 0
 active_unit = 0
+animation = 0
+every_enemy = 0
+everyone = 0
 
 </string>
           </argument>
@@ -55,45 +58,57 @@ active_unit = 0
             <kind>1</kind>
             <string>//Battle events
 
-switch(SCR_IsAlive(inst_id))
+if(animation==0)
 {
-    case 0: 
+    switch(SCR_IsAlive(inst_id))
     {
-        if(new_turn==0 and queue_turn == array_length_1d(inst_id))
-            new_turn = 1
-        //battle in progress
-        if(new_turn==1)
+        case 0: 
         {
-            turn_queue = SCR_Sort_array(inst_id)
-            new_turn = 0
-            queue_turn = 0
+            if(new_turn==0 and queue_turn &gt;= array_length_1d(turn_queue))
+                new_turn = 1
+            //battle in progress
+            if(new_turn==1)
+            {
+                turn_queue = SCR_Sort_array(inst_id)
+                new_turn = 0
+                queue_turn = 0
+            }
+            
+            if(turn_queue[queue_turn].active_turn = 0)
+            {
+                turn_queue[queue_turn].active_turn = 1          
+                active_unit = turn_queue[queue_turn]
+                SCR_Choice_target_system()
+            }  
+            
         }
-        
-        if(turn_queue[queue_turn].active_turn = 0)
+        break;
+        case 1: 
         {
-            turn_queue[queue_turn].active_turn = 1 
-            active_unit = turn_queue[queue_turn]
-        }  
-        
+            //victory
+            show_message("You are victorious")
+            room_goto("RM_TEST_ROOM")
+        }
+        break;
+        case 2: 
+        {
+             //Defeat
+            show_message("You have been defeated")
+            room_goto("RM_TEST_ROOM")
+        }
     }
-    break;
-    case 1: 
+} else if(animation == 1)
+{
+    if(floor(active_unit.image_index) == 15)
     {
-        //victory
-        show_message("You are victorious")
-        room_goto("RM_TEST_ROOM")
-    }
-    break;
-    case 2: 
-    {
-         //Defeat
-        show_message("You have been defeated")
-        room_goto("RM_TEST_ROOM")
+        animation = 0
+        with(Test_animation)
+        {
+            instance_destroy();
+        };
+          
     }
 }
- 
-
-
 </string>
           </argument>
         </arguments>

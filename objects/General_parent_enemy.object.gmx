@@ -69,6 +69,7 @@ switch (object_get_name(object_index))
  
 
 
+
 </string>
           </argument>
         </arguments>
@@ -91,12 +92,34 @@ switch (object_get_name(object_index))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///End aniamtion    
-if(floor(image_index) == 15)
-    sprite_index = SPR_Orc_stand
-
-if(active_turn == 1)
+            <string>///AI 
+if(active_turn == 1 and room_get_name(room) == "RM_Battle_Room" and Battle_progress.animation==0)
     SRC_AI_enemy(id)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Back to stand sprite
+
+if(room_get_name(room) == "RM_Battle_Room" and sprite_index&lt;&gt;asset_get_index("SPR_" + object_get_name(object_index) + "_dead"))
+    if(Battle_progress.animation == 0)
+        sprite_index = asset_get_index("SPR_" + object_get_name(object_index) + "_stand")
 </string>
           </argument>
         </arguments>
@@ -124,7 +147,7 @@ if(active_turn == 1)
 if(focuse == 1)
 {
     focuse = 0
-    SCR_Enemy_target_clean()
+    Battle_progress.everyone=0
 }
 
 </string>
@@ -180,7 +203,12 @@ if(focuse == 0)
             <kind>1</kind>
             <string>///Attack
 
-SCR_Type_of_attack()
+if(Battle_progress.animation == 0 and Battle_progress.active_unit.active_turn==1)
+{
+    Battle_progress.everyone = 0
+    Battle_progress.every_enemy = 0
+    SCR_Type_of_attack()
+}    
  
 
 
@@ -221,8 +249,7 @@ if(focuse == 1 and room_get_name(room) == "RM_Battle_Room" )
     draw_text(1130,241,"AR:  " + string(ar)) 
     draw_text(1130,261,"MD:  " + string(md)) 
     draw_text(1130,281,"MR:  " + string(mr)) 
-    draw_text(1130,301,"IN:  " + string(in)) 
-    SCR_Choice_target_system()    
+    draw_text(1130,301,"IN:  " + string(in))    
 }
 
 if(active_turn == 1)
@@ -230,8 +257,16 @@ if(active_turn == 1)
     draw_rectangle_colour(x-5, y-5, x+149, y+149, c_black, c_black, c_black, c_black, true)  
 }   
 
-if(targeted==1)  
+if(focuse == 1 and targeted==1)  
+{
     draw_rectangle_colour(x-5, y-5, x+149, y+149, c_red, c_red, c_red, c_red, true) 
+    if(Battle_progress.every_enemy==1)
+        Battle_progress.everyone=1
+}
+
+if(Battle_progress.everyone==1)
+      draw_rectangle_colour(x-5, y-5, x+149, y+149, c_red, c_red, c_red, c_red, true)  
+
 </string>
           </argument>
         </arguments>

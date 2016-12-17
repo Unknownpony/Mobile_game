@@ -146,15 +146,39 @@ switch (object_get_name(object_index))
           <argument>
             <kind>1</kind>
             <string>///Move around the room with mouse
-if(select=1)
+if(select=1 and room_get_name(room) == "RM_Army_Management")
 {
     x=mouse_x-sprite_width/2
     y=mouse_y-sprite_height/2
 }
         
-if(floor(image_index) == 15)
-    sprite_index = SPR_Squire_stand
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Back to stand sprite
+
+if(room_get_name(room) == "RM_Battle_Room" and sprite_index&lt;&gt;asset_get_index("SPR_" + object_get_name(object_index) + "_dead"))
+    if(Battle_progress.animation == 0)
+        sprite_index = asset_get_index("SPR_" + object_get_name(object_index) + "_stand")
 </string>
           </argument>
         </arguments>
@@ -222,11 +246,8 @@ if(floor(image_index) == 15)
             <string>///Put focuse on the instance
 
 if(focuse == 1)
-{
     focuse = 0
-    if(room_get_name(room) == "RM_Battle_Room")
-        SCR_Teammates_target_clean()
-}
+
 
 
 </string>
@@ -393,7 +414,6 @@ if(focuse == 1 and room_get_name(room) == "RM_Battle_Room")
     draw_text(10,261,"MD:  " + string(md)) 
     draw_text(10,281,"MR:  " + string(mr)) 
     draw_text(10,301,"IN:  " + string(in)) 
-    SCR_Choice_target_system() 
 } 
 
 if(active_turn == 1)
@@ -401,7 +421,7 @@ if(active_turn == 1)
     draw_rectangle_colour(x-5, y-5, x+149, y+149, c_black, c_black, c_black, c_black, true)  
 }   
 
-if(targeted == 1 and room_get_name(room) == "RM_Battle_Room")
+if(targeted == 1 and room_get_name(room) == "RM_Battle_Room" and focuse == 1)
     draw_rectangle_colour(x-5, y-5, x+149, y+149, c_green, c_green, c_green, c_green, true)  
 </string>
           </argument>
