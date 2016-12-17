@@ -11,24 +11,22 @@ switch(object_get_name(Battle_progress.active_unit.object_index))
         {
             SCR_DMG_Calculation(Battle_progress.active_unit,id)
             Battle_progress.queue_turn++
-            Battle_progress.active_unit.active_turn=0 
+            Battle_progress.active_unit.active_turn=0
             SCR_Enemy_target_clean()
         }
     } break;
     case "Apprentice": 
     {
         if(targeted==1)
-        {
-            Battle_progress.queue_turn++
-            Battle_progress.active_unit.active_turn=0 
-            for(i=0; i<array_length_1d(Battle_progress.inst_id); i+=1)
+        {     
+            for(apprentice_i=0; apprentice_i<array_length_1d(Battle_progress.inst_id); apprentice_i++)
             { 
-                if(Battle_progress.inst_id[i].position>8)
-                {
-                    SCR_DMG_Calculation(Battle_progress.active_unit,Battle_progress.inst_id[i].id)
-                    Battle_progress.inst_id[i].targeted=0
-                }
+                if(Battle_progress.inst_id[apprentice_i].position>8)
+                    SCR_DMG_Calculation(Battle_progress.active_unit,Battle_progress.inst_id[apprentice_i].id)
             }
+            Battle_progress.queue_turn++
+            Battle_progress.active_unit.active_turn = 0             
+            SCR_Enemy_target_clean()
         }
     } break;
     case "Acolyte":
@@ -42,9 +40,5 @@ switch(object_get_name(Battle_progress.active_unit.object_index))
         }
     } break;
 }
- 
-
-
-
 
 

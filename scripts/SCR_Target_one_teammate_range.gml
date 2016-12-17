@@ -5,7 +5,6 @@
 arr = argument0
 
 //Mark which player unit can be hit
-for(i=0; i<array_length_1d(arr); i+=1)
-    if(arr[i].position<9)
-        if(position_meeting(mouse_x, mouse_y, arr[i]) == 1)
-            arr[i].targeted = 1
+for(totr_i=0; totr_i<array_length_1d(arr); totr_i+=1)
+    if(arr[totr_i].position<9)
+        arr[totr_i].targeted = 1

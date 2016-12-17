@@ -4,7 +4,20 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Attack sound effect">
+      <sound>sound\SO_Heal</sound>
+      <sound>sound\SO_Mace</sound>
+      <sound>sound\SO_Slash</sound>
+      <sound>sound\SO_Fire</sound>
+      <sound>sound\SO_Fire_gun</sound>
+    </sounds>
+    <sounds name="Get hit sound effect">
+      <sound>sound\SO_Female_death</sound>
+      <sound>sound\SO_Male_death</sound>
+      <sound>sound\SO_Orcs_death</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprites name="TEST_SPRITE">
       <sprite>sprites\Test_battle</sprite>
@@ -20,6 +33,7 @@
           <sprite>sprites\SPR_Squire_half_body</sprite>
           <sprite>sprites\SPR_Squire_attack</sprite>
           <sprite>sprites\SPR_Squire_dead</sprite>
+          <sprite>sprites\SPR_Squire_get_dmg</sprite>
         </sprites>
       </sprites>
       <sprites name="Fighters">
@@ -29,6 +43,8 @@
           <sprite>sprites\SPR_Fighter_full_body</sprite>
           <sprite>sprites\SPR_Fighter_half_body</sprite>
           <sprite>sprites\SPR_Fighter_dead</sprite>
+          <sprite>sprites\SPR_Fighter_attack</sprite>
+          <sprite>sprites\SPR_Fighter_get_dmg</sprite>
         </sprites>
       </sprites>
       <sprites name="Mages">
@@ -38,6 +54,8 @@
           <sprite>sprites\SPR_Apprentice_full_body</sprite>
           <sprite>sprites\SPR_Apprentice_half_body</sprite>
           <sprite>sprites\SPR_Apprentice_dead</sprite>
+          <sprite>sprites\SPR_Apprentice_attack</sprite>
+          <sprite>sprites\SPR_Apprentice_get_dmg</sprite>
         </sprites>
       </sprites>
       <sprites name="Healers">
@@ -47,6 +65,8 @@
           <sprite>sprites\SPR_Acolyte_full_body</sprite>
           <sprite>sprites\SPR_Acolyte_half_body</sprite>
           <sprite>sprites\SPR_Acolyte_dead</sprite>
+          <sprite>sprites\SPR_Acolyte_attack</sprite>
+          <sprite>sprites\SPR_Acolyte_get_dmg</sprite>
         </sprites>
       </sprites>
       <sprites name="Rangers">
@@ -56,6 +76,8 @@
           <sprite>sprites\SPR_Scout_full_body</sprite>
           <sprite>sprites\SPR_Scout_half_body</sprite>
           <sprite>sprites\SPR_Scout_dead</sprite>
+          <sprite>sprites\SPR_Scout_attack</sprite>
+          <sprite>sprites\SPR_Scout_get_dmg</sprite>
         </sprites>
       </sprites>
       <sprite>sprites\SPR_No_unit_portret</sprite>
@@ -80,6 +102,7 @@
           <sprite>sprites\SPR_Orc_half_body</sprite>
           <sprite>sprites\SPR_Orc_get_dmg</sprite>
           <sprite>sprites\SPR_Orc_dead</sprite>
+          <sprite>sprites\SPR_Orc_attack</sprite>
         </sprites>
         <sprites name="Orc Shaman">
           <sprite>sprites\SPR_Orc_shaman_portret</sprite>
@@ -87,8 +110,16 @@
           <sprite>sprites\SPR_Orc_shaman_half_body</sprite>
           <sprite>sprites\SPR_Orc_shaman_get_dmg</sprite>
           <sprite>sprites\SPR_Orc_shaman_dead</sprite>
+          <sprite>sprites\SPR_Orc_shaman_attack</sprite>
         </sprites>
       </sprites>
+    </sprites>
+    <sprites name="Attack Animation">
+      <sprite>sprites\SPR_Slash</sprite>
+      <sprite>sprites\SPR_Fire</sprite>
+      <sprite>sprites\SPR_Heal</sprite>
+      <sprite>sprites\SPR_Smash</sprite>
+      <sprite>sprites\SPR_Shot</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -123,8 +154,8 @@
         <script>scripts\SCR_DMG_Calculation.gml</script>
         <script>scripts\SCR_Heals_Calculation.gml</script>
         <script>scripts\SCR_Death_animation.gml</script>
-        <script>scripts\SCR_Attack_animation.gml</script>
-        <script>scripts\SCR_Get_dmg_animation.gml</script>
+        <script>scripts\SCR_Battle_animation.gml</script>
+        <script>scripts\SCR_Heal_animation.gml</script>
       </scripts>
       <scripts name="AI">
         <script>scripts\SRC_AI_enemy.gml</script>
@@ -194,6 +225,7 @@
       <object>objects\Test_button_battle</object>
       <object>objects\Test_button_castle</object>
       <object>objects\Test_button_army</object>
+      <object>objects\Test_animation</object>
     </objects>
     <objects name="Map objects">
       <object>objects\MO_Player</object>

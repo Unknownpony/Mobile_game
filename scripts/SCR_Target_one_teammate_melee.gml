@@ -18,41 +18,41 @@ switch (pos)
 {
     case 13: 
     {
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {
-            if(arr[i].position==9 or arr[i].position==10 or arr[i].position==11 or arr[i].position==12)
+            if(arr[totm_i].position==9 or arr[totm_i].position==10 or arr[totm_i].position==11 or arr[totm_i].position==12)
                 check = 1    
         }
         
         if (check == 1)
             break;
             
-        for(i=0; i<array_length_1d(arr); i+=1)
+        for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
         {
-            if(arr[i].position==5)
+            if(arr[totm_i].position==5)
             {
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==6)
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==6)
                     {
-                        arr[i].targeted = 1
+                        arr[totm_i].targeted = 1
                         check = 1
                     }
                 break;
-            } else if(arr[i].position==6)
+            } else if(arr[totm_i].position==6)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==7)
+            } else if(arr[totm_i].position==7)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==8)
+            } else if(arr[totm_i].position==8)
             {
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break
             } 
@@ -61,73 +61,73 @@ switch (pos)
         if (check == 1)
             break;
         
-        for(i=0; i<array_length_1d(arr); i+=1)
+        for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
         {
-            if(arr[i].position==1 )
+            if(arr[totm_i].position==1 )
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==2)                        
-                    arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==2)                        
+                    arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==2)
+            } else if(arr[totm_i].position==2)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==3)
+            } else if(arr[totm_i].position==3)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==4)
+            } else if(arr[totm_i].position==4)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
             }
         }             
     }break;
     case 14: 
     {
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {
-            if(arr[i].position==9 or arr[i].position==10 or arr[i].position==11 or arr[i].position==12)
+            if(arr[totm_i].position==9 or arr[totm_i].position==10 or arr[totm_i].position==11 or arr[totm_i].position==12)
                 check = 1    
         }
         
         if (check == 1)
             break;
         
-        for(i=0; i<array_length_1d(arr); i+=1)
+        for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
         {
-            if(arr[i].position==5)
+            if(arr[totm_i].position==5)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==6 or arr[i].position==7)    
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==6 or arr[totm_i].position==7)    
                     {                    
-                        arr[i].targeted = 1
+                        arr[totm_i].targeted = 1
                         check = 1
                     }
                 break;
-            } else if(arr[i].position==6)
+            } else if(arr[totm_i].position==6)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==7)      
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==7)      
                     {                  
-                        arr[i].targeted = 1
+                        arr[totm_i].targeted = 1
                         check = 1
                     }
                 break;
-            } else if(arr[i].position==7)
+            } else if(arr[totm_i].position==7)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==8)
+            } else if(arr[totm_i].position==8)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
             } 
@@ -136,70 +136,70 @@ switch (pos)
         if (check == 1)
             break;
         
-        for(i=0; i<array_length_1d(arr); i+=1)
+        for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
         {
-            if(arr[i].position==1 )
+            if(arr[totm_i].position==1 )
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==2 or arr[i].position==3)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==2 or arr[totm_i].position==3)                        
+                        arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==2)
+            } else if(arr[totm_i].position==2)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==3)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==3)                        
+                        arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==3)
+            } else if(arr[totm_i].position==3)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==4)
+            } else if(arr[totm_i].position==4)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
             }
         }  
     }break;
     case 15: 
     {
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {
-            if(arr[i].position==9 or arr[i].position==10 or arr[i].position==11 or arr[i].position==12)
+            if(arr[totm_i].position==9 or arr[totm_i].position==10 or arr[totm_i].position==11 or arr[totm_i].position==12)
                 check = 1    
         }
         
         if (check == 1)
             break;
         
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {
-            if(arr[i].position==8)
+            if(arr[totm_i].position==8)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==7 or arr[i].position==6)
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==7 or arr[totm_i].position==6)
+                        arr[totm_i].targeted = 1
                 check = 1
                 break;
-            }else if(arr[i].position==7)
+            }else if(arr[totm_i].position==7)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==6)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==6)                        
+                        arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==6)
+            } else if(arr[totm_i].position==6)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==5)
+            } else if(arr[totm_i].position==5)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
             } 
@@ -208,64 +208,64 @@ switch (pos)
         if (check == 1)
             break;
             
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {   
-            if(arr[i].position==4)
+            if(arr[totm_i].position==4)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==3 or arr[i].position==2)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==3 or arr[totm_i].position==2)                        
+                        arr[totm_i].targeted = 1
                 break;
-            }else if(arr[i].position==3)
+            }else if(arr[totm_i].position==3)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==2)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==2)                        
+                        arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==2)
+            } else if(arr[totm_i].position==2)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==1 )
+            } else if(arr[totm_i].position==1 )
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
             } 
         }   
     }break;
     case 16: 
     {
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {
-            if(arr[i].position==9 or arr[i].position==10 or arr[i].position==11 or arr[i].position==12)
+            if(arr[totm_i].position==9 or arr[totm_i].position==10 or arr[totm_i].position==11 or arr[totm_i].position==12)
                 check = 1    
         }
         
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {
-            if(arr[i].position==8)
+            if(arr[totm_i].position==8)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==7)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==7)                        
+                        arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==7)
+            } else if(arr[totm_i].position==7)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;                
-            } else if(arr[i].position==6)
+            } else if(arr[totm_i].position==6)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==5)
+            } else if(arr[totm_i].position==5)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break
             } 
@@ -274,58 +274,58 @@ switch (pos)
         if (check == 1)
             break;
             
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {
-            if(arr[i].position==4)
+            if(arr[totm_i].position==4)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==3)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==3)                        
+                        arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==3)
+            } else if(arr[totm_i].position==3)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==2)
+            } else if(arr[totm_i].position==2)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==1 )
+            } else if(arr[totm_i].position==1 )
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
             }
         }    
     }break;
     case 9: 
     {          
-        for(i=0; i<array_length_1d(arr); i+=1)
+        for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
         {
-            if(arr[i].position==5)
+            if(arr[totm_i].position==5)
             {
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==6)
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==6)
                     {
-                        arr[i].targeted = 1
+                        arr[totm_i].targeted = 1
                         check = 1
                     }
                 break;
-            } else if(arr[i].position==6)
+            } else if(arr[totm_i].position==6)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==7)
+            } else if(arr[totm_i].position==7)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==8)
+            } else if(arr[totm_i].position==8)
             {
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break
             } 
@@ -334,64 +334,64 @@ switch (pos)
         if (check == 1)
             break;
         
-        for(i=0; i<array_length_1d(arr); i+=1)
+        for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
         {
-            if(arr[i].position==1 )
+            if(arr[totm_i].position==1 )
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==2)                        
-                    arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==2)                        
+                    arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==2)
+            } else if(arr[totm_i].position==2)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==3)
+            } else if(arr[totm_i].position==3)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==4)
+            } else if(arr[totm_i].position==4)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
             }
         }             
     }break; 
     case 10: 
     {        
-        for(i=0; i<array_length_1d(arr); i+=1)
+        for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
         {
-            if(arr[i].position==5)
+            if(arr[totm_i].position==5)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==6 or arr[i].position==7)    
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==6 or arr[totm_i].position==7)    
                     {                    
-                        arr[i].targeted = 1
+                        arr[totm_i].targeted = 1
                         check = 1
                     }
                 break;
-            } else if(arr[i].position==6)
+            } else if(arr[totm_i].position==6)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==7)      
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==7)      
                     {                  
-                        arr[i].targeted = 1
+                        arr[totm_i].targeted = 1
                         check = 1
                     }
                 break;
-            } else if(arr[i].position==7)
+            } else if(arr[totm_i].position==7)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==8)
+            } else if(arr[totm_i].position==8)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
             } 
@@ -400,61 +400,61 @@ switch (pos)
         if (check == 1)
             break;
         
-        for(i=0; i<array_length_1d(arr); i+=1)
+        for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
         {
-            if(arr[i].position==1 )
+            if(arr[totm_i].position==1 )
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==2 or arr[i].position==3)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==2 or arr[totm_i].position==3)                        
+                        arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==2)
+            } else if(arr[totm_i].position==2)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==3)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==3)                        
+                        arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==3)
+            } else if(arr[totm_i].position==3)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==4)
+            } else if(arr[totm_i].position==4)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
             }
         }  
     }break;
     case 11: 
     {
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {
-            if(arr[i].position==8)
+            if(arr[totm_i].position==8)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==7 or arr[i].position==6)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==7 or arr[totm_i].position==6)                        
+                        arr[totm_i].targeted = 1
                 check = 1
                 break;
-            }else if(arr[i].position==7)
+            }else if(arr[totm_i].position==7)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==6)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==6)                        
+                        arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==6)
+            } else if(arr[totm_i].position==6)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==5)
+            } else if(arr[totm_i].position==5)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
             } 
@@ -463,58 +463,58 @@ switch (pos)
         if (check == 1)
             break;
             
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {   
-            if(arr[i].position==4)
+            if(arr[totm_i].position==4)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==3 or arr[i].position==2)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==3 or arr[totm_i].position==2)                        
+                        arr[totm_i].targeted = 1
                 break;
-            }else if(arr[i].position==3)
+            }else if(arr[totm_i].position==3)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==2)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==2)                        
+                        arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==2)
+            } else if(arr[totm_i].position==2)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==1 )
+            } else if(arr[totm_i].position==1 )
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
             } 
         }  
     }break;
     case 12: 
     {
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {
-            if(arr[i].position==8)
+            if(arr[totm_i].position==8)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==7)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==7)                        
+                        arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==7)
+            } else if(arr[totm_i].position==7)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;                
-            } else if(arr[i].position==6)
+            } else if(arr[totm_i].position==6)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break;
-            } else if(arr[i].position==5)
+            } else if(arr[totm_i].position==5)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 check = 1
                 break
             } 
@@ -523,26 +523,26 @@ switch (pos)
         if (check == 1)
             break;
             
-        for(i=array_length_1d(arr)-1; i>=0; i--)
+        for(totm_i=array_length_1d(arr)-1; totm_i>=0; totm_i--)
         {
-            if(arr[i].position==4)
+            if(arr[totm_i].position==4)
             {                
-                arr[i].targeted = 1
-                for(i=0; i<array_length_1d(arr); i+=1)
-                    if(arr[i].position==3)                        
-                        arr[i].targeted = 1
+                arr[totm_i].targeted = 1
+                for(totm_i=0; totm_i<array_length_1d(arr); totm_i+=1)
+                    if(arr[totm_i].position==3)                        
+                        arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==3)
+            } else if(arr[totm_i].position==3)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==2)
+            } else if(arr[totm_i].position==2)
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
-            } else if(arr[i].position==1 )
+            } else if(arr[totm_i].position==1 )
             {                
-                arr[i].targeted = 1
+                arr[totm_i].targeted = 1
                 break;
             }
         }  

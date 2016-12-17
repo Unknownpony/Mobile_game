@@ -12,21 +12,21 @@ switch(object_get_name(active.object_index))
         m=0
         death_marked=0
         hit_unit=0
-        for (i=0; i<array_length_1d(targets); i+=1)
+        for (ai_i=0; ai_i<array_length_1d(targets); ai_i+=1)
         {
-            if(targets[i].hp<=ad)
+            if(targets[ai_i].hp<=ad)
             {
-                death_marked[m]=targets[i]
+                death_marked[m]=targets[ai_i]
                 m++
             }
         }
         if(death_marked==0)
         {
             hit_unit = targets[0]
-            for (i=1; i<array_length_1d(targets); i+=1)
+            for (ai_i=1; ai_i<array_length_1d(targets); ai_i+=1)
             {
-                if((hit_unit.hp/hit_unit.max_hp)>(targets[i].hp/targets[i].max_hp))
-                    hit_unit=targets[i]
+                if((hit_unit.hp/hit_unit.max_hp)>(targets[ai_i].hp/targets[ai_i].max_hp))
+                    hit_unit=targets[ai_i]
             }
         } else
         {
@@ -35,10 +35,10 @@ switch(object_get_name(active.object_index))
             else
             {
                 hit_unit = death_marked[0]
-                for (i=1; i<array_length_1d(death_marked); i+=1)
+                for (ai_i=1; ai_i<array_length_1d(death_marked); ai_i+=1)
                 {
-                    if((hit_unit.hp/hit_unit.max_hp)>(death_marked[i].hp/death_marked[i].max_hp))
-                        hit_unit=death_marked[i]
+                    if((hit_unit.hp/hit_unit.max_hp)>(death_marked[ai_i].hp/death_marked[ai_i].max_hp))
+                        hit_unit=death_marked[ai_i]
                 }
             }
         }
@@ -50,12 +50,12 @@ switch(object_get_name(active.object_index))
     case "Orc_shaman": 
     {
         SCR_Target_all_teammates(Battle_progress.inst_id)
-        for(i=0; i<array_length_1d(Battle_progress.inst_id); i+=1)
+        for(ai_i=0; ai_i<array_length_1d(Battle_progress.inst_id); ai_i+=1)
             { 
-                if(Battle_progress.inst_id[i].position<8)
+                if(Battle_progress.inst_id[ai_i].position<8)
                 {
-                    SCR_DMG_Calculation(id,Battle_progress.inst_id[i]) 
-                    Battle_progress.inst_id[i].targeted=0
+                    SCR_DMG_Calculation(id,Battle_progress.inst_id[ai_i]) 
+                    Battle_progress.inst_id[ai_i].targeted=0
                 }
             }
         Battle_progress.queue_turn++
