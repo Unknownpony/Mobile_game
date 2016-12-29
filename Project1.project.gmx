@@ -17,6 +17,9 @@
       <sound>sound\SO_Male_death</sound>
       <sound>sound\SO_Orcs_death</sound>
     </sounds>
+    <sounds name="Event sound effect">
+      <sound>sound\SO_Evolution</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="TEST_SPRITE">
@@ -35,6 +38,120 @@
           <sprite>sprites\SPR_Squire_dead</sprite>
           <sprite>sprites\SPR_Squire_get_dmg</sprite>
         </sprites>
+        <sprites name="Tier1">
+          <sprites name="Knight">
+            <sprite>sprites\SPR_Knight_stand</sprite>
+            <sprite>sprites\SPR_Knight_portret</sprite>
+            <sprite>sprites\SPR_Knight_full_body</sprite>
+            <sprite>sprites\SPR_Knight_half_body</sprite>
+            <sprite>sprites\SPR_Knight_attack</sprite>
+            <sprite>sprites\SPR_Knight_dead</sprite>
+            <sprite>sprites\SPR_Knight_get_dmg</sprite>
+          </sprites>
+          <sprites name="Warrior">
+            <sprite>sprites\SPR_Warrior_stand</sprite>
+            <sprite>sprites\SPR_Warrior_portret</sprite>
+            <sprite>sprites\SPR_Warrior_full_body</sprite>
+            <sprite>sprites\SPR_Warrior_half_body</sprite>
+            <sprite>sprites\SPR_Warrior_attack</sprite>
+            <sprite>sprites\SPR_Warrior_dead</sprite>
+            <sprite>sprites\SPR_Warrior_get_dmg</sprite>
+          </sprites>
+          <sprites name="Young hero">
+            <sprite>sprites\SPR_Young_hero_stand</sprite>
+            <sprite>sprites\SPR_Young_hero_portret</sprite>
+            <sprite>sprites\SPR_Young_hero_full_body</sprite>
+            <sprite>sprites\SPR_Young_hero_half_body</sprite>
+            <sprite>sprites\SPR_Young_hero_attack</sprite>
+            <sprite>sprites\SPR_Young_hero_dead</sprite>
+            <sprite>sprites\SPR_Young_hero_get_dmg</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Tier2">
+          <sprites name="Hero">
+            <sprite>sprites\SPR_Hero_stand</sprite>
+            <sprite>sprites\SPR_Hero_portret</sprite>
+            <sprite>sprites\SPR_Hero_full_body</sprite>
+            <sprite>sprites\SPR_Hero_half_body</sprite>
+            <sprite>sprites\SPR_Hero_attack</sprite>
+            <sprite>sprites\SPR_Hero_dead</sprite>
+            <sprite>sprites\SPR_Hero_get_dmg</sprite>
+          </sprites>
+          <sprites name="Elementalist warrior">
+            <sprite>sprites\SPR_Elementalist_warrior_stand</sprite>
+            <sprite>sprites\SPR_Elementalist_warrior_portret</sprite>
+            <sprite>sprites\SPR_Elementalist_warrior_full_body</sprite>
+            <sprite>sprites\SPR_Elementalist_warrior_half_body</sprite>
+            <sprite>sprites\SPR_Elementalist_warrior_attack</sprite>
+            <sprite>sprites\SPR_Elementalist_warrior_dead</sprite>
+            <sprite>sprites\SPR_Elementalist_warrior_get_dmg</sprite>
+          </sprites>
+          <sprites name="Paladin">
+            <sprite>sprites\SPR_Paladin_stand</sprite>
+            <sprite>sprites\SPR_Paladin_portret</sprite>
+            <sprite>sprites\SPR_Paladin_full_body</sprite>
+            <sprite>sprites\SPR_Paladin_half_body</sprite>
+            <sprite>sprites\SPR_Paladin_attack</sprite>
+            <sprite>sprites\SPR_Paladin_dead</sprite>
+            <sprite>sprites\SPR_Paladin_get_dmg</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Tier3">
+          <sprites name="Nymph">
+            <sprite>sprites\SPR_Nymph_stand</sprite>
+            <sprite>sprites\SPR_Nymph_portret</sprite>
+            <sprite>sprites\SPR_Nymph_full_body</sprite>
+            <sprite>sprites\SPR_Nymph_half_body</sprite>
+            <sprite>sprites\SPR_Nymph_attack</sprite>
+            <sprite>sprites\SPR_Nymph_dead</sprite>
+            <sprite>sprites\SPR_Nymph_get_dmg</sprite>
+          </sprites>
+          <sprites name="Dragon slayer">
+            <sprite>sprites\SPR_Dragon_slayer_stand</sprite>
+            <sprite>sprites\SPR_Dragon_slayer_portret</sprite>
+            <sprite>sprites\SPR_Dragon_slayer_full_body</sprite>
+            <sprite>sprites\SPR_Dragon_slayer_half_body</sprite>
+            <sprite>sprites\SPR_Dragon_slayer_attack</sprite>
+            <sprite>sprites\SPR_Dragon_slayer_dead</sprite>
+            <sprite>sprites\SPR_Dragon_slayer_get_dmg</sprite>
+          </sprites>
+          <sprites name="Sylph">
+            <sprite>sprites\SPR_Sylph_stand</sprite>
+            <sprite>sprites\SPR_Sylph_portret</sprite>
+            <sprite>sprites\SPR_Sylph_full_body</sprite>
+            <sprite>sprites\SPR_Sylph_half_body</sprite>
+            <sprite>sprites\SPR_Sylph_attack</sprite>
+            <sprite>sprites\SPR_Sylph_dead</sprite>
+            <sprite>sprites\SPR_Sylph_get_dmg</sprite>
+          </sprites>
+          <sprites name="Holy avenger">
+            <sprite>sprites\SPR_Holy_avenger_stand</sprite>
+            <sprite>sprites\SPR_Holy_avenger_portret</sprite>
+            <sprite>sprites\SPR_Holy_avenger_full_body</sprite>
+            <sprite>sprites\SPR_Holy_avenger_half_body</sprite>
+            <sprite>sprites\SPR_Holy_avenger_attack</sprite>
+            <sprite>sprites\SPR_Holy_avenger_dead</sprite>
+            <sprite>sprites\SPR_Holy_avenger_get_dmg</sprite>
+          </sprites>
+          <sprites name="Gladiator">
+            <sprite>sprites\SPR_Gladiator_stand</sprite>
+            <sprite>sprites\SPR_Gladiator_portret</sprite>
+            <sprite>sprites\SPR_Gladiator_full_body</sprite>
+            <sprite>sprites\SPR_Gladiator_half_body</sprite>
+            <sprite>sprites\SPR_Gladiator_attack</sprite>
+            <sprite>sprites\SPR_Gladiator_dead</sprite>
+            <sprite>sprites\SPR_Gladiator_get_dmg</sprite>
+          </sprites>
+          <sprites name="Wall">
+            <sprite>sprites\SPR_Wall_stand</sprite>
+            <sprite>sprites\SPR_Wall_portret</sprite>
+            <sprite>sprites\SPR_Wall_full_body</sprite>
+            <sprite>sprites\SPR_Wall_half_body</sprite>
+            <sprite>sprites\SPR_Wall_attack</sprite>
+            <sprite>sprites\SPR_Wall_dead</sprite>
+            <sprite>sprites\SPR_Wall_get_dmg</sprite>
+          </sprites>
+        </sprites>
       </sprites>
       <sprites name="Fighters">
         <sprites name="Fighter">
@@ -45,6 +162,93 @@
           <sprite>sprites\SPR_Fighter_dead</sprite>
           <sprite>sprites\SPR_Fighter_attack</sprite>
           <sprite>sprites\SPR_Fighter_get_dmg</sprite>
+        </sprites>
+        <sprites name="Tier1">
+          <sprites name="Rouge">
+            <sprite>sprites\SPR_Rouge_stand</sprite>
+            <sprite>sprites\SPR_Rouge_portret</sprite>
+            <sprite>sprites\SPR_Rouge_full_body</sprite>
+            <sprite>sprites\SPR_Rouge_half_body</sprite>
+            <sprite>sprites\SPR_Rouge_attack</sprite>
+            <sprite>sprites\SPR_Rouge_dead</sprite>
+            <sprite>sprites\SPR_Rouge_get_dmg</sprite>
+          </sprites>
+          <sprites name="Kung Fu Fighter">
+            <sprite>sprites\SPR_Kung_Fu_Fighter_stand</sprite>
+            <sprite>sprites\SPR_Kung_Fu_Fighter_portret</sprite>
+            <sprite>sprites\SPR_Kung_Fu_Fighter_full_body</sprite>
+            <sprite>sprites\SPR_Kung_Fu_Fighter_half_body</sprite>
+            <sprite>sprites\SPR_Kung_Fu_Fighter_attack</sprite>
+            <sprite>sprites\SPR_Kung_Fu_Fighter_dead</sprite>
+            <sprite>sprites\SPR_Kung_Fu_Fighter_get_dmg</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Tier2">
+          <sprites name="Assassin">
+            <sprite>sprites\SPR_Assassin_stand</sprite>
+            <sprite>sprites\SPR_Assassin_portret</sprite>
+            <sprite>sprites\SPR_Assassin_full_body</sprite>
+            <sprite>sprites\SPR_Assassin_half_body</sprite>
+            <sprite>sprites\SPR_Assassin_attack</sprite>
+            <sprite>sprites\SPR_Assassin_dead</sprite>
+            <sprite>sprites\SPR_Assassin_get_dmg</sprite>
+          </sprites>
+          <sprites name="Shaolin nun">
+            <sprite>sprites\SPR_Shaolin_nun_stand</sprite>
+            <sprite>sprites\SPR_Shaolin_nun_portret</sprite>
+            <sprite>sprites\SPR_Shaolin_nun_full_body</sprite>
+            <sprite>sprites\SPR_Shaolin_nun_half_body</sprite>
+            <sprite>sprites\SPR_Shaolin_nun_attack</sprite>
+            <sprite>sprites\SPR_Shaolin_nun_dead</sprite>
+            <sprite>sprites\SPR_Shaolin_nun_get_dmg</sprite>
+          </sprites>
+          <sprites name="Shaolin monk">
+            <sprite>sprites\SPR_Shaolin_monk_stand</sprite>
+            <sprite>sprites\SPR_Shaolin_monk_portret</sprite>
+            <sprite>sprites\SPR_Shaolin_monk_full_body</sprite>
+            <sprite>sprites\SPR_Shaolin_monk_half_body</sprite>
+            <sprite>sprites\SPR_Shaolin_monk_attack</sprite>
+            <sprite>sprites\SPR_Shaolin_monk_dead</sprite>
+            <sprite>sprites\SPR_Shaolin_monk_get_dmg</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Tier3">
+          <sprites name="Shadow ninja">
+            <sprite>sprites\SPR_Shadow_ninja_stand</sprite>
+            <sprite>sprites\SPR_Shadow_ninja_portret</sprite>
+            <sprite>sprites\SPR_Shadow_ninja_full_body</sprite>
+            <sprite>sprites\SPR_Shadow_ninja_half_body</sprite>
+            <sprite>sprites\SPR_Shadow_ninja_attack</sprite>
+            <sprite>sprites\SPR_Shadow_ninja_dead</sprite>
+            <sprite>sprites\SPR_Shadow_ninja_get_dmg</sprite>
+          </sprites>
+          <sprites name="Rebel">
+            <sprite>sprites\SPR_Rebel_stand</sprite>
+            <sprite>sprites\SPR_Rebel_portret</sprite>
+            <sprite>sprites\SPR_Rebel_full_body</sprite>
+            <sprite>sprites\SPR_Rebel_half_body</sprite>
+            <sprite>sprites\SPR_Rebel_attack</sprite>
+            <sprite>sprites\SPR_Rebel_dead</sprite>
+            <sprite>sprites\SPR_Rebel_get_dmg</sprite>
+          </sprites>
+          <sprites name="Enlightened one">
+            <sprite>sprites\SPR_Enlightened_one_stand</sprite>
+            <sprite>sprites\SPR_Enlightened_one_portret</sprite>
+            <sprite>sprites\SPR_Enlightened_one_full_body</sprite>
+            <sprite>sprites\SPR_Enlightened_one_half_body</sprite>
+            <sprite>sprites\SPR_Enlightened_one_attack</sprite>
+            <sprite>sprites\SPR_Enlightened_one_dead</sprite>
+            <sprite>sprites\SPR_Enlightened_one_get_dmg</sprite>
+          </sprites>
+          <sprites name="Ogre">
+            <sprite>sprites\SPR_Ogre_stand</sprite>
+            <sprite>sprites\SPR_Ogre_portret</sprite>
+            <sprite>sprites\SPR_Ogre_full_body</sprite>
+            <sprite>sprites\SPR_Ogre_half_body</sprite>
+            <sprite>sprites\SPR_Ogre_attack</sprite>
+            <sprite>sprites\SPR_Ogre_dead</sprite>
+            <sprite>sprites\SPR_Ogre_get_dmg</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Mages">
@@ -57,6 +261,84 @@
           <sprite>sprites\SPR_Apprentice_attack</sprite>
           <sprite>sprites\SPR_Apprentice_get_dmg</sprite>
         </sprites>
+        <sprites name="Tier1">
+          <sprites name="Mage">
+            <sprite>sprites\SPR_Mage_stand</sprite>
+            <sprite>sprites\SPR_Mage_portret</sprite>
+            <sprite>sprites\SPR_Mage_full_body</sprite>
+            <sprite>sprites\SPR_Mage_half_body</sprite>
+            <sprite>sprites\SPR_Mage_attack</sprite>
+            <sprite>sprites\SPR_Mage_dead</sprite>
+            <sprite>sprites\SPR_Mage_get_dmg</sprite>
+          </sprites>
+          <sprites name="Enchantress">
+            <sprite>sprites\SPR_Enchantress_stand</sprite>
+            <sprite>sprites\SPR_Enchantress_portret</sprite>
+            <sprite>sprites\SPR_Enchantress_full_body</sprite>
+            <sprite>sprites\SPR_Enchantress_half_body</sprite>
+            <sprite>sprites\SPR_Enchantress_attack</sprite>
+            <sprite>sprites\SPR_Enchantress_dead</sprite>
+            <sprite>sprites\SPR_Enchantress_get_dmg</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Tier2">
+          <sprites name="Wizard">
+            <sprite>sprites\SPR_Wizard_stand</sprite>
+            <sprite>sprites\SPR_Wizard_portret</sprite>
+            <sprite>sprites\SPR_Wizard_full_body</sprite>
+            <sprite>sprites\SPR_Wizard_half_body</sprite>
+            <sprite>sprites\SPR_Wizard_attack</sprite>
+            <sprite>sprites\SPR_Wizard_dead</sprite>
+            <sprite>sprites\SPR_Wizard_get_dmg</sprite>
+          </sprites>
+          <sprites name="Necromancer">
+            <sprite>sprites\SPR_Necromancer_stand</sprite>
+            <sprite>sprites\SPR_Necromancer_portret</sprite>
+            <sprite>sprites\SPR_Necromancer_full_body</sprite>
+            <sprite>sprites\SPR_Necromancer_half_body</sprite>
+            <sprite>sprites\SPR_Necromancer_attack</sprite>
+            <sprite>sprites\SPR_Necromancer_dead</sprite>
+            <sprite>sprites\SPR_Necromancer_get_dmg</sprite>
+          </sprites>
+          <sprites name="Sorceress">
+            <sprite>sprites\SPR_Sorceress_stand</sprite>
+            <sprite>sprites\SPR_Sorceress_portret</sprite>
+            <sprite>sprites\SPR_Sorceress_full_body</sprite>
+            <sprite>sprites\SPR_Sorceress_half_body</sprite>
+            <sprite>sprites\SPR_Sorceress_attack</sprite>
+            <sprite>sprites\SPR_Sorceress_dead</sprite>
+            <sprite>sprites\SPR_Sorceress_get_dmg</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Tier3">
+          <sprites name="Great white wizard">
+            <sprite>sprites\SPR_Great_white_wizard_stand</sprite>
+            <sprite>sprites\SPR_Great_white_wizard_portret</sprite>
+            <sprite>sprites\SPR_Great_white_wizard_full_body</sprite>
+            <sprite>sprites\SPR_Great_white_wizard_half_body</sprite>
+            <sprite>sprites\SPR_Great_white_wizard_attack</sprite>
+            <sprite>sprites\SPR_Great_white_wizard_dead</sprite>
+            <sprite>sprites\SPR_Great_white_wizard_get_dmg</sprite>
+          </sprites>
+          <sprites name="Pandemoniues">
+            <sprite>sprites\SPR_Pandemoniues_stand</sprite>
+            <sprite>sprites\SPR_Pandemoniues_portret</sprite>
+            <sprite>sprites\SPR_Pandemoniues_full_body</sprite>
+            <sprite>sprites\SPR_Pandemoniues_half_body</sprite>
+            <sprite>sprites\SPR_Pandemoniues_attack</sprite>
+            <sprite>sprites\SPR_Pandemoniues_dead</sprite>
+            <sprite>sprites\SPR_Pandemoniues_get_dmg</sprite>
+          </sprites>
+          <sprites name="Ancient one">
+            <sprite>sprites\SPR_Ancient_one_stand</sprite>
+            <sprite>sprites\SPR_Ancient_one_portret</sprite>
+            <sprite>sprites\SPR_Ancient_one_full_body</sprite>
+            <sprite>sprites\SPR_Ancient_one_half_body</sprite>
+            <sprite>sprites\SPR_Ancient_one_attack</sprite>
+            <sprite>sprites\SPR_Ancient_one_dead</sprite>
+            <sprite>sprites\SPR_Ancient_one_get_dmg</sprite>
+          </sprites>
+        </sprites>
       </sprites>
       <sprites name="Healers">
         <sprites name="Acolyte">
@@ -68,6 +350,66 @@
           <sprite>sprites\SPR_Acolyte_attack</sprite>
           <sprite>sprites\SPR_Acolyte_get_dmg</sprite>
         </sprites>
+        <sprites name="Tier1">
+          <sprites name="Oracle">
+            <sprite>sprites\SPR_Oracle_stand</sprite>
+            <sprite>sprites\SPR_Oracle_portret</sprite>
+            <sprite>sprites\SPR_Oracle_full_body</sprite>
+            <sprite>sprites\SPR_Oracle_half_body</sprite>
+            <sprite>sprites\SPR_Oracle_attack</sprite>
+            <sprite>sprites\SPR_Oracle_dead</sprite>
+            <sprite>sprites\SPR_Oracle_get_dmg</sprite>
+          </sprites>
+          <sprites name="Cleric">
+            <sprite>sprites\SPR_Cleric_stand</sprite>
+            <sprite>sprites\SPR_Cleric_portret</sprite>
+            <sprite>sprites\SPR_Cleric_full_body</sprite>
+            <sprite>sprites\SPR_Cleric_half_body</sprite>
+            <sprite>sprites\SPR_Cleric_attack</sprite>
+            <sprite>sprites\SPR_Cleric_dead</sprite>
+            <sprite>sprites\SPR_Cleric_get_dmg</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Tier2">
+          <sprites name="Druid">
+            <sprite>sprites\SPR_Druid_stand</sprite>
+            <sprite>sprites\SPR_Druid_portret</sprite>
+            <sprite>sprites\SPR_Druid_full_body</sprite>
+            <sprite>sprites\SPR_Druid_half_body</sprite>
+            <sprite>sprites\SPR_Druid_attack</sprite>
+            <sprite>sprites\SPR_Druid_dead</sprite>
+            <sprite>sprites\SPR_Druid_get_dmg</sprite>
+          </sprites>
+          <sprites name="Priest">
+            <sprite>sprites\SPR_Priest_stand</sprite>
+            <sprite>sprites\SPR_Priest_portret</sprite>
+            <sprite>sprites\SPR_Priest_full_body</sprite>
+            <sprite>sprites\SPR_Priest_half_body</sprite>
+            <sprite>sprites\SPR_Priest_attack</sprite>
+            <sprite>sprites\SPR_Priest_dead</sprite>
+            <sprite>sprites\SPR_Priest_get_dmg</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Tier3">
+          <sprites name="Archdruid">
+            <sprite>sprites\SPR_Archdruid_stand</sprite>
+            <sprite>sprites\SPR_Archdruid_portret</sprite>
+            <sprite>sprites\SPR_Archdruid_full_body</sprite>
+            <sprite>sprites\SPR_Archdruid_half_body</sprite>
+            <sprite>sprites\SPR_Archdruid_attack</sprite>
+            <sprite>sprites\SPR_Archdruid_dead</sprite>
+            <sprite>sprites\SPR_Archdruid_get_dmg</sprite>
+          </sprites>
+          <sprites name="Bless one">
+            <sprite>sprites\SPR_Bless_one_stand</sprite>
+            <sprite>sprites\SPR_Bless_one_portret</sprite>
+            <sprite>sprites\SPR_Bless_one_full_body</sprite>
+            <sprite>sprites\SPR_Bless_one_half_body</sprite>
+            <sprite>sprites\SPR_Bless_one_attack</sprite>
+            <sprite>sprites\SPR_Bless_one_dead</sprite>
+            <sprite>sprites\SPR_Bless_one_get_dmg</sprite>
+          </sprites>
+        </sprites>
       </sprites>
       <sprites name="Rangers">
         <sprites name="Scout">
@@ -78,6 +420,111 @@
           <sprite>sprites\SPR_Scout_dead</sprite>
           <sprite>sprites\SPR_Scout_attack</sprite>
           <sprite>sprites\SPR_Scout_get_dmg</sprite>
+        </sprites>
+        <sprites name="Tier1">
+          <sprites name="Guner">
+            <sprite>sprites\SPR_Guner_stand</sprite>
+            <sprite>sprites\SPR_Guner_portret</sprite>
+            <sprite>sprites\SPR_Guner_full_body</sprite>
+            <sprite>sprites\SPR_Guner_half_body</sprite>
+            <sprite>sprites\SPR_Guner_attack</sprite>
+            <sprite>sprites\SPR_Guner_dead</sprite>
+            <sprite>sprites\SPR_Guner_get_dmg</sprite>
+          </sprites>
+          <sprites name="Thief">
+            <sprite>sprites\SPR_Thief_stand</sprite>
+            <sprite>sprites\SPR_Thief_portret</sprite>
+            <sprite>sprites\SPR_Thief_full_body</sprite>
+            <sprite>sprites\SPR_Thief_half_body</sprite>
+            <sprite>sprites\SPR_Thief_attack</sprite>
+            <sprite>sprites\SPR_Thief_dead</sprite>
+            <sprite>sprites\SPR_Thief_get_dmg</sprite>
+          </sprites>
+          <sprites name="Archer">
+            <sprite>sprites\SPR_Archer_stand</sprite>
+            <sprite>sprites\SPR_Archer_portret</sprite>
+            <sprite>sprites\SPR_Archer_full_body</sprite>
+            <sprite>sprites\SPR_Archer_half_body</sprite>
+            <sprite>sprites\SPR_Archer_attack</sprite>
+            <sprite>sprites\SPR_Archer_dead</sprite>
+            <sprite>sprites\SPR_Archer_get_dmg</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Tier2">
+          <sprites name="Marksman">
+            <sprite>sprites\SPR_Marksman_stand</sprite>
+            <sprite>sprites\SPR_Marksman_portret</sprite>
+            <sprite>sprites\SPR_Marksman_full_body</sprite>
+            <sprite>sprites\SPR_Marksman_half_body</sprite>
+            <sprite>sprites\SPR_Marksman_attack</sprite>
+            <sprite>sprites\SPR_Marksman_dead</sprite>
+            <sprite>sprites\SPR_Marksman_get_dmg</sprite>
+          </sprites>
+          <sprites name="Hunter">
+            <sprite>sprites\SPR_Hunter_stand</sprite>
+            <sprite>sprites\SPR_Hunter_portret</sprite>
+            <sprite>sprites\SPR_Hunter_full_body</sprite>
+            <sprite>sprites\SPR_Hunter_half_body</sprite>
+            <sprite>sprites\SPR_Hunter_attack</sprite>
+            <sprite>sprites\SPR_Hunter_dead</sprite>
+            <sprite>sprites\SPR_Hunter_get_dmg</sprite>
+          </sprites>
+          <sprites name="Bandit">
+            <sprite>sprites\SPR_Bandit_stand</sprite>
+            <sprite>sprites\SPR_Bandit_portret</sprite>
+            <sprite>sprites\SPR_Bandit_full_body</sprite>
+            <sprite>sprites\SPR_Bandit_half_body</sprite>
+            <sprite>sprites\SPR_Bandit_attack</sprite>
+            <sprite>sprites\SPR_Bandit_dead</sprite>
+            <sprite>sprites\SPR_Bandit_get_dmg</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Tier3">
+          <sprites name="Duelist">
+            <sprite>sprites\SPR_Duelist_stand</sprite>
+            <sprite>sprites\SPR_Duelist_portret</sprite>
+            <sprite>sprites\SPR_Duelist_full_body</sprite>
+            <sprite>sprites\SPR_Duelist_half_body</sprite>
+            <sprite>sprites\SPR_Duelist_attack</sprite>
+            <sprite>sprites\SPR_Duelist_dead</sprite>
+            <sprite>sprites\SPR_Duelist_get_dmg</sprite>
+          </sprites>
+          <sprites name="Sniper">
+            <sprite>sprites\SPR_Sniper_stand</sprite>
+            <sprite>sprites\SPR_Sniper_portret</sprite>
+            <sprite>sprites\SPR_Sniper_full_body</sprite>
+            <sprite>sprites\SPR_Sniper_half_body</sprite>
+            <sprite>sprites\SPR_Sniper_attack</sprite>
+            <sprite>sprites\SPR_Sniper_dead</sprite>
+            <sprite>sprites\SPR_Sniper_get_dmg</sprite>
+          </sprites>
+          <sprites name="Sharpshooter">
+            <sprite>sprites\SPR_Sharpshooter_stand</sprite>
+            <sprite>sprites\SPR_Sharpshooter_portret</sprite>
+            <sprite>sprites\SPR_Sharpshooter_full_body</sprite>
+            <sprite>sprites\SPR_Sharpshooter_half_body</sprite>
+            <sprite>sprites\SPR_Sharpshooter_attack</sprite>
+            <sprite>sprites\SPR_Sharpshooter_dead</sprite>
+            <sprite>sprites\SPR_Sharpshooter_get_dmg</sprite>
+          </sprites>
+          <sprites name="Outlaw">
+            <sprite>sprites\SPR_Outlaw_stand</sprite>
+            <sprite>sprites\SPR_Outlaw_portret</sprite>
+            <sprite>sprites\SPR_Outlaw_full_body</sprite>
+            <sprite>sprites\SPR_Outlaw_half_body</sprite>
+            <sprite>sprites\SPR_Outlaw_attack</sprite>
+            <sprite>sprites\SPR_Outlaw_dead</sprite>
+            <sprite>sprites\SPR_Outlaw_get_dmg</sprite>
+          </sprites>
+          <sprites name="Destroyer">
+            <sprite>sprites\SPR_Destroyer_stand</sprite>
+            <sprite>sprites\SPR_Destroyer_portret</sprite>
+            <sprite>sprites\SPR_Destroyer_full_body</sprite>
+            <sprite>sprites\SPR_Destroyer_half_body</sprite>
+            <sprite>sprites\SPR_Destroyer_attack</sprite>
+            <sprite>sprites\SPR_Destroyer_dead</sprite>
+            <sprite>sprites\SPR_Destroyer_get_dmg</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprite>sprites\SPR_No_unit_portret</sprite>
@@ -95,7 +542,7 @@
       <sprite>sprites\SPR_Player</sprite>
     </sprites>
     <sprites name="Enemy">
-      <sprites name="Orcs">
+      <sprites name="Green Skin">
         <sprites name="Orc">
           <sprite>sprites\SPR_Orc_portret</sprite>
           <sprite>sprites\SPR_Orc_stand</sprite>
@@ -113,6 +560,26 @@
           <sprite>sprites\SPR_Orc_shaman_attack</sprite>
         </sprites>
       </sprites>
+      <sprites name="Undead">
+        <sprites name="Lich">
+          <sprite>sprites\SPR_Lich_protret</sprite>
+          <sprite>sprites\SPR_Lich_stand</sprite>
+          <sprite>sprites\SPR_Lich_half_body</sprite>
+          <sprite>sprites\SPR_Lich_get_dmg</sprite>
+          <sprite>sprites\SPR_Lich_dead</sprite>
+          <sprite>sprites\SPR_Lich_attack</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Dragons">
+        <sprites name="Blue dragon">
+          <sprite>sprites\SPR_Blue_dragon_portret</sprite>
+          <sprite>sprites\SPR_Blue_dragon_stand</sprite>
+          <sprite>sprites\SPR_Blue_dragon_half_body</sprite>
+          <sprite>sprites\SPR_Blue_dragon_get_dmg</sprite>
+          <sprite>sprites\SPR_Blue_dragon_dead</sprite>
+          <sprite>sprites\SPR_Blue_dragon_attack</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="Attack Animation">
       <sprite>sprites\SPR_Slash</sprite>
@@ -120,6 +587,7 @@
       <sprite>sprites\SPR_Heal</sprite>
       <sprite>sprites\SPR_Smash</sprite>
       <sprite>sprites\SPR_Shot</sprite>
+      <sprite>sprites\SPR_Evolve</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -149,17 +617,23 @@
         <script>scripts\SCR_Choice_target_system.gml</script>
       </scripts>
       <scripts name="Animation and calculation">
-        <script>scripts\SCR_Type_of_attack.gml</script>
+        <script>scripts\SCR_Attack_animation.gml</script>
         <script>scripts\SCR_IsAlive.gml</script>
         <script>scripts\SCR_DMG_Calculation.gml</script>
         <script>scripts\SCR_Heals_Calculation.gml</script>
         <script>scripts\SCR_Death_animation.gml</script>
         <script>scripts\SCR_Battle_animation.gml</script>
         <script>scripts\SCR_Heal_animation.gml</script>
+        <script>scripts\SCR_Debuff_calculation.gml</script>
+        <script>scripts\SCR_Buff_debuff_statues.gml</script>
       </scripts>
       <scripts name="AI">
         <script>scripts\SRC_AI_enemy.gml</script>
         <script>scripts\SRC_List_of_targets.gml</script>
+      </scripts>
+      <scripts name="End of battle/turn">
+        <script>scripts\SCR_Unit_evolve.gml</script>
+        <script>scripts\SCR_Clean_status.gml</script>
       </scripts>
     </scripts>
     <scripts name="Room scripts">
@@ -178,18 +652,94 @@
     <objects name="Player_units">
       <objects name="Warriors">
         <object>objects\Squire</object>
+        <objects name="Tier1">
+          <object>objects\Knight</object>
+          <object>objects\Warrior</object>
+          <object>objects\Young_hero</object>
+        </objects>
+        <objects name="Tier2">
+          <object>objects\Elementalist_warrior</object>
+          <object>objects\Hero</object>
+          <object>objects\Paladin</object>
+        </objects>
+        <objects name="Tier3">
+          <object>objects\Nymph</object>
+          <object>objects\Dragon_slayer</object>
+          <object>objects\Sylph</object>
+          <object>objects\Holy_avenger</object>
+          <object>objects\Gladiator</object>
+          <object>objects\Wall</object>
+        </objects>
       </objects>
       <objects name="Fighters">
         <object>objects\Fighter</object>
+        <objects name="Tier1">
+          <object>objects\Rouge</object>
+          <object>objects\Kung_Fu_Fighter</object>
+        </objects>
+        <objects name="Tier2">
+          <object>objects\Assassin</object>
+          <object>objects\Shaolin_nun</object>
+          <object>objects\Shaolin_monk</object>
+        </objects>
+        <objects name="Tier3">
+          <object>objects\Shadow_ninja</object>
+          <object>objects\Rebel</object>
+          <object>objects\Enlightened_one</object>
+          <object>objects\Ogre</object>
+        </objects>
       </objects>
       <objects name="Mages">
         <object>objects\Apprentice</object>
-      </objects>
-      <objects name="Rangers">
-        <object>objects\Scout</object>
+        <objects name="Tier 1">
+          <object>objects\Mage</object>
+          <object>objects\Enchantress</object>
+        </objects>
+        <objects name="Tier 2">
+          <object>objects\Wizard</object>
+          <object>objects\Necromancer</object>
+          <object>objects\Sorceress</object>
+        </objects>
+        <objects name="Tier 3">
+          <object>objects\Great_white_wizard</object>
+          <object>objects\Pandemoniues</object>
+          <object>objects\Ancient_one</object>
+        </objects>
       </objects>
       <objects name="Healers">
         <object>objects\Acolyte</object>
+        <objects name="Tier 1">
+          <object>objects\Oracle</object>
+          <object>objects\Cleric</object>
+        </objects>
+        <objects name="Tier 2">
+          <object>objects\Druid</object>
+          <object>objects\Priest</object>
+        </objects>
+        <objects name="Tier 3">
+          <object>objects\Archdruid</object>
+          <object>objects\Bless_one</object>
+        </objects>
+      </objects>
+      <objects name="Rangers">
+        <object>objects\Scout</object>
+        <objects name="Tier 1">
+          <object>objects\Guner</object>
+          <object>objects\Archer</object>
+          <object>objects\Thief</object>
+        </objects>
+        <objects name="Tier 2">
+          <object>objects\Marksman</object>
+          <object>objects\Hunter</object>
+          <object>objects\Bandit</object>
+        </objects>
+        <objects name="Tier 3">
+          <object>objects\Duelist</object>
+          <object>objects\Sharpshooter</object>
+          <object>objects\Sniper</object>
+          <object>objects\Destroyer</object>
+          <object>objects\Outlaw</object>
+        </objects>
       </objects>
       <objects name="General">
         <object>objects\General_parent_units</object>
@@ -197,9 +747,15 @@
       </objects>
     </objects>
     <objects name="Enemy units">
-      <objects name="Orcs">
+      <objects name="Green Skin">
         <object>objects\Orc</object>
         <object>objects\Orc_shaman</object>
+      </objects>
+      <objects name="Undead">
+        <object>objects\Lich</object>
+      </objects>
+      <objects name="Dragons">
+        <object>objects\Blue_dragon</object>
       </objects>
       <objects name="General">
         <object>objects\General_parent_enemy</object>

@@ -6,6 +6,7 @@ active = argument0
 switch(object_get_name(active.object_index))
 {
     case "Orc": 
+    case "Blue_dragon":
     {
         SCR_Target_one_teammate_melee(position,Battle_progress.inst_id)
         targets = SRC_List_of_targets()
@@ -42,23 +43,19 @@ switch(object_get_name(active.object_index))
                 }
             }
         }
-        SCR_DMG_Calculation(id,hit_unit)       
-        Battle_progress.queue_turn++
+        Battle_progress.target_unit = hit_unit       
+        Battle_progress.animation = 1
+        Battle_progress.queue_turn++ 
         Battle_progress.active_unit.active_turn=0 
-        SCR_Teammates_target_clean()
+        Battle_progress.attack_range = 0
     } break;
     case "Orc_shaman": 
+    case "Lich":
     {
         SCR_Target_all_teammates(Battle_progress.inst_id)
-        for(ai_i=0; ai_i<array_length_1d(Battle_progress.inst_id); ai_i+=1)
-            { 
-                if(Battle_progress.inst_id[ai_i].position<8)
-                {
-                    SCR_DMG_Calculation(id,Battle_progress.inst_id[ai_i]) 
-                    Battle_progress.inst_id[ai_i].targeted=0
-                }
-            }
+        Battle_progress.animation = 1
         Battle_progress.queue_turn++
         Battle_progress.active_unit.active_turn=0 
+        Battle_progress.attack_range = 1
     } break;
 }

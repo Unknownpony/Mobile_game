@@ -23,10 +23,16 @@ temp_unit=0
 if(mouse_x>=begin_x and mouse_x<=end_x and mouse_y>=begin_y and mouse_y<=end_y and !(mouse_x>=temp_x and mouse_x<=temp_x+97 and mouse_y>=temp_y and mouse_y<=temp_y+95))
 {   
         //Check the colision of mouse and object below. If htere is no colision -4 is return       
-        while (below_object==-4)
+        while(below_object==-4)
         {
-            below_object = collision_point( mouse_x, mouse_y, asset_get_index(Game_flow.all_unit[i,0]), false, true )   
-            i+=1         
+            test = array_length_2d(Game_flow.all_unit, i)
+            for (j=0; j<test; j+=1)
+            {
+                below_object = collision_point( mouse_x, mouse_y, asset_get_index(Game_flow.all_unit[i,j]), false, true )  
+                if(below_object<>-4)
+                    break
+            } 
+            i+=1                           
         };    
         //Swap x and y position of both objects
         x=current_position_x
