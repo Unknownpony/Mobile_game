@@ -27,100 +27,607 @@
             <kind>1</kind>
             <string>///Initial units
 
+xp = 0
+position = 0
+focuse = 0
+select = 0
+active_turn = 0
+targeted = 0
+evolve = 0
+type_of_attack = 0
+unit_id = 0
+level_check = 0
+unit_level = 0
+buff = 0
+debuff = 0
 switch (object_get_name(object_index))
 {
+    //Warriors
+    //basic
     case "Squire": 
     {
         max_hp = 100
         hp = 100
-        xp = 0
-        ad = 30
-        ar = 0
-        md = 0
-        mr = 0
-        in = 51
-        position = 0
-        xp_to_level_up = 200
-        focuse = 0
-        select = 0
-        active_turn = 0
-        type_of_attack = 0
-        targeted = 0
-    } break;
-    case "Fighter": 
-    {
-        max_hp = 90
-        hp = 90
-        xp = 0
         ad = 25
         ar = 0
         md = 0
         mr = 0
-        in = 55
-        position = 0
+        in = 50
         xp_to_level_up = 200
-        focuse = 0
-        select = 0
-        active_turn = 0
-        type_of_attack=0
-        targeted = 0
     } break;
-    case "Apprentice": 
+    //Tier 1
+    case "Warrior": 
     {
-        max_hp = 60
-        hp = 60
-        xp = 0
-        ad = 15
+        max_hp = 120
+        hp = 120
+        ad = 50
         ar = 0
         md = 0
         mr = 0
-        in = 40
-        position = 0
-        xp_to_level_up = 200
-        focuse = 0
-        select = 0
-        active_turn = 0
-        type_of_attack=1
-        targeted = 0
+        in = 60
+        xp_to_level_up = 500
     } break;
-    case "Acolyte": 
+    case "Young_hero": 
+    {
+        max_hp = 160
+        hp = 160
+        ad = 45
+        ar = 0
+        md = 0
+        mr = 0
+        in = 60
+        xp_to_level_up = 500
+    } break;
+    case "Knight": 
+    {
+        max_hp = 200
+        hp = 200
+        ad = 40
+        ar = 10
+        md = 0
+        mr = 0
+        in = 50
+        xp_to_level_up = 500
+    } break;
+    //Tier 2
+    case "Elementalist_warrior":
+    {
+        max_hp = 150
+        hp = 150
+        ad = 35
+        ar = 0
+        md = 35
+        mr = 0
+        in = 60
+        xp_to_level_up = 2200
+    } break;
+    case "Hero":
+    {
+        max_hp = 200
+        hp = 200
+        ad = 80
+        ar = 5
+        md = 0
+        mr = 0
+        in = 50
+        xp_to_level_up = 2200
+    } break;
+    case "Paladin":
+    {
+        max_hp = 260
+        hp = 260
+        ad = 50
+        ar = 20
+        md = 0
+        mr = 5
+        in = 50
+        xp_to_level_up = 2200
+    } break;   
+    //Tier 3
+    case "Nymph":
+    {
+        max_hp = 240
+        hp = 260
+        ad = 70
+        ar = 0
+        md = 25
+        mr = 0
+        in = 60
+        xp_to_level_up = 5000
+    } break;
+    case "Dragon_slayer":
+    {
+        max_hp = 220
+        hp = 220
+        ad = 50
+        ar = 15
+        md = 50
+        mr = 0
+        in = 55
+        xp_to_level_up = 5000
+    } break;
+    case "Sylph":
+    {
+        max_hp = 200
+        hp = 200
+        ad = 25
+        ar = 0
+        md = 75
+        mr = 15
+        in = 60
+        xp_to_level_up = 5000
+    } break;
+    case "Holy_avenger":
+    {
+        max_hp = 230
+        hp = 230
+        ad = 125
+        ar = 0
+        md = 0
+        mr = 0
+        in = 50
+        xp_to_level_up = 5000
+    } break;
+    case "Gladiator":
+    {
+        max_hp = 275
+        hp = 275
+        ad = 80
+        ar = 45
+        md = 0
+        mr = 0
+        in = 50
+        xp_to_level_up = 5000
+    } break;
+    case "Wall":
+    {
+        max_hp = 300
+        hp = 300
+        ad = 70
+        ar = 25
+        md = 0
+        mr = 25
+        in = 40
+        xp_to_level_up = 5000
+    } break;
+    //Fighters
+    case "Fighter": 
+    {
+        max_hp = 70
+        hp = 70
+        ad = 20
+        ar = 0
+        md = 0
+        mr = 0
+        in = 55
+        xp_to_level_up = 200
+    } break;
+    //Tier 1
+    case "Rouge": 
+    {
+        max_hp = 80
+        hp = 80
+        ad = 50
+        ar = 0
+        md = 0
+        mr = 0
+        in = 55
+        xp_to_level_up = 200
+    } break;
+    case "Kung_Fu_Fighter": 
+    {
+        max_hp = 100
+        hp = 100
+        ad = 35
+        ar = 5
+        md = 0
+        mr = 0
+        in = 55
+        xp_to_level_up = 200
+    } break;
+    //Tier 2
+    case "Assassin": 
+    {
+        max_hp = 90
+        hp = 90
+        ad = 75
+        ar = 0
+        md = 0
+        mr = 0
+        in = 55
+        xp_to_level_up = 200
+    } break;
+    case "Shaolin_nun": 
+    {
+        max_hp = 125
+        hp = 125
+        ad = 55
+        ar = 0
+        md = 0
+        mr = 0
+        in = 60
+        xp_to_level_up = 200
+    } break;
+    case "Shaolin_monk": 
+    {
+        max_hp = 135
+        hp = 135
+        ad = 45
+        ar = 10
+        md = 0
+        mr = 0
+        in = 55
+        xp_to_level_up = 200
+    } break;
+    //Tier 3
+    case "Shadow_ninja": 
+    {
+        max_hp = 95
+        hp = 95
+        ad = 115
+        ar = 0
+        md = 0
+        mr = 0
+        in = 55
+        xp_to_level_up = 200
+    } break;
+    case "Rebel": 
+    {
+        max_hp = 140
+        hp = 140
+        ad = 85
+        ar = 15
+        md = 0
+        mr = 0
+        in = 55
+        xp_to_level_up = 200
+    } break;
+    case "Enlightened_one": 
+    {
+        max_hp = 130
+        hp = 130
+        ad = 40
+        ar = 10
+        md = 40
+        mr = 10
+        in = 60
+        xp_to_level_up = 200
+    } break;
+    case "Ogre": 
+    {
+        max_hp = 200
+        hp = 200
+        ad = 90
+        ar = 20
+        md = 0
+        mr = 0
+        in = 55
+        xp_to_level_up = 200
+    } break;
+    //Mages
+    //basic
+    case "Apprentice": 
     {
         max_hp = 40
         hp = 40
-        xp = 0
+        ad = 0
+        ar = 0
+        md = 15
+        mr = 0
+        in = 40
+        xp_to_level_up = 200
+    } break;
+    //Tier 1
+    case "Mage": 
+    {
+        max_hp = 75
+        hp = 75
+        ad = 0
+        ar = 0
+        md = 30
+        mr = 5
+        in = 40
+        xp_to_level_up = 500
+    } break;
+    case "Enchantress": 
+    {
+        max_hp = 60
+        hp = 60
+        ad = 0
+        ar = 0
+        md = 35
+        mr = 0
+        in = 45
+        xp_to_level_up = 500
+    } break;
+    //Tier 2
+    case "Wizard": 
+    {
+        max_hp = 100
+        hp = 100
+        ad = 0
+        ar = 0
+        md = 45
+        mr = 10
+        in = 40
+        xp_to_level_up = 2200
+    } break;
+    case "Necromancer": 
+    {
+        max_hp = 90
+        hp = 90
+        ad = 25
+        ar = 0
+        md = 25
+        mr = 0
+        in = 40
+        xp_to_level_up = 2200
+    } break;
+    case "Sorceress": 
+    {
+        max_hp = 85
+        hp = 85
+        ad = 0
+        ar = 0
+        md = 55
+        mr = 0
+        in = 45
+        xp_to_level_up = 2200
+    } break;
+    //Tier 3
+    case "Great_white_wizard": 
+    {
+        max_hp = 125
+        hp = 125
+        ad = 0
+        ar = 0
+        md = 70
+        mr = 20
+        in = 40
+        xp_to_level_up = 5000
+    } break;
+    case "Pandemoniues": 
+    {
+        max_hp = 110
+        hp = 110
+        ad = 30
+        ar = 5
+        md = 30
+        mr = 5
+        in = 40
+        xp_to_level_up = 5000
+    } break;
+    case "Ancient_one": 
+    {
+        max_hp = 100
+        hp = 100
+        ad = 0
+        ar = 0
+        md = 85
+        mr = 0
+        in = 45
+        xp_to_level_up = 5000
+    } break;
+    //Healers
+    case "Acolyte": 
+    {
+        max_hp = 50
+        hp = 50
         ad = 0
         ar = 0
         md = 20
         mr = 0
         in = 20
-        position = 0
         xp_to_level_up = 200
-        focuse = 0
-        select = 0
-        active_turn = 0
-        type_of_attack=0
-        targeted = 0
     } break;
+    //Tier 1
+    case "Oracle": 
+    {
+        max_hp = 75
+        hp = 75
+        ad = 0
+        ar = 0
+        md = 40
+        mr = 0
+        in = 20
+        xp_to_level_up = 500
+    } break;
+    case "Cleric": 
+    {
+        max_hp = 65
+        hp = 65
+        ad = 0
+        ar = 0
+        md = 20
+        mr = 0
+        in = 20
+        xp_to_level_up = 500
+    } break;
+    //Tier 2
+    case "Druid": 
+    {
+        max_hp = 90
+        hp = 90
+        ad = 0
+        ar = 0
+        md = 70
+        mr = 0
+        in = 20
+        xp_to_level_up = 2200
+    } break;
+    case "Priest": 
+    {
+        max_hp = 75
+        hp = 75
+        ad = 0
+        ar = 0
+        md = 40
+        mr = 10
+        in = 20
+        xp_to_level_up = 2200
+    } break;
+    //Tier 3
+    case "Archdruid": 
+    {
+        max_hp = 115
+        hp = 115
+        ad = 0
+        ar = 5
+        md = 100
+        mr = 5
+        in = 20
+        xp_to_level_up = 5000
+    } break;
+    case "Bless_one": 
+    {
+        max_hp = 100
+        hp = 100
+        ad = 0
+        ar = 0
+        md = 60
+        mr = 105
+        in = 20
+        xp_to_level_up = 5000
+    } break;
+    //Rangers
     case "Scout": 
     {
-        max_hp = 50
-        hp = 50
-        xp = 0
-        ad = 20
+        max_hp = 45
+        hp = 45
+        ad = 25
         ar = 0
         md = 0
         mr = 0
         in = 60
-        position = 0
         xp_to_level_up = 200
-        focuse = 0
-        select = 0
-        active_turn = 0
-        type_of_attack=0
-        targeted = 0
+    } break;
+    //Tier 1
+    case "Guner": 
+    {
+        max_hp = 60
+        hp = 60
+        ad = 40
+        ar = 0
+        md = 0
+        mr = 0
+        in = 60
+        xp_to_level_up = 500
+    } break;
+    case "Archer": 
+    {
+        max_hp = 80
+        hp = 80
+        ad = 35
+        ar = 0
+        md = 0
+        mr = 0
+        in = 65
+        xp_to_level_up = 500
+    } break;
+    case "Thief": 
+    {
+        max_hp = 100
+        hp = 100
+        ad = 40
+        ar = 0
+        md = 0
+        mr = 0
+        in = 60
+        xp_to_level_up = 500
+    } break;
+    //Tier 2
+    case "Marksman": 
+    {
+        max_hp = 80
+        hp = 80
+        ad = 65
+        ar = 0
+        md = 0
+        mr = 0
+        in = 60
+        xp_to_level_up = 2200
+    } break;
+    case "Hunter": 
+    {
+        max_hp = 100
+        hp = 100
+        ad = 55
+        ar = 0
+        md = 0
+        mr = 0
+        in = 65
+        xp_to_level_up = 2200
+    } break;
+    case "Bandit": 
+    {
+        max_hp = 110
+        hp = 110
+        ad = 50
+        ar = 0
+        md = 0
+        mr = 0
+        in = 60
+        xp_to_level_up = 2200
+    } break;
+    //Tier 3
+    case "Duelist": 
+    {
+        max_hp = 140
+        hp = 140
+        ad = 50 // x2
+        ar = 0
+        md = 0
+        mr = 0
+        in = 60
+        xp_to_level_up = 5000
+    } break;
+    case "Sharpshooter": 
+    {
+        max_hp = 120
+        hp = 120
+        ad = 120
+        ar = 0
+        md = 0
+        mr = 0
+        in = 45
+        xp_to_level_up = 5000
+    } break;
+    case "Sniper": 
+    {
+        max_hp = 150
+        hp = 150
+        ad = 30
+        ar = 0
+        md = 30
+        mr = 0
+        in = 65
+        xp_to_level_up = 5000
+    } break;
+    case "Destroyer": 
+    {
+        max_hp = 200
+        hp = 200
+        ad = 70
+        ar = 0
+        md = 0
+        mr = 0
+        in = 5045
+        xp_to_level_up = 5000
+    } break;
+    case "Outlaw": 
+    {
+        max_hp = 160
+        hp = 160
+        ad = 90
+        ar = 0
+        md = 0
+        mr = 0
+        in = 60
+        xp_to_level_up = 5000
     } break;
 }
- 
+
+
 
 
 </string>
@@ -179,6 +686,99 @@ if(select=1 and room_get_name(room) == "RM_Army_Management")
 if(room_get_name(room) == "RM_Battle_Room" and sprite_index&lt;&gt;asset_get_index("SPR_" + object_get_name(object_index) + "_dead"))
     if(Battle_progress.animation == 0)
         sprite_index = asset_get_index("SPR_" + object_get_name(object_index) + "_stand")
+
+if(unit_level&lt;&gt;0 and level_check == 0)
+{    
+    max_hp += (10*unit_level)
+    ad += (5*unit_level)
+    ar += (2*unit_level)
+    md += (5*unit_level)
+    mr += (2*unit_level)
+    xp_to_level_up += (1500*unit_level)
+    level_check = 1
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Evolution
+
+if(evolve == 1)
+    switch (unit_id)
+    {
+        //Warriors
+        case 1: instance_change(Warrior, true); break;
+        case 2: instance_change(Young_hero, true); break;
+        case 3: instance_change(Knight, true); break;
+        case 4: instance_change(Elementalist_warrior, true); break;
+        case 5: instance_change(Hero, true); break;
+        case 6: instance_change(Paladin, true); break;
+        case 7: instance_change(Nymph, true); break;
+        case 8: instance_change(Dragon_slayer, true); break;
+        case 9: instance_change(Sylph, true); break;
+        case 10: instance_change(Holy_avenger, true); break;
+        case 11: instance_change(Gladiator, true); break;
+        case 12: instance_change(Wall, true); break;
+        //Fighters
+        case 13: instance_change(Rouge, true); break;
+        case 14: instance_change(Kung_Fu_Fighter, true); break;
+        case 15: instance_change(Assassin, true); break;
+        case 16: instance_change(Shaolin_nun, true); break;
+        case 17: instance_change(Shaolin_monk, true); break;
+        case 18: instance_change(Shadow_ninja, true); break;
+        case 19: instance_change(Rebel, true); break;
+        case 20: instance_change(Enlightened_one, true); break;
+        case 21: instance_change(Ogre, true); break;
+        //Mages
+        case 22: instance_change(Mage, true); break;
+        case 23: instance_change(Enchantress, true); break;
+        case 24: instance_change(Wizard, true); break;
+        case 25: instance_change(Necromancer, true); break;
+        case 26: instance_change(Sorceress, true); break;
+        case 27: instance_change(Great_white_wizard, true); break;
+        case 28: instance_change(Pandemoniues, true); break;
+        case 29: instance_change(Ancient_one, true); break;
+        //Healers
+        case 30: instance_change(Oracle, true); break;
+        case 31: instance_change(Cleric, true); break;
+        case 32: instance_change(Druid, true); break;
+        case 33: instance_change(Priest, true); break;
+        case 34: instance_change(Archdruid, true); break;
+        case 35: instance_change(Bless_one, true); break;
+        //Rangers
+        case 36: instance_change(Guner, true); break;
+        case 37: instance_change(Archer, true); break;
+        case 38: instance_change(Thief, true); break;
+        case 39: instance_change(Marksman, true); break;
+        case 40: instance_change(Hunter, true); break;
+        case 41: instance_change(Bandit, true); break;
+        case 42: instance_change(Duelist, true); break;
+        case 43: instance_change(Sharpshooter, true); break;
+        case 44: instance_change(Sniper, true); break;
+        case 45: instance_change(Destroyer, true); break;
+        case 46: instance_change(Outlaw, true); break;
+        default: evolve = 0 break;
+    }
+     
+    
 </string>
           </argument>
         </arguments>
@@ -358,8 +958,14 @@ if(room_get_name(room) == "RM_Army_Management" and view_visible[1]=1)
             <kind>1</kind>
             <string>///Heals
 
-if(room_get_name(room) == "RM_Battle_Room" and targeted = 1)
-    SCR_Type_of_attack()
+if(room_get_name(room) == "RM_Battle_Room" and Battle_progress.animation == 0 and Battle_progress.active_unit.active_turn==1 and Battle_progress.active_unit.position&lt;9 and targeted == 1)
+{
+    Battle_progress.everyone = 0
+    Battle_progress.target_unit = id
+    Battle_progress.animation = 1 
+    Battle_progress.queue_turn++
+    Battle_progress.active_unit.active_turn=0
+} 
  
 
 
@@ -402,27 +1008,35 @@ if (focuse == 1 and room_get_name(room) == "RM_Army_Management")
            draw_text(2130,70,"Put lore here")
     }   
 }
-else 
-if(focuse == 1 and room_get_name(room) == "RM_Battle_Room")
+else if(room_get_name(room) == "RM_Battle_Room")
 {
-    draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_half_body"),0,0,0)   
-    draw_set_font(FNT_Arial_15)
-    draw_text(10,181,"HP: " + string(hp) + " / " + string(max_hp))      
-    draw_text(10,201,"XP:  " + string(xp)) 
-    draw_text(10,221,"AD:  " + string(ad)) 
-    draw_text(10,241,"AR:  " + string(ar)) 
-    draw_text(10,261,"MD:  " + string(md)) 
-    draw_text(10,281,"MR:  " + string(mr)) 
-    draw_text(10,301,"IN:  " + string(in)) 
-} 
-
-if(active_turn == 1)
-{
-    draw_rectangle_colour(x-5, y-5, x+149, y+149, c_black, c_black, c_black, c_black, true)  
-}   
-
-if(targeted == 1 and room_get_name(room) == "RM_Battle_Room" and focuse == 1)
-    draw_rectangle_colour(x-5, y-5, x+149, y+149, c_green, c_green, c_green, c_green, true)  
+    if(active_turn == 1 and Battle_progress.animation == 0)
+        draw_rectangle_colour(x-5, y-5, x+149, y+149, c_black, c_black, c_black, c_black, true)
+        
+    if(focuse == 1)   //if mouse is on object and it's room battle
+    {
+        if(Battle_progress.animation == 0)    //if aniamtion isn't in progress
+        {
+            //Draw stats and portret of the obejct on left site of the room
+            draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_half_body"),0,0,0)   
+            draw_set_font(FNT_Arial_15)
+            draw_text(10,181,"HP: " + string(hp) + " / " + string(max_hp))      
+            draw_text(10,201,"XP:  " + string(xp) + " / " + string(xp_to_level_up))  
+            draw_text(10,221,"AD:  " + string(ad)) 
+            draw_text(10,241,"AR:  " + string(ar)) 
+            draw_text(10,261,"MD:  " + string(md)) 
+            draw_text(10,281,"MR:  " + string(mr)) 
+            draw_text(10,301,"IN:  " + string(in)) 
+            //if it's targeted draw green circle around object to indicate it was targeted
+            if(targeted == 1)
+            {
+                    draw_rectangle_colour(x-5, y-5, x+149, y+149, c_green, c_green, c_green, c_green, true) 
+                    if(Battle_progress.every_player==1)
+                        Battle_progress.attack_range=1
+            }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

@@ -61,12 +61,7 @@ for (i=0; i&lt;5; i+=1)
 statues[0] = "No_unit" //Unit name
 statues[1] = 0         //HP
 statues[2] = 0         //XP
-statues[3] = 0         //Attack dmg
-statues[4] = 0         //Armor
-statues[5] = 0         //Magic dmg
-statues[6] = 0         //magic resist
-statues[7] = 0         //Iniciative
-
+statues[3] = 0         //Unit level
 
 //Initial army of the user
 //Army 2 on 4  and barack 1 on 4 slots overall 3 on 4 slots
@@ -79,21 +74,111 @@ for (i=0; i&lt;3; i+=1)
     }   
 }
 
+//for testing 
 test[0] = "Squire"
-army[0,0] = test //Unit name
+test[1] = 100
+test[2] = 190
+test[3] = 0
+test1[0] = "Fighter"
+test1[1] = 70
+test1[2] = 190
+test1[3] = 0
+test2[0] = "Apprentice"
+test2[1] = 40
+test2[2] = 190
+test2[3] = 0
+test3[0] = "Acolyte"
+test3[1] = 50
+test3[2] = 190
+test3[3] = 0
+test4[0] = "Scout"
+test4[1] = 45
+test4[2] = 190
+test4[3] = 0
+army[1,3] = test //Unit name
+army[0,2] = test2
+army[1,1] = test1
+army[0,0] = test3
+army[0,1] = test4
 
+castle[0,0] = 2
+castle[0,1] = 2
+castle[0,2] = 4
+
+castle[1,0] = 2
+castle[1,1] = 3
+castle[1,2] = 4
+
+castle[2,0] = 2
+castle[2,1] = 3
+castle[2,2] = 3
+
+castle[3,0] = 1
+castle[3,1] = 1
+castle[3,2] = 1
+
+castle[4,0] = 3
+castle[4,1] = 3
+castle[4,2] = 4
 
 //All units in array
+//Warriors
 all_unit[0,0]="Squire"
+all_unit[0,1]="Warrior"
+all_unit[0,2]="Young_hero"
+all_unit[0,3]="Knight"
+all_unit[0,4]="Elementalist_warrior"
+all_unit[0,5]="Hero"
+all_unit[0,6]="Paladin"
+all_unit[0,7]="Nymph"
+all_unit[0,8]="Dragon_slayer"
+all_unit[0,9]="Sylph"
+all_unit[0,10]="Holy_avenger"
+all_unit[0,11]="Gladiator"
+all_unit[0,12]="Wall"
+//Fighters
 all_unit[1,0]="Fighter"
+all_unit[1,1]="Rouge"
+all_unit[1,2]="Kung_Fu_Fighter"
+all_unit[1,3]="Assassin"
+all_unit[1,4]="Shaolin_nun"
+all_unit[1,5]="Shaolin_monk"
+all_unit[1,6]="Shadow_ninja"
+all_unit[1,7]="Rebel"
+all_unit[1,8]="Enlightened_one"
+all_unit[1,9]="Ogre"
+//Mages
 all_unit[2,0]="Apprentice"
+all_unit[2,1]="Mage"
+all_unit[2,2]="Enchantress"
+all_unit[2,3]="Wizard"
+all_unit[2,4]="Necromancer"
+all_unit[2,5]="Sorceress"
+all_unit[2,6]="Great_white_wizard"
+all_unit[2,7]="Pandemoniues"
+all_unit[2,8]="Ancient_one"
+//Healers
 all_unit[3,0]="Acolyte"
+all_unit[3,1]="Oracle"
+all_unit[3,2]="Cleric"
+all_unit[3,3]="Druid"
+all_unit[3,4]="Priest"
+all_unit[3,5]="Archdruid"
+all_unit[3,6]="Bless_one"
+//Rangers
 all_unit[4,0]="Scout"
+all_unit[4,1]="Guner"
+all_unit[4,2]="Archer"
+all_unit[4,3]="Thief"
+all_unit[4,4]="Marksman"
+all_unit[4,5]="Hunter"
+all_unit[4,6]="Bandit"
+all_unit[4,7]="Duelist"
+all_unit[4,8]="Sharpshooter"
+all_unit[4,9]="Sniper"
+all_unit[4,10]="Destroyer"
+all_unit[4,11]="Outlaw"
 all_unit[5,0]="No_unit"
-
-
-all_enemies[0] = Orc
-all_enemies[1] = Orc_shaman
 </string>
           </argument>
         </arguments>

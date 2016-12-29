@@ -27,43 +27,67 @@
             <kind>1</kind>
             <string>///Initial units
 
+xp = 0
+focuse = 0
+position = 0
+select = 0
+active_turn = 0
+type_of_attack = 0
+targeted = 0
+buff = 0
+debuff = 0
 switch (object_get_name(object_index))
 {
+    //Green skin
     case "Orc": 
     {
         max_hp = 120
         hp = 120
-        xp = 0
         ad = 30
         ar = 0
         md = 0
         mr = 0
         in = 10
-        position = 0
         xp_to_level_up = 200
-        focuse = 0
-        select = 0
-        active_turn = 0
-        type_of_attack = 0
-        targeted = 0
+        xp_worth = 10000000
     } break;
     case "Orc_shaman": 
     {
         max_hp = 90
         hp = 90
-        xp = 0
         ad = 25
         ar = 0
         md = 0
         mr = 0
         in = 10
-        position = 0
         xp_to_level_up = 200
-        focuse = 0
-        select = 0
-        active_turn = 0
-        type_of_attack=0
-        targeted = 0
+        xp_worth = 80
+    } break;
+    //Undead
+    case "Lich": 
+    {
+        max_hp = 90
+        hp = 90
+        ad = 25
+        ar = 0
+        md = 0
+        mr = 0
+        in = 10
+        xp_to_level_up = 200
+        xp_worth = 80
+    } break;
+    //Dragons
+    case "Blue_dragon": 
+    {
+        max_hp = 90
+        hp = 90
+        ad = 25
+        ar = 0
+        md = 0
+        mr = 0
+        in = 10
+        xp_to_level_up = 200
+        xp_worth = 80
     } break;
 }
  
@@ -147,7 +171,7 @@ if(room_get_name(room) == "RM_Battle_Room" and sprite_index&lt;&gt;asset_get_ind
 if(focuse == 1)
 {
     focuse = 0
-    Battle_progress.everyone=0
+    Battle_progress.every_enemy=0
 }
 
 </string>
@@ -203,11 +227,13 @@ if(focuse == 0)
             <kind>1</kind>
             <string>///Attack
 
-if(Battle_progress.animation == 0 and Battle_progress.active_unit.active_turn==1)
+if(Battle_progress.animation == 0 and Battle_progress.active_unit.active_turn==1 and Battle_progress.active_unit.position&lt;9 and targeted == 1)
 {
     Battle_progress.everyone = 0
-    Battle_progress.every_enemy = 0
-    SCR_Type_of_attack()
+    Battle_progress.target_unit = id
+    Battle_progress.animation = 1 
+    Battle_progress.queue_turn++
+    Battle_progress.active_unit.active_turn=0
 }    
  
 
@@ -239,34 +265,36 @@ if(Battle_progress.animation == 0 and Battle_progress.active_unit.active_turn==1
             <kind>1</kind>
             <string>///Frame around instance if Focuse
 
-if(focuse == 1 and room_get_name(room) == "RM_Battle_Room" )
+if(Battle_progress.animation = 0)
 {
-    draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_half_body"),0,1120,0)   
-    draw_set_font(FNT_Arial_15)
-    draw_text(1130,181,"HP: " + string(hp) + " / " + string(max_hp))      
-    draw_text(1130,201,"XP:  " + string(xp)) 
-    draw_text(1130,221,"AD:  " + string(ad)) 
-    draw_text(1130,241,"AR:  " + string(ar)) 
-    draw_text(1130,261,"MD:  " + string(md)) 
-    draw_text(1130,281,"MR:  " + string(mr)) 
-    draw_text(1130,301,"IN:  " + string(in))    
+    if(focuse == 1 and room_get_name(room) == "RM_Battle_Room" )
+    {
+        draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_half_body"),0,1120,0)   
+        draw_set_font(FNT_Arial_15)
+        draw_text(1130,181,"HP: " + string(hp) + " / " + string(max_hp))      
+        draw_text(1130,201,"XP:  " + string(xp)) 
+        draw_text(1130,221,"AD:  " + string(ad)) 
+        draw_text(1130,241,"AR:  " + string(ar)) 
+        draw_text(1130,261,"MD:  " + string(md)) 
+        draw_text(1130,281,"MR:  " + string(mr)) 
+        draw_text(1130,301,"IN:  " + string(in))    
+    }
+    
+    if(active_turn == 1)
+    {
+        draw_rectangle_colour(x-5, y-5, x+sprite_width+5, y+sprite_height+5, c_black, c_black, c_black, c_black, true)  
+    }   
+    
+    if(focuse == 1 and targeted==1)  
+    {
+        draw_rectangle_colour(x-5, y-5, x+sprite_width+5, y+sprite_height+5, c_red, c_red, c_red, c_red, true) 
+        if(Battle_progress.attack_range==1)
+            Battle_progress.every_enemy=1
+    }
+    
+    if(Battle_progress.attack_range==1 and Battle_progress.every_enemy==1 and hp&gt;0)
+          draw_rectangle_colour(x-5, y-5, x+sprite_width+5, y+sprite_height+5, c_red, c_red, c_red, c_red, true)  
 }
-
-if(active_turn == 1)
-{
-    draw_rectangle_colour(x-5, y-5, x+149, y+149, c_black, c_black, c_black, c_black, true)  
-}   
-
-if(focuse == 1 and targeted==1)  
-{
-    draw_rectangle_colour(x-5, y-5, x+149, y+149, c_red, c_red, c_red, c_red, true) 
-    if(Battle_progress.every_enemy==1)
-        Battle_progress.everyone=1
-}
-
-if(Battle_progress.everyone==1)
-      draw_rectangle_colour(x-5, y-5, x+149, y+149, c_red, c_red, c_red, c_red, true)  
-
 </string>
           </argument>
         </arguments>

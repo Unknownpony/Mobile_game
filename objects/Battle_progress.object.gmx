@@ -26,13 +26,19 @@
           <argument>
             <kind>1</kind>
             <string>///Battle progress and ending
-inst_id = 0
-new_turn = 1
-queue_turn = 0
-active_unit = 0
-animation = 0
-every_enemy = 0
-everyone = 0
+//Units arrays
+inst_id = 0         //FIFO array of insatnce
+queue_turn = 0      //Sorted array of instance for round
+active_unit = 0     //Current active instance
+target_unit = 0     //Targeted insatnce
+upgrade_unit = 0    //Array of instance which will be upgraded  
+animation = 0       //Aniamtion flag 
+every_enemy = 0     //Flag for drawing circle around every enemy 
+every_player = 0    //Flag for drawing circle around every player 
+attack_range = 0    //Attack range (type of attack)
+battle_xp = 0       //Expiriance gain after battle
+new_turn = 1        //Flag for new turn
+turn_queue = 0      //Which array object is currently active in round
 
 </string>
           </argument>
@@ -58,36 +64,218 @@ everyone = 0
             <kind>1</kind>
             <string>//Battle events
 
+//If animation of battle didn't started
 if(animation==0)
 {
-    switch(SCR_IsAlive(inst_id))
+    switch(SCR_IsAlive(inst_id))  //Check if player or enemy army life isn't equal 0
     {
+        //if it's not then battle start or progress
         case 0: 
         {
+            //Check if end of round by checking the new round flag and if flag of active units isn't on last object of the array of instance for current round
             if(new_turn==0 and queue_turn &gt;= array_length_1d(turn_queue))
-                new_turn = 1
-            //battle in progress
-            if(new_turn==1)
             {
-                turn_queue = SCR_Sort_array(inst_id)
-                new_turn = 0
-                queue_turn = 0
+                SCR_Clean_status(inst_id)       //Clean buffs and debuffs
+                new_turn = 1                    //change flag to 1 (new round)
+            }
+            //Check if new round start
+            if(new_turn==1)     
+            {
+                SCR_Buff_debuff_statues(inst_id)        //buff and debuffs check for units
+                turn_queue = SCR_Sort_array(inst_id)    //create new sorted array of instance for the new round
+                new_turn = 0                            //deactive flag for new round
+                queue_turn = 0                          //put flag of current active unit to first object
             }
             
-            if(turn_queue[queue_turn].active_turn = 0)
+            if(turn_queue[queue_turn].active_turn = 0)  //check if current active unit has active flag on, Start of unit
             {
-                turn_queue[queue_turn].active_turn = 1          
-                active_unit = turn_queue[queue_turn]
-                SCR_Choice_target_system()
+                if(SCR_Debuff_calculation(turn_queue[queue_turn]) &lt;&gt; 1)    //Debuff calculation
+                {                                        
+                    active_unit = turn_queue[queue_turn]    //set active instance to a variable for active unit
+                    active_unit.active_turn = 1             //put active flag of the current unit on         
+                    SCR_Choice_target_system()              //based on which active unit is on, chocie target system
+                } else 
+                {
+                    show_message("skip turn")
+                    queue_turn++
+                }
             }  
-            
         }
         break;
+        //If enemy health is zero. Expiriance is shared and eventually upgrade of units and aniamtion is show
         case 1: 
         {
-            //victory
-            show_message("You are victorious")
-            room_goto("RM_TEST_ROOM")
+            //calculate exp worth of the enemy army   
+            for(i=0; i&lt;array_length_1d(start_enemy_army); i+=1) 
+                battle_xp += start_enemy_army[i].xp_worth
+            
+            //divide exp by alive player units    
+            battle_xp = floor(battle_xp/array_length_1d(inst_id))
+            
+            //add expiriance to the alive units
+            j=0
+            temp=0
+            temp_unit = 0
+            for(i=0; i&lt;array_length_1d(start_army); i+=1)
+            { 
+                //check if unit is alive
+                if(start_army[i].hp&gt;0)
+                {
+                    //Check if after adding exp the current exp value will be higher then xp to level up
+                    if((start_army[i].xp+battle_xp)&gt;=start_army[i].xp_to_level_up)
+                    {
+                        //Check which building exist or if it exist
+                        if(SCR_Unit_evolve(start_army[i]) == 0)
+                            animation = 3
+                        temp_unit[j] = start_army[i]
+                        j++
+                    }
+                    switch(start_army[i].position)
+                    {
+                        case 1: 
+                        if(temp == 0)
+                        {
+                            temp = Game_flow.army[0,0]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp + battle_xp
+                            Game_flow.army[0,0] = temp
+                        } else
+                            Game_flow.army[0,0] = temp
+                        break;
+                        case 2:
+                        if(temp == 0)
+                        {
+                            temp = Game_flow.army[0,1]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp + battle_xp
+                            Game_flow.army[0,1] = temp
+                        } else
+                            Game_flow.army[0,1] = temp
+                        break;
+                        case 3:
+                        if(temp == 0)
+                        {
+                            temp = Game_flow.army[0,2]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp + battle_xp
+                            Game_flow.army[0,2] = temp
+                        } else
+                            Game_flow.army[0,2] = temp
+                        break;
+                        case 4: 
+                        if(temp == 0)
+                        {
+                            temp = Game_flow.army[0,3]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp + battle_xp
+                            Game_flow.army[0,3] = temp
+                        } else
+                            Game_flow.army[0,3] = temp
+                        break;
+                        case 5:
+                        if(temp == 0)
+                        { 
+                            temp = Game_flow.army[1,0]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp + battle_xp
+                            Game_flow.army[1,0] = temp
+                        } else
+                            Game_flow.army[1,0] = temp
+                        break;
+                        case 6: 
+                        if(temp == 0)
+                        {
+                            temp = Game_flow.army[1,1]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp + battle_xp
+                            Game_flow.army[1,1] = temp
+                        } else
+                            Game_flow.army[1,1] = temp
+                        break;
+                        case 7: 
+                        if(temp == 0)
+                        {
+                            temp = Game_flow.army[1,2]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp + battle_xp
+                            Game_flow.army[1,2] = temp
+                        } else
+                            Game_flow.army[1,2] = temp
+                        break;
+                        case 8: 
+                        if(temp == 0)
+                        {
+                            temp = Game_flow.army[1,3]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp + battle_xp
+                            Game_flow.army[1,3] = temp
+                        } else
+                            Game_flow.army[1,3] = temp
+                        break;
+                    } 
+                } else
+                {
+                    switch(start_army[i].position)
+                    {
+                        case 1: 
+                        {
+                            temp = Game_flow.army[0,0]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp
+                            Game_flow.army[0,0] = temp
+                        }break;
+                        case 2:
+                        {
+                            temp = Game_flow.army[0,1]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp
+                            Game_flow.army[0,1] = temp
+                        }break;
+                        case 3:
+                        {
+                            temp = Game_flow.army[0,2]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp
+                            Game_flow.army[0,2] = temp
+                        }break;
+                        case 4: 
+                        {
+                            temp = Game_flow.army[0,3]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp
+                            Game_flow.army[0,3] = temp
+                        }break;
+                        case 5:
+                        { 
+                            temp = Game_flow.army[1,0]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp
+                            Game_flow.army[1,0] = temp
+                        }break;
+                        case 6: 
+                        {
+                            temp = Game_flow.army[1,1]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp
+                            Game_flow.army[1,1] = temp
+                        }break;
+                        case 7: 
+                        {
+                            temp = Game_flow.army[1,2]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp
+                            Game_flow.army[1,2] = temp
+                        }break;
+                        case 8: 
+                        {
+                            temp = Game_flow.army[1,3]
+                            temp[1] = start_army[i].hp
+                            temp[2] = start_army[i].xp
+                            Game_flow.army[1,3] = temp
+                        }break;
+                    } 
+                }
+            }
         }
         break;
         case 2: 
@@ -99,16 +287,55 @@ if(animation==0)
     }
 } else if(animation == 1)
 {
+    if(active_unit.sprite_index = asset_get_index("SPR_" + object_get_name(active_unit.object_index) + "_stand"))
+        SCR_Attack_animation()
+    //End animation Condition
     if(floor(active_unit.image_index) == 15)
+    { 
+        if(attack_range&lt;&gt;2)
+            SCR_DMG_Calculation(active_unit, target_unit)
+        else
+            SCR_Heals_Calculation(active_unit, target_unit)
+        animation = 2 
+    }          
+} 
+
+if(animation == 2)
+{
+    //End of animation, clearing for next active unit
+    SCR_Enemy_target_clean()
+    SCR_Teammates_target_clean()
+    animation = 0
+    every_enemy = 0
+    every_player = 0
+    attack_range = 0
+    with(Test_animation)
     {
-        animation = 0
+        instance_destroy();
+    }
+}
+
+if(animation == 3)
+{
+    if(floor(evolve_animation.image_index) == 15) 
+    {
+        for(j=0; j&lt;array_length_1d(temp_unit); j+=1)
+            temp_unit[j].evolve = 1
+        animation = 4
+        audio_play_sound(SO_Evolution,10,false)
         with(Test_animation)
         {
             instance_destroy();
-        };
-          
-    }
+        }
+    }    
 }
+
+if(animation == 4)
+{
+//    show_message("You are victorious")
+//    room_goto("RM_TEST_ROOM") 
+}
+
 </string>
           </argument>
         </arguments>

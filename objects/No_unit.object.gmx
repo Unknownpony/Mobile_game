@@ -74,8 +74,9 @@ switch (bought_unit)
             default:  row = 0;
         }
         new_unit[0]="Squire"
-        new_unit[1]=0
+        new_unit[1]=100
         new_unit[2]=0
+        new_unit[3]=0
         Game_flow.army[column,row] = new_unit
     break;
     case 2: 
@@ -94,8 +95,9 @@ switch (bought_unit)
             default:  row = 0;
         }
         new_unit[0]="Fighter"
-        new_unit[1]=0
+        new_unit[1]=90
         new_unit[2]=0
+        new_unit[3]=0
         Game_flow.army[column,row] = new_unit
     break;
     case 3: 
@@ -114,8 +116,9 @@ switch (bought_unit)
             default:  row = 0;
         }
         new_unit[0]="Apprentice"
-        new_unit[1]=0
+        new_unit[1]=60
         new_unit[2]=0
+        new_unit[3]=0
         Game_flow.army[column,row] = new_unit
     break;
     case 4: 
@@ -134,8 +137,9 @@ switch (bought_unit)
             default:  row = 0;
         }
         new_unit[0]="Acolyte"
-        new_unit[1]=0
+        new_unit[1]=40
         new_unit[2]=0
+        new_unit[3]=0
         Game_flow.army[column,row] = new_unit
     break;
     case 5: 
@@ -154,8 +158,9 @@ switch (bought_unit)
             default:  row = 0;
         }
         new_unit[0]="Scout"
-        new_unit[1]=0
+        new_unit[1]=50
         new_unit[2]=0
+        new_unit[3]=0
         Game_flow.army[column,row] = new_unit
     break;
     //default: STATEMENT;
