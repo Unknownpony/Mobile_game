@@ -36,6 +36,9 @@ type_of_attack = 0
 targeted = 0
 buff = 0
 debuff = 0
+def = 0
+effect = 0
+dmg_amp = 1
 switch (object_get_name(object_index))
 {
     //Green skin
@@ -139,11 +142,23 @@ if(active_turn == 1 and room_get_name(room) == "RM_Battle_Room" and Battle_progr
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Back to stand sprite
+            <string>///Sprite effects
 
-if(room_get_name(room) == "RM_Battle_Room" and sprite_index&lt;&gt;asset_get_index("SPR_" + object_get_name(object_index) + "_dead"))
-    if(Battle_progress.animation == 0)
-        sprite_index = asset_get_index("SPR_" + object_get_name(object_index) + "_stand")
+if(room_get_name(room) == "RM_Battle_Room")
+{
+    if(sprite_index&lt;&gt;asset_get_index("SPR_" + object_get_name(object_index) + "_dead"))
+        if(Battle_progress.animation == 0)
+            sprite_index = asset_get_index("SPR_" + object_get_name(object_index) + "_stand")
+    
+    switch (debuff)
+    {
+        case 0: image_blend = c_white; break;
+        case 1: image_blend = c_green; break;
+        case 2: image_blend = c_blue; break;
+        case 3: image_blend = c_red; break;
+        case 4: image_blend = c_gray; break;
+    } 
+}
 </string>
           </argument>
         </arguments>

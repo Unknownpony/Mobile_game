@@ -40,6 +40,9 @@ level_check = 0
 unit_level = 0
 buff = 0
 debuff = 0
+def = 0
+effect = 0
+dmg_amp = 1
 switch (object_get_name(object_index))
 {
     //Warriors
@@ -652,11 +655,14 @@ switch (object_get_name(object_index))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Move around the room with mouse
-if(select=1 and room_get_name(room) == "RM_Army_Management")
+            <string>///Army managment room script
+if(room_get_name(room) == "RM_Army_Management")
 {
-    x=mouse_x-sprite_width/2
-    y=mouse_y-sprite_height/2
+    if(select==1)
+    {
+        x=mouse_x-sprite_width/2
+        y=mouse_y-sprite_height/2
+    }
 }
         
 
@@ -681,104 +687,82 @@ if(select=1 and room_get_name(room) == "RM_Army_Management")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Back to stand sprite
+            <string>///Battle room  script
 
-if(room_get_name(room) == "RM_Battle_Room" and sprite_index&lt;&gt;asset_get_index("SPR_" + object_get_name(object_index) + "_dead"))
-    if(Battle_progress.animation == 0)
-        sprite_index = asset_get_index("SPR_" + object_get_name(object_index) + "_stand")
-
-if(unit_level&lt;&gt;0 and level_check == 0)
-{    
-    max_hp += (10*unit_level)
-    ad += (5*unit_level)
-    ar += (2*unit_level)
-    md += (5*unit_level)
-    mr += (2*unit_level)
-    xp_to_level_up += (1500*unit_level)
-    level_check = 1
-}
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Evolution
-
-if(evolve == 1)
-    switch (unit_id)
-    {
-        //Warriors
-        case 1: instance_change(Warrior, true); break;
-        case 2: instance_change(Young_hero, true); break;
-        case 3: instance_change(Knight, true); break;
-        case 4: instance_change(Elementalist_warrior, true); break;
-        case 5: instance_change(Hero, true); break;
-        case 6: instance_change(Paladin, true); break;
-        case 7: instance_change(Nymph, true); break;
-        case 8: instance_change(Dragon_slayer, true); break;
-        case 9: instance_change(Sylph, true); break;
-        case 10: instance_change(Holy_avenger, true); break;
-        case 11: instance_change(Gladiator, true); break;
-        case 12: instance_change(Wall, true); break;
-        //Fighters
-        case 13: instance_change(Rouge, true); break;
-        case 14: instance_change(Kung_Fu_Fighter, true); break;
-        case 15: instance_change(Assassin, true); break;
-        case 16: instance_change(Shaolin_nun, true); break;
-        case 17: instance_change(Shaolin_monk, true); break;
-        case 18: instance_change(Shadow_ninja, true); break;
-        case 19: instance_change(Rebel, true); break;
-        case 20: instance_change(Enlightened_one, true); break;
-        case 21: instance_change(Ogre, true); break;
-        //Mages
-        case 22: instance_change(Mage, true); break;
-        case 23: instance_change(Enchantress, true); break;
-        case 24: instance_change(Wizard, true); break;
-        case 25: instance_change(Necromancer, true); break;
-        case 26: instance_change(Sorceress, true); break;
-        case 27: instance_change(Great_white_wizard, true); break;
-        case 28: instance_change(Pandemoniues, true); break;
-        case 29: instance_change(Ancient_one, true); break;
-        //Healers
-        case 30: instance_change(Oracle, true); break;
-        case 31: instance_change(Cleric, true); break;
-        case 32: instance_change(Druid, true); break;
-        case 33: instance_change(Priest, true); break;
-        case 34: instance_change(Archdruid, true); break;
-        case 35: instance_change(Bless_one, true); break;
-        //Rangers
-        case 36: instance_change(Guner, true); break;
-        case 37: instance_change(Archer, true); break;
-        case 38: instance_change(Thief, true); break;
-        case 39: instance_change(Marksman, true); break;
-        case 40: instance_change(Hunter, true); break;
-        case 41: instance_change(Bandit, true); break;
-        case 42: instance_change(Duelist, true); break;
-        case 43: instance_change(Sharpshooter, true); break;
-        case 44: instance_change(Sniper, true); break;
-        case 45: instance_change(Destroyer, true); break;
-        case 46: instance_change(Outlaw, true); break;
-        default: evolve = 0 break;
-    }
-     
+if(room_get_name(room) == "RM_Battle_Room")
+{
+    if(sprite_index&lt;&gt;asset_get_index("SPR_" + object_get_name(object_index) + "_dead"))
+        if(Battle_progress.animation == 0)
+            sprite_index = asset_get_index("SPR_" + object_get_name(object_index) + "_stand")
     
+    if(unit_level&lt;&gt;0 and level_check == 0)
+    {    
+        max_hp += (10*unit_level)
+        ad += (5*unit_level)
+        ar += (2*unit_level)
+        md += (5*unit_level)
+        mr += (2*unit_level)
+        xp_to_level_up += (1500*unit_level)
+        level_check = 1
+    }
+    
+    if(evolve == 1)
+        switch (unit_id)
+        {
+            //Warriors
+            case 1: instance_change(Warrior, true); break;
+            case 2: instance_change(Young_hero, true); break;
+            case 3: instance_change(Knight, true); break;
+            case 4: instance_change(Elementalist_warrior, true); break;
+            case 5: instance_change(Hero, true); break;
+            case 6: instance_change(Paladin, true); break;
+            case 7: instance_change(Nymph, true); break;
+            case 8: instance_change(Dragon_slayer, true); break;
+            case 9: instance_change(Sylph, true); break;
+            case 10: instance_change(Holy_avenger, true); break;
+            case 11: instance_change(Gladiator, true); break;
+            case 12: instance_change(Wall, true); break;
+            //Fighters
+            case 13: instance_change(Rouge, true); break;
+            case 14: instance_change(Kung_Fu_Fighter, true); break;
+            case 15: instance_change(Assassin, true); break;
+            case 16: instance_change(Shaolin_nun, true); break;
+            case 17: instance_change(Shaolin_monk, true); break;
+            case 18: instance_change(Shadow_ninja, true); break;
+            case 19: instance_change(Rebel, true); break;
+            case 20: instance_change(Enlightened_one, true); break;
+            case 21: instance_change(Ogre, true); break;
+            //Mages
+            case 22: instance_change(Mage, true); break;
+            case 23: instance_change(Enchantress, true); break;
+            case 24: instance_change(Wizard, true); break;
+            case 25: instance_change(Necromancer, true); break;
+            case 26: instance_change(Sorceress, true); break;
+            case 27: instance_change(Great_white_wizard, true); break;
+            case 28: instance_change(Pandemoniues, true); break;
+            case 29: instance_change(Ancient_one, true); break;
+            //Healers
+            case 30: instance_change(Oracle, true); break;
+            case 31: instance_change(Cleric, true); break;
+            case 32: instance_change(Druid, true); break;
+            case 33: instance_change(Priest, true); break;
+            case 34: instance_change(Archdruid, true); break;
+            case 35: instance_change(Bless_one, true); break;
+            //Rangers
+            case 36: instance_change(Guner, true); break;
+            case 37: instance_change(Archer, true); break;
+            case 38: instance_change(Thief, true); break;
+            case 39: instance_change(Marksman, true); break;
+            case 40: instance_change(Hunter, true); break;
+            case 41: instance_change(Bandit, true); break;
+            case 42: instance_change(Duelist, true); break;
+            case 43: instance_change(Sharpshooter, true); break;
+            case 44: instance_change(Sniper, true); break;
+            case 45: instance_change(Destroyer, true); break;
+            case 46: instance_change(Outlaw, true); break;
+            default: evolve = 0 break;
+        }
+}
 </string>
           </argument>
         </arguments>
@@ -903,38 +887,20 @@ if(focuse == 0)
             <kind>1</kind>
             <string>///Army managment room script
 
-if(room_get_name(room) == "RM_Army_Management" and global.selected=0 and view_visible[0]=1)
+if(room_get_name(room) == "RM_Army_Management")
 {
-    temp_x = x
-    temp_y = y
-    select = 1
-    global.selected = 1    
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Shop room script
-
-if(room_get_name(room) == "RM_Army_Management" and view_visible[1]=1)
-{
-    Army_managment.ref_of_clicked_instance.bought_unit = SCR_Buy_unit(object_get_name(object_index),50)
+    if(global.selected=0 and view_visible[0]=1)
+    {
+        temp_x = x
+        temp_y = y
+        select = 1
+        global.selected = 1   
+    } 
+    
+    if(view_visible[1]=1)
+    {
+        Army_managment.ref_of_clicked_instance.bought_unit = SCR_Buy_unit(object_get_name(object_index),50)
+    }
 }
 </string>
           </argument>

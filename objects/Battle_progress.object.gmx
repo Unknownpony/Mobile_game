@@ -96,7 +96,6 @@ if(animation==0)
                     SCR_Choice_target_system()              //based on which active unit is on, chocie target system
                 } else 
                 {
-                    show_message("skip turn")
                     queue_turn++
                 }
             }  

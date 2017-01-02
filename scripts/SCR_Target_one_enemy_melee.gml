@@ -142,9 +142,12 @@ switch (pos)
         for(toem_i=0; toem_i<array_length_1d(arr); toem_i+=1)
         {
             if(arr[toem_i].position==5 or arr[toem_i].position==6 or arr[toem_i].position==7 or arr[toem_i].position==8)
-                break;
+                   check = 1;
         }
         
+        if (check == 1)
+            break;
+            
         for(toem_i=array_length_1d(arr)-1; toem_i>=0; toem_i--)
         {
             if(arr[toem_i].position==12)
@@ -223,8 +226,11 @@ switch (pos)
         for(toem_i=0; toem_i<array_length_1d(arr); toem_i+=1)
         {
             if(arr[toem_i].position==5 or arr[toem_i].position==6 or arr[toem_i].position==7 or arr[toem_i].position==8)
-                break;
+                check = 1;
         }
+        
+        if (check == 1)
+            break;
         
         for(toem_i=array_length_1d(arr)-1; toem_i>=0; toem_i--)
         {
@@ -451,7 +457,7 @@ switch (pos)
         if (check == 1)
             break;
             
-        for(toem_i=array_length_1d(arr-1); toem_i>=0; toem_i--)
+        for(toem_i=array_length_1d(arr)-1; toem_i>=0; toem_i--)
         {   
             if(arr[toem_i].position==16)
             {

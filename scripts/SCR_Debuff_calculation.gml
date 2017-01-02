@@ -10,7 +10,7 @@ switch (unit_statues.debuff)
     case 2:     //freeze
         unit_statues.hp -= 20; break;
     case 3: //fire
-        unit_statues.hp -= 20 - unit_statues.hp * 0.05; break;
+        unit_statues.hp -= 20 - floor(unit_statues.hp * 0.05); break;
     //Paralyse
     case 4: 
     {
@@ -19,6 +19,8 @@ switch (unit_statues.debuff)
     } break;
 }
 
+unit_statues.debuff = 0
+
 if(unit_statues.hp <=0)
 {
     unit_statues.hp = 0
@@ -26,7 +28,8 @@ if(unit_statues.hp <=0)
     SCR_Death_animation(unit_statues)
     Battle_progress.turn_queue = SCR_Delete_obj_with_0_HP(Battle_progress.turn_queue,1)
     Battle_progress.inst_id = SCR_Delete_obj_with_0_HP(Battle_progress.inst_id,0)
-    return 2;
+    return 1;
 }
+
 
 

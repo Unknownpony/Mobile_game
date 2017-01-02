@@ -71,7 +71,7 @@
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>RM_Building_room</room>
+            <room>RM_Castle_Managment</room>
           </argument>
         </arguments>
       </action>

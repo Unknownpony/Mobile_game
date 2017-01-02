@@ -39,6 +39,13 @@ switch(object_get_name(Battle_progress.active_unit.object_index))
                 Battle_progress.attack_range = 0
             }
             break;
+            case 1: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.active_unit.effect = 1
+                Battle_progress.attack_range = 0
+            }
+            break;
         }
     } break;
     //mages
@@ -60,6 +67,13 @@ switch(object_get_name(Battle_progress.active_unit.object_index))
                 Battle_progress.attack_range = 1
             }
             break;
+            case 1: 
+            {
+                SCR_Target_all_enemy(Battle_progress.inst_id)
+                Battle_progress.active_unit.effect = 3
+                Battle_progress.attack_range = 1
+            }
+            break;
         }
     } break;
     //healers
@@ -77,6 +91,12 @@ switch(object_get_name(Battle_progress.active_unit.object_index))
             {
                 SCR_Target_one_teammate_range(Battle_progress.inst_id)
                 Battle_progress.attack_range = 2
+            }
+            break;
+            case 1: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.attack_range = 0
             }
             break;
         }
@@ -100,6 +120,13 @@ switch(object_get_name(Battle_progress.active_unit.object_index))
             {
                SCR_Target_one_enemy_range(Battle_progress.inst_id)
                Battle_progress.attack_range = 0
+            }
+            break;
+            case 1: 
+            {
+                SCR_Target_one_enemy_range(Battle_progress.inst_id)
+                Battle_progress.active_unit.effect = 2
+                Battle_progress.attack_range = 0
             }
             break;
         }

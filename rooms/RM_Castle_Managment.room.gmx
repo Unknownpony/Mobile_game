@@ -2,7 +2,7 @@
 <room>
   <caption></caption>
   <width>1280</width>
-  <height>720</height>
+  <height>3600</height>
   <vsnap>32</vsnap>
   <hsnap>32</hsnap>
   <isometric>0</isometric>
@@ -11,7 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code></code>
-  <enableViews>0</enableViews>
+  <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
@@ -41,16 +41,70 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="720" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="1440" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="2160" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="2880" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
-  <instances/>
+  <instances>
+    <instance objName="Castle_managment" x="0" y="0" name="inst_F23B83BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_tab_buildings" x="0" y="0" name="inst_FD485395" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_tab_buildings" x="256" y="0" name="inst_BF3A01CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_tab_buildings" x="512" y="0" name="inst_BE29E819" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_tab_buildings" x="1024" y="0" name="inst_FECE35AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_tab_buildings" x="768" y="0" name="inst_AC44E196" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="BT_Back" x="1216" y="192" name="inst_037A0267" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="640" y="96" name="inst_14CC6258" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="224" y="320" name="inst_EE2A0812" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="640" y="320" name="inst_BA08C993" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="960" y="320" name="inst_4D35774B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="32" y="544" name="inst_95C3BE0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="224" y="544" name="inst_F7C26016" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="416" y="544" name="inst_B623E4BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="640" y="544" name="inst_2B9FE42D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="864" y="544" name="inst_CC3D6168" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="1056" y="544" name="inst_C9B045A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_fighters_buildings" x="160" y="800" name="inst_A4DC97C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_fighters_buildings" x="160" y="1024" name="inst_7A8EBEB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_fighters_buildings" x="576" y="1024" name="inst_6917175C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_fighters_buildings" x="160" y="1248" name="inst_8036C50A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="224" y="96" name="inst_52BF7E32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_warrior_buildings" x="960" y="96" name="inst_02510190" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_fighters_buildings" x="480" y="1248" name="inst_D63F88EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_fighters_buildings" x="768" y="800" name="inst_7227165F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_fighters_buildings" x="672" y="1248" name="inst_6E538309" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_fighters_buildings" x="960" y="1248" name="inst_68BAFE13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_fighters_buildings" x="960" y="1024" name="inst_2A33069D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_mages_buildings" x="256" y="1536" name="inst_7F00C9BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_mages_buildings" x="896" y="1536" name="inst_A3D71D31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_mages_buildings" x="896" y="1760" name="inst_9672A216" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_mages_buildings" x="896" y="1984" name="inst_22FA05D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_mages_buildings" x="64" y="1760" name="inst_ED14E9E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_mages_buildings" x="448" y="1760" name="inst_1D57E627" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_mages_buildings" x="64" y="1984" name="inst_9AF9DBA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_mages_buildings" x="448" y="1984" name="inst_703EAAA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_healers_buildings" x="320" y="2240" name="inst_71B0C5B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_healers_buildings" x="800" y="2240" name="inst_D64C4BE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_healers_buildings" x="800" y="2464" name="inst_8057D000" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_healers_buildings" x="800" y="2688" name="inst_C7836619" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_healers_buildings" x="320" y="2464" name="inst_638F1148" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_healers_buildings" x="320" y="2688" name="inst_44A883B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rangers_buildings" x="160" y="2976" name="inst_1C584D9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rangers_buildings" x="544" y="2976" name="inst_A580BFCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rangers_buildings" x="160" y="3200" name="inst_3F6B0806" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rangers_buildings" x="32" y="3424" name="inst_7976C28C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rangers_buildings" x="288" y="3424" name="inst_E8D6657D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rangers_buildings" x="544" y="3200" name="inst_A64E15DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rangers_buildings" x="544" y="3424" name="inst_B85FFC95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rangers_buildings" x="928" y="2976" name="inst_A4F937B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rangers_buildings" x="928" y="3200" name="inst_D081D5BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rangers_buildings" x="800" y="3424" name="inst_07876CE5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rangers_buildings" x="1056" y="3424" name="inst_546A80E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+  </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

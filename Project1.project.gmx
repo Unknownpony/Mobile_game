@@ -26,6 +26,12 @@
       <sprite>sprites\Test_battle</sprite>
       <sprite>sprites\Test_castle</sprite>
       <sprite>sprites\Test_army</sprite>
+      <sprite>sprites\Test_attack_1</sprite>
+      <sprite>sprites\Test_attack_2</sprite>
+      <sprite>sprites\Test_pass</sprite>
+      <sprite>sprites\Test_def</sprite>
+      <sprite>sprites\Test_button_tab</sprite>
+      <sprite>sprites\Test_building_sprite</sprite>
     </sprites>
     <sprites name="Units">
       <sprites name="Warriors">
@@ -775,6 +781,7 @@
       <object>objects\Game_flow</object>
       <object>objects\Battle_progress</object>
       <object>objects\Army_managment</object>
+      <object>objects\Castle_managment</object>
       <object>objects\ScaleView</object>
     </objects>
     <objects name="TEST_OBJECTS">
@@ -782,6 +789,13 @@
       <object>objects\Test_button_castle</object>
       <object>objects\Test_button_army</object>
       <object>objects\Test_animation</object>
+      <object>objects\Test_combat_buttons</object>
+      <object>objects\Test_tab_buildings</object>
+      <object>objects\Test_warrior_buildings</object>
+      <object>objects\Test_fighters_buildings</object>
+      <object>objects\Test_mages_buildings</object>
+      <object>objects\Test_healers_buildings</object>
+      <object>objects\Test_rangers_buildings</object>
     </objects>
     <objects name="Map objects">
       <object>objects\MO_Player</object>
@@ -795,7 +809,6 @@
     <room>rooms\RM_Battle_Room</room>
     <room>rooms\RM_Army_Management</room>
     <room>rooms\RM_Castle_Managment</room>
-    <room>rooms\RM_Building_room</room>
     <room>rooms\RM_Castle</room>
     <room>rooms\RM_tavern</room>
     <room>rooms\RM_Global_Map</room>

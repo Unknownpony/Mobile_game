@@ -38,4 +38,5 @@ for(cs_i=0; cs_i<array_length_1d(clean_units); cs_i+=1)
             status_units[cs_i].debuff = 0;
         } break;
     }
+    status_units[cs_i].effect = 0
 }
