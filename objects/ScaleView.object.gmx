@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>zoom= 1;
-zoom_min=0.3;
-zoom_max=1.5;
+zoom_min=0.5;
+zoom_max=1.3;
 
 base_width=1280;
 base_height=720;
