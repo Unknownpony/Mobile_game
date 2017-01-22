@@ -32,6 +32,8 @@
       <sprite>sprites\Test_def</sprite>
       <sprite>sprites\Test_button_tab</sprite>
       <sprite>sprites\Test_building_sprite</sprite>
+      <sprite>sprites\Test_lore</sprite>
+      <sprite>sprites\Test_lore_button</sprite>
     </sprites>
     <sprites name="Units">
       <sprites name="Warriors">
@@ -549,21 +551,146 @@
     </sprites>
     <sprites name="Enemy">
       <sprites name="Green Skin">
-        <sprites name="Orc">
-          <sprite>sprites\SPR_Orc_portret</sprite>
-          <sprite>sprites\SPR_Orc_stand</sprite>
-          <sprite>sprites\SPR_Orc_half_body</sprite>
-          <sprite>sprites\SPR_Orc_get_dmg</sprite>
-          <sprite>sprites\SPR_Orc_dead</sprite>
-          <sprite>sprites\SPR_Orc_attack</sprite>
+        <sprites name="Orcs">
+          <sprites name="Orc">
+            <sprite>sprites\SPR_Orc_portret</sprite>
+            <sprite>sprites\SPR_Orc_stand</sprite>
+            <sprite>sprites\SPR_Orc_half_body</sprite>
+            <sprite>sprites\SPR_Orc_get_dmg</sprite>
+            <sprite>sprites\SPR_Orc_dead</sprite>
+            <sprite>sprites\SPR_Orc_attack</sprite>
+          </sprites>
+          <sprites name="Orc assassin">
+            <sprite>sprites\SPR_Orc_assassin_portret</sprite>
+            <sprite>sprites\SPR_Orc_assassin_stand</sprite>
+            <sprite>sprites\SPR_Orc_assassin_half_body</sprite>
+            <sprite>sprites\SPR_Orc_assassin_get_dmg</sprite>
+            <sprite>sprites\SPR_Orc_assassin_dead</sprite>
+            <sprite>sprites\SPR_Orc_assassin_attack</sprite>
+          </sprites>
+          <sprites name="Orc barbarian">
+            <sprite>sprites\SPR_Orc_barbarian_portret</sprite>
+            <sprite>sprites\SPR_Orc_barbarian_stand</sprite>
+            <sprite>sprites\SPR_Orc_barbarian_half_body</sprite>
+            <sprite>sprites\SPR_Orc_barbarian_get_dmg</sprite>
+            <sprite>sprites\SPR_Orc_barbarian_dead</sprite>
+            <sprite>sprites\SPR_Orc_barbarian_attack</sprite>
+          </sprites>
+          <sprites name="Orc brute">
+            <sprite>sprites\SPR_Orc_brute_portret</sprite>
+            <sprite>sprites\SPR_Orc_brute_stand</sprite>
+            <sprite>sprites\SPR_Orc_brute_half_body</sprite>
+            <sprite>sprites\SPR_Orc_brute_get_dmg</sprite>
+            <sprite>sprites\SPR_Orc_brute_dead</sprite>
+            <sprite>sprites\SPR_Orc_brute_attack</sprite>
+          </sprites>
+          <sprites name="Orc chief">
+            <sprite>sprites\SPR_Orc_chief_portret</sprite>
+            <sprite>sprites\SPR_Orc_chief_stand</sprite>
+            <sprite>sprites\SPR_Orc_chief_half_body</sprite>
+            <sprite>sprites\SPR_Orc_chief_get_dmg</sprite>
+            <sprite>sprites\SPR_Orc_chief_dead</sprite>
+            <sprite>sprites\SPR_Orc_chief_attack</sprite>
+          </sprites>
+          <sprites name="Orc mage">
+            <sprite>sprites\SPR_Orc_mage_portret</sprite>
+            <sprite>sprites\SPR_Orc_mage_stand</sprite>
+            <sprite>sprites\SPR_Orc_mage_half_body</sprite>
+            <sprite>sprites\SPR_Orc_mage_get_dmg</sprite>
+            <sprite>sprites\SPR_Orc_mage_dead</sprite>
+            <sprite>sprites\SPR_Orc_mage_attack</sprite>
+          </sprites>
+          <sprites name="Orc queen">
+            <sprite>sprites\SPR_Orc_queen_portret</sprite>
+            <sprite>sprites\SPR_Orc_queen_stand</sprite>
+            <sprite>sprites\SPR_Orc_queen_half_body</sprite>
+            <sprite>sprites\SPR_Orc_queen_get_dmg</sprite>
+            <sprite>sprites\SPR_Orc_queen_dead</sprite>
+            <sprite>sprites\SPR_Orc_queen_attack</sprite>
+          </sprites>
+          <sprites name="Orc shaman">
+            <sprite>sprites\SPR_Orc_shaman_portret</sprite>
+            <sprite>sprites\SPR_Orc_shaman_stand</sprite>
+            <sprite>sprites\SPR_Orc_shaman_half_body</sprite>
+            <sprite>sprites\SPR_Orc_shaman_get_dmg</sprite>
+            <sprite>sprites\SPR_Orc_shaman_dead</sprite>
+            <sprite>sprites\SPR_Orc_shaman_attack</sprite>
+          </sprites>
+          <sprites name="Orc warlord">
+            <sprite>sprites\SPR_Orc_warlord_portret</sprite>
+            <sprite>sprites\SPR_Orc_warlord_stand</sprite>
+            <sprite>sprites\SPR_Orc_warlord_half_body</sprite>
+            <sprite>sprites\SPR_Orc_warlord_get_dmg</sprite>
+            <sprite>sprites\SPR_Orc_warlord_dead</sprite>
+            <sprite>sprites\SPR_Orc_warlord_attack</sprite>
+          </sprites>
+          <sprites name="Orc warrior">
+            <sprite>sprites\SPR_Orc_warrior_portret</sprite>
+            <sprite>sprites\SPR_Orc_warrior_stand</sprite>
+            <sprite>sprites\SPR_Orc_warrior_half_body</sprite>
+            <sprite>sprites\SPR_Orc_warrior_get_dmg</sprite>
+            <sprite>sprites\SPR_Orc_warrior_dead</sprite>
+            <sprite>sprites\SPR_Orc_warrior_attack</sprite>
+          </sprites>
         </sprites>
-        <sprites name="Orc Shaman">
-          <sprite>sprites\SPR_Orc_shaman_portret</sprite>
-          <sprite>sprites\SPR_Orc_shaman_stand</sprite>
-          <sprite>sprites\SPR_Orc_shaman_half_body</sprite>
-          <sprite>sprites\SPR_Orc_shaman_get_dmg</sprite>
-          <sprite>sprites\SPR_Orc_shaman_dead</sprite>
-          <sprite>sprites\SPR_Orc_shaman_attack</sprite>
+        <sprites name="Goblins">
+          <sprites name="Gremlin">
+            <sprite>sprites\SPR_Gremlin_portret</sprite>
+            <sprite>sprites\SPR_Gremlin_stand</sprite>
+            <sprite>sprites\SPR_Gremlin_half_body</sprite>
+            <sprite>sprites\SPR_Gremlin_get_dmg</sprite>
+            <sprite>sprites\SPR_Gremlin_dead</sprite>
+            <sprite>sprites\SPR_Gremlin_attack</sprite>
+            <sprite>sprites\SPR_Gremlin_full_body</sprite>
+          </sprites>
+          <sprites name="Goblin">
+            <sprite>sprites\SPR_Goblin_portret</sprite>
+            <sprite>sprites\SPR_Goblin_stand</sprite>
+            <sprite>sprites\SPR_Goblin_half_body</sprite>
+            <sprite>sprites\SPR_Goblin_get_dmg</sprite>
+            <sprite>sprites\SPR_Goblin_dead</sprite>
+            <sprite>sprites\SPR_Goblin_attack</sprite>
+          </sprites>
+          <sprites name="Goblin chief">
+            <sprite>sprites\SPR_Goblin_chief_portret</sprite>
+            <sprite>sprites\SPR_Goblin_chief_stand</sprite>
+            <sprite>sprites\SPR_Goblin_chief_half_body</sprite>
+            <sprite>sprites\SPR_Goblin_chief_get_dmg</sprite>
+            <sprite>sprites\SPR_Goblin_chief_dead</sprite>
+            <sprite>sprites\SPR_Goblin_chief_attack</sprite>
+          </sprites>
+          <sprites name="Goblin champion">
+            <sprite>sprites\SPR_Goblin_champion_portret</sprite>
+            <sprite>sprites\SPR_Goblin_champion_stand</sprite>
+            <sprite>sprites\SPR_Goblin_champion_half_body</sprite>
+            <sprite>sprites\SPR_Goblin_champion_get_dmg</sprite>
+            <sprite>sprites\SPR_Goblin_champion_dead</sprite>
+            <sprite>sprites\SPR_Goblin_champion_attack</sprite>
+          </sprites>
+          <sprites name="Goblin_shaman">
+            <sprite>sprites\SPR_Goblin_shaman_portret</sprite>
+            <sprite>sprites\SPR_Goblin_shaman_stand</sprite>
+            <sprite>sprites\SPR_Goblin_shaman_half_body</sprite>
+            <sprite>sprites\SPR_Goblin_shaman_get_dmg</sprite>
+            <sprite>sprites\SPR_Goblin_shaman_dead</sprite>
+            <sprite>sprites\SPR_Goblin_shaman_attack</sprite>
+          </sprites>
+          <sprites name="Kobold">
+            <sprite>sprites\SPR_Kobold_portret</sprite>
+            <sprite>sprites\SPR_Kobold_stand</sprite>
+            <sprite>sprites\SPR_Kobold_half_body</sprite>
+            <sprite>sprites\SPR_Kobold_get_dmg</sprite>
+            <sprite>sprites\SPR_Kobold_dead</sprite>
+            <sprite>sprites\SPR_Kobold_attack</sprite>
+          </sprites>
+          <sprites name="Kobold warrior">
+            <sprite>sprites\SPR_Kobold_warrior_portret</sprite>
+            <sprite>sprites\SPR_Kobold_warrior_stand</sprite>
+            <sprite>sprites\SPR_Kobold_warrior_half_body</sprite>
+            <sprite>sprites\SPR_Kobold_warrior_get_dmg</sprite>
+            <sprite>sprites\SPR_Kobold_warrior_dead</sprite>
+            <sprite>sprites\SPR_Kobold_warrior_attack</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Undead">
@@ -584,6 +711,19 @@
           <sprite>sprites\SPR_Blue_dragon_get_dmg</sprite>
           <sprite>sprites\SPR_Blue_dragon_dead</sprite>
           <sprite>sprites\SPR_Blue_dragon_attack</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Animals">
+        <sprites name="Insects">
+          <sprites name="Giant_bee">
+            <sprite>sprites\SPR_Giant_bee_portret</sprite>
+            <sprite>sprites\SPR_Giant_bee_stand</sprite>
+            <sprite>sprites\SPR_Giant_bee_half_body</sprite>
+            <sprite>sprites\SPR_Giant_bee_dmg</sprite>
+            <sprite>sprites\SPR_Giant_bee_dead</sprite>
+            <sprite>sprites\SPR_Giant_bee_attack</sprite>
+            <sprite>sprites\SPR_Giant_bee_full_body</sprite>
+          </sprites>
         </sprites>
       </sprites>
     </sprites>
@@ -754,14 +894,38 @@
     </objects>
     <objects name="Enemy units">
       <objects name="Green Skin">
-        <object>objects\Orc</object>
-        <object>objects\Orc_shaman</object>
+        <objects name="Orcs">
+          <object>objects\Orc</object>
+          <object>objects\Orc_assassin</object>
+          <object>objects\Orc_barbarian</object>
+          <object>objects\Orc_brute</object>
+          <object>objects\Orc_chief</object>
+          <object>objects\Orc_mage</object>
+          <object>objects\Orc_queen</object>
+          <object>objects\Orc_shaman</object>
+          <object>objects\Orc_warlord</object>
+          <object>objects\Orc_warrior</object>
+        </objects>
+        <objects name="Goblins">
+          <object>objects\Gremlin</object>
+          <object>objects\Goblin</object>
+          <object>objects\Goblin_chief</object>
+          <object>objects\Goblin_champion</object>
+          <object>objects\Goblin_shaman</object>
+          <object>objects\Kobold</object>
+          <object>objects\Kobold_warrior</object>
+        </objects>
       </objects>
       <objects name="Undead">
         <object>objects\Lich</object>
       </objects>
       <objects name="Dragons">
         <object>objects\Blue_dragon</object>
+      </objects>
+      <objects name="Animals">
+        <objects name="Insects">
+          <object>objects\Giant_bee</object>
+        </objects>
       </objects>
       <objects name="General">
         <object>objects\General_parent_enemy</object>
@@ -796,6 +960,7 @@
       <object>objects\Test_mages_buildings</object>
       <object>objects\Test_healers_buildings</object>
       <object>objects\Test_rangers_buildings</object>
+      <object>objects\Test_lore_showing</object>
     </objects>
     <objects name="Map objects">
       <object>objects\MO_Player</object>

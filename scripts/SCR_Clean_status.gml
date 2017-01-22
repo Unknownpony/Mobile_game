@@ -39,4 +39,6 @@ for(cs_i=0; cs_i<array_length_1d(clean_units); cs_i+=1)
         } break;
     }
     status_units[cs_i].effect = 0
+    status_units[cs_i].def = 0
+    status_units[cs_i].type_of_attack = 0
 }

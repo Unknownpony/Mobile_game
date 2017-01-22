@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//call battle
 
-SCR_Call_battle(1, BG_level_1)
+SCR_Call_battle(Game_flow.max_level_user_reached, BG_level_1)
 </string>
           </argument>
         </arguments>

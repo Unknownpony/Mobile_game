@@ -43,6 +43,9 @@ debuff = 0
 def = 0
 effect = 0
 dmg_amp = 1
+debuff_counter = 0
+lore = 0
+lore_button = 0
 switch (object_get_name(object_index))
 {
     //Warriors
@@ -658,7 +661,7 @@ switch (object_get_name(object_index))
             <string>///Army managment room script
 if(room_get_name(room) == "RM_Army_Management")
 {
-    if(select==1)
+    if(select==1 and view_visible[0]==1)
     {
         x=mouse_x-sprite_width/2
         y=mouse_y-sprite_height/2
@@ -827,79 +830,56 @@ if(room_get_name(room) == "RM_Battle_Room")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Put focuse on the instance
-
-if(focuse == 1)
-    focuse = 0
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Put focuse on the instance
-
-if(focuse == 0)
-    focuse = 1
-     
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Army managment room script
-
-if(room_get_name(room) == "RM_Army_Management")
+            <string>///Battle room scripts
+if(room_get_name(room) == "RM_Battle_Room")
 {
-    if(global.selected=0 and view_visible[0]=1)
+    if(focuse == 1)
+        Battle_progress.every_enemy=0
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Army managment room scripts
+
+//Select object in shop window 2
+if(room_get_name(room) == "RM_Army_Management")
+{ 
+    if(view_visible[1]==1)
     {
-        temp_x = x
-        temp_y = y
+        for(i=0; i&lt;array_length_1d(Army_managment.inst_shop_id); i+=1)
+        {
+            Army_managment.inst_shop_id[i].select = 0;
+            Army_managment.inst_shop_id[i].lore = 0;
+        }
+        with(Test_lore_showing)
+        {
+            instance_destroy();
+        }
         select = 1
-        global.selected = 1   
-    } 
+    }
     
-    if(view_visible[1]=1)
+    if(focuse == 0)
     {
-        Army_managment.ref_of_clicked_instance.bought_unit = SCR_Buy_unit(object_get_name(object_index),50)
+        focuse = 1
     }
 }
 </string>
@@ -922,19 +902,111 @@ if(room_get_name(room) == "RM_Army_Management")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Heals
+            <string>///Battle room scripts
 
-if(room_get_name(room) == "RM_Battle_Room" and Battle_progress.animation == 0 and Battle_progress.active_unit.active_turn==1 and Battle_progress.active_unit.position&lt;9 and targeted == 1)
+if(room_get_name(room) == "RM_Battle_Room")
+{ 
+    //select Unit
+    for(i=0; i&lt;array_length_1d(Battle_progress.start_army); i+=1)
+        Battle_progress.start_army[i].select = 0;
+    select = 1
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Army managment room scripts
+
+if(room_get_name(room) == "RM_Army_Management")
 {
-    Battle_progress.everyone = 0
-    Battle_progress.target_unit = id
-    Battle_progress.animation = 1 
-    Battle_progress.queue_turn++
-    Battle_progress.active_unit.active_turn=0
-} 
- 
+    if(global.selected==0 and view_visible[0]==1)
+    {
+        temp_x = x
+        temp_y = y
+        select = 1
+        global.selected = 1   
+    } 
+    
+    if(view_visible[1]==1 and select == 1)
+    {
+        switch(object_get_name(object_index))
+        {
+            case "Squire":
+                Army_managment.ref_of_clicked_instance.bought_unit = SCR_Buy_unit(object_get_name(object_index),50)
+                select = 0
+                break;
+            case "Fighter":
+                Army_managment.ref_of_clicked_instance.bought_unit = SCR_Buy_unit(object_get_name(object_index),60)
+                select = 0
+                break;
+            case "Apprentice":
+                Army_managment.ref_of_clicked_instance.bought_unit = SCR_Buy_unit(object_get_name(object_index),75)
+                select = 0
+                break;
+            case "Acolyte":
+                Army_managment.ref_of_clicked_instance.bought_unit = SCR_Buy_unit(object_get_name(object_index),65)
+                select = 0
+                break;
+            case "Scout":
+                Army_managment.ref_of_clicked_instance.bought_unit = SCR_Buy_unit(object_get_name(object_index),55)
+                select = 0
+                break;
+            }      
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Battle room scripts
 
-
+if(room_get_name(room) == "RM_Battle_Room")
+{ 
+    //AI attack
+    if(Battle_progress.animation == 0 and Battle_progress.active_unit.active_turn==1 and Battle_progress.active_unit.position&lt;9 and targeted == 1 and select == 1)
+    {
+        select = 0
+        Battle_progress.everyone = 0
+        Battle_progress.target_unit = id
+        Battle_progress.animation = 1 
+        Battle_progress.queue_turn++
+        Battle_progress.active_unit.active_turn=0
+    } 
+}
 
 
 
@@ -960,49 +1032,78 @@ if(room_get_name(room) == "RM_Battle_Room" and Battle_progress.animation == 0 an
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Frame around instance if Focuse
+            <string>///Army managment room scripts
 
-if (focuse == 1 and room_get_name(room) == "RM_Army_Management")
+if (select==1 and room_get_name(room) == "RM_Army_Management")
 {
     draw_rectangle_colour(x-5, y-5, x+101, y+101, c_black, c_black, c_black, c_black, true)
-    
-    //Draw Stats
-    if(view_visible[1]==1 and object_get_name(object_index)&lt;&gt;"No_unit")
-    {
-           draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_full_body"), 0, 1500, 80);
-           draw_rectangle_colour(1800, 50, 2560, 700, c_gray, c_gray, c_gray, c_gray, false); 
-           draw_text(2130,70,"Put lore here")
-    }   
+    if(view_visible[1]==1 and lore==0)
+        lore = instance_create(view_xview[view_current]+200,view_yview[view_current]+80,Test_lore_showing)    
 }
-else if(room_get_name(room) == "RM_Battle_Room")
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Battle room scripts.
+
+if(room_get_name(room) == "RM_Battle_Room")
 {
     if(active_turn == 1 and Battle_progress.animation == 0)
         draw_rectangle_colour(x-5, y-5, x+149, y+149, c_black, c_black, c_black, c_black, true)
-        
-    if(focuse == 1)   //if mouse is on object and it's room battle
+    
+    if(select == 1 and Battle_progress.animation == 0)
+        draw_rectangle_colour(x-5, y-5, x+149, y+149, c_blue, c_blue, c_blue, c_blue, true)
+       
+    if(Battle_progress.attack_range==3 and Battle_progress.every_enemy==1 and hp&gt;0 and select_heal == 1)
+        draw_rectangle_colour(x-5, y-5, x+149, y+149, c_purple, c_purple, c_purple, c_purple, true)
+     
+    if(select == 1)   //if mouse is on object and it's room battle
     {
         if(Battle_progress.animation == 0)    //if aniamtion isn't in progress
         {
             //Draw stats and portret of the obejct on left site of the room
             draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_half_body"),0,0,0)   
             draw_set_font(FNT_Arial_15)
-            draw_text(10,181,"HP: " + string(hp) + " / " + string(max_hp))      
-            draw_text(10,201,"XP:  " + string(xp) + " / " + string(xp_to_level_up))  
-            draw_text(10,221,"AD:  " + string(ad)) 
-            draw_text(10,241,"AR:  " + string(ar)) 
-            draw_text(10,261,"MD:  " + string(md)) 
-            draw_text(10,281,"MR:  " + string(mr)) 
-            draw_text(10,301,"IN:  " + string(in)) 
+            draw_text(10,181,object_get_name(object_index))   
+            draw_text(10,201,"HP: " + string(hp) + " / " + string(max_hp))      
+            draw_text(10,221,"XP:  " + string(xp) + " / " + string(xp_to_level_up))  
+            draw_text(10,241,"AD:  " + string(ad)) 
+            draw_text(10,261,"AR:  " + string(ar)) 
+            draw_text(10,281,"MD:  " + string(md)) 
+            draw_text(10,301,"MR:  " + string(mr)) 
+            draw_text(10,321,"IN:  " + string(in)) 
+            lore_button = collision_point( 10, 340, Test_combat_buttons, false, true )
+            lore_button.visible = 1 
             //if it's targeted draw green circle around object to indicate it was targeted
             if(targeted == 1)
             {
                     draw_rectangle_colour(x-5, y-5, x+149, y+149, c_green, c_green, c_green, c_green, true) 
-                    if(Battle_progress.every_player==1)
-                        Battle_progress.attack_range=1
+                    if(Battle_progress.attack_range==3)
+                        Battle_progress.every_enemy=1
             }
         }
     }
+    
+   
 }
+
+
 </string>
           </argument>
         </arguments>

@@ -4,10 +4,10 @@ bought_unit_name = argument0
 g = argument1
 
 //Check if we are in the shop window and if any object was selected
-if(room_get_name(room) == "RM_Army_Management" and global.selected=0 and view_visible[1]=1)
+if(room_get_name(room) == "RM_Army_Management" and global.selected==0 and view_visible[1]==1)
 {
     //Pop up message if user want to buy this unit by such ammount of gold
-    if(show_question("Do you want to buy this unit for" + string(g) + " Gold?") == 1)
+    if(show_question("Do you want to buy this unit for " + string(g) + " Gold?") == 1)
     {   
         //Check if user has enough gold to buy this unit
         if(Game_flow.gold >=g)

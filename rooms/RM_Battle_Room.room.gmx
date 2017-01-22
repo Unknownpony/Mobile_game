@@ -29,7 +29,8 @@ for (i=0; i&lt;2; i+=1)
          if (Unit[0]&lt;&gt;"No_unit" and Unit[1]&gt;0)
          {        
              Battle_progress.inst_id[n] = instance_create(10+(i+1)*144,720-(j+1)*144,asset_get_index(Unit[0]))
-             Battle_progress.inst_id[n].hp = Unit[1]
+             Battle_progress.start_army[n] = Battle_progress.inst_id[n]
+             //Battle_progress.inst_id[n].hp = Unit[1]
              Battle_progress.inst_id[n].xp = Unit[2]
              Battle_progress.inst_id[n].unit_level = Unit[3]
              Battle_progress.inst_id[n].position = position
@@ -45,48 +46,74 @@ for (i=0; i&lt;2; i+=1)
          position++
      }   
 }
-Battle_progress.start_army = Battle_progress.inst_id
-//12 16
-//11 15
-//10 14
-//9  13
+
+//832, 976
+//12   16   - 4
+//11   15   - 3
+//10   14   - 2
+//9    13   - 1
 p=0
 switch (Game_flow.level)
 {
     //Level 1
     case 1:        
         //Enemy army for this level
-        Battle_progress.inst_id[n] = instance_create(832,720-1*144,Orc);
-        Battle_progress.inst_id[n].position = 9
+        Battle_progress.inst_id[n] = instance_create(832,720-2*144,Gremlin);
+        Battle_progress.inst_id[n].position = 10
         n++
-//        Battle_progress.inst_id[n] = instance_create(832,720-3*144,Blue_dragon);
-//        Battle_progress.inst_id[n].position = 10
-//        n++
-//        Battle_progress.inst_id[n] = instance_create(832,720-4*144,Orc);
-//        Battle_progress.inst_id[n].position = 12
-//        n++
-        Battle_progress.inst_id[n] = instance_create(976,720-2*144,Lich);
-        Battle_progress.inst_id[n].position = 15
+        Battle_progress.inst_id[n] = instance_create(832,720-3*144,Gremlin);
+        Battle_progress.inst_id[n].position = 11
     //Level 2
     break;
     case 2: 
         //Enemy army for this level
-        Battle_progress.inst_id[n] = instance_create(832,720-1*144,Orc);
-        Battle_progress.inst_id[n].position = position
-        position++
+        Battle_progress.inst_id[n] = instance_create(832,720-2*144,Gremlin);
+        Battle_progress.inst_id[n].position = 10
         n++
-        Battle_progress.inst_id[n] = instance_create(976,720-2*144,Orc_shaman);
-        Battle_progress.inst_id[n].position = position
-        position++
+        Battle_progress.inst_id[n] = instance_create(832,720-3*144,Goblin);
+        Battle_progress.inst_id[n].position = 11
         n++
-        Battle_progress.inst_id[n] = instance_create(832,720-3*144,Orc);
-        Battle_progress.inst_id[n].position = position 
+        Battle_progress.inst_id[n] = instance_create(832,720-4*144,Gremlin);
+        Battle_progress.inst_id[n].position = 12
         break;
     case 3: 
+        //Enemy army for this level
+        Battle_progress.inst_id[n] = instance_create(832,720-3*144,Goblin);
+        Battle_progress.inst_id[n].position = 11
+        n++
+        Battle_progress.inst_id[n] = instance_create(976,720-2*144,Giant_bee);
+        Battle_progress.inst_id[n].position = 14
+        n++        
+        Battle_progress.inst_id[n] = instance_create(976,720-4*144,Giant_bee);
+        Battle_progress.inst_id[n].position = 16
         break;
     case 4: 
+        //Enemy army for this level
+        Battle_progress.inst_id[n] = instance_create(832,720-1*144,Goblin);
+        Battle_progress.inst_id[n].position = 9
+        n++
+        Battle_progress.inst_id[n] = instance_create(832,720-2*144,Goblin);
+        Battle_progress.inst_id[n].position = 10
+        n++
+        Battle_progress.inst_id[n] = instance_create(832,720-3*144,Gremlin);
+        Battle_progress.inst_id[n].position = 11
+        n++
+        Battle_progress.inst_id[n] = instance_create(976,720-2*144,Goblin_shaman);
+        Battle_progress.inst_id[n].position = 14
         break;
     case 5: 
+        //Enemy army for this level
+        Battle_progress.inst_id[n] = instance_create(832,720-1*144,Goblin);
+        Battle_progress.inst_id[n].position = 9
+        n++
+        Battle_progress.inst_id[n] = instance_create(832,720-2*144,Kobold);
+        Battle_progress.inst_id[n].position = 10
+        n++
+        Battle_progress.inst_id[n] = instance_create(832,720-4*144,Gremlin);
+        Battle_progress.inst_id[n].position = 12
+        n++
+        Battle_progress.inst_id[n] = instance_create(976,720-2*144,Goblin_shaman);
+        Battle_progress.inst_id[n].position = 14
         break;
     case 6: 
         break;
@@ -97,6 +124,18 @@ switch (Game_flow.level)
     case 9: 
         break;
     case 10: 
+        break;
+    case 11: 
+        break;
+    case 12: 
+        break;
+    case 13: 
+        break;
+    case 14: 
+        break;
+    case 15: 
+        break;
+    case 16: 
         break;
     default: 
         level=0;
@@ -153,6 +192,8 @@ for(i=0; i&lt;array_length_1d(Battle_progress.inst_id); i+=1)
     <instance objName="Test_combat_buttons" x="0" y="590" name="inst_39D63302" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Test_combat_buttons" x="1120" y="460" name="inst_6BAFF54C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Test_combat_buttons" x="1120" y="590" name="inst_8D1878F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_combat_buttons" x="0" y="330" name="inst_2655F8D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_combat_buttons" x="1120" y="330" name="inst_2C0E03B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

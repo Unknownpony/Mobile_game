@@ -26,12 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>//Put sprite depended on x
+lore = 0
 switch (x)
 {
     case 0: 
     {
         switch (y)
         {
+            case 330: 
+                sprite_index = Test_lore_button; 
+                visible = 0;
+                break;
             case 460: sprite_index = Test_attack_1; break;
             case 590: sprite_index = Test_attack_2; break;
         }         
@@ -40,6 +45,10 @@ switch (x)
     {
         switch (y)
         {
+            case 330: 
+                sprite_index = Test_lore_button; 
+                visible = 0;
+                break;
             case 460: sprite_index = Test_def; break;
             case 590: sprite_index = Test_pass; break;
         }         
@@ -50,7 +59,49 @@ switch (x)
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///change color
+image_blend = c_white
+if(Battle_progress.active_unit.position&lt;9)
+    switch(Battle_progress.active_unit.type_of_attack)
+    {
+        case 0: 
+        {
+            if(x==0 and y==460)
+                image_blend = c_gray  
+        }break;
+        case 1:
+        {
+            if(x==0 and y==590)
+                image_blend = c_gray 
+        }break;
+    }
+
+    if(lore&lt;&gt;0)
+        image_blend = c_gray
+        
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -76,6 +127,19 @@ if(Battle_progress.active_unit.position&lt;9)
         {
             switch (y)
             {
+                case 330: 
+                {
+                    if(lore==0)
+                        lore = instance_create(view_xview[view_current]+200,view_yview[view_current]+80,Test_lore_showing)   
+                    else
+                    {
+                        lore = 0
+                        with(Test_lore_showing)
+                        {
+                            instance_destroy();
+                        }
+                    }
+                } break;
                 case 460: 
                 {
                     if(Battle_progress.active_unit.type_of_attack &lt;&gt; 0)
@@ -102,6 +166,19 @@ if(Battle_progress.active_unit.position&lt;9)
         {
             switch (y)
             {
+                case 330: 
+                {
+                    if(lore==0)
+                        lore = instance_create(view_xview[view_current]+200,view_yview[view_current]+80,Test_lore_showing)   
+                    else
+                    {
+                        lore = 0
+                        with(Test_lore_showing)
+                        {
+                            instance_destroy();
+                        }
+                    }
+                } break;
                 case 460:
                 {
                     if(Battle_progress.active_unit.def&lt;&gt; 1)

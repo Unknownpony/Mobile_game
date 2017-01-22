@@ -27,19 +27,20 @@
             <kind>1</kind>
             <string>///Battle progress and ending
 //Units arrays
-inst_id = 0         //FIFO array of insatnce
-queue_turn = 0      //Sorted array of instance for round
-active_unit = 0     //Current active instance
-target_unit = 0     //Targeted insatnce
-upgrade_unit = 0    //Array of instance which will be upgraded  
-animation = 0       //Aniamtion flag 
-every_enemy = 0     //Flag for drawing circle around every enemy 
-every_player = 0    //Flag for drawing circle around every player 
-attack_range = 0    //Attack range (type of attack)
-battle_xp = 0       //Expiriance gain after battle
-new_turn = 1        //Flag for new turn
-turn_queue = 0      //Which array object is currently active in round
-
+inst_id = 0             //FIFO array of insatnce
+queue_turn = 0          //Sorted array of instance for round
+active_unit = 0         //Current active instance
+target_unit = 0         //Targeted insatnce
+upgrade_unit = 0        //Array of instance which will be upgraded  
+animation = 0           //Aniamtion flag 
+every_enemy = 0         //Flag for drawing circle around every enemy 
+every_player = 0        //Flag for drawing circle around every player 
+attack_range = 0        //Attack range (type of attack)
+battle_xp = 0           //Expiriance gain after battle
+new_turn = 1            //Flag for new turn
+turn_queue = 0          //Which array object is currently active in round
+start_army = 0          //Array of every player unit
+start_enemy_army = 0    //Array of every enemy unit
 </string>
           </argument>
         </arguments>
@@ -92,7 +93,7 @@ if(animation==0)
                 if(SCR_Debuff_calculation(turn_queue[queue_turn]) &lt;&gt; 1)    //Debuff calculation
                 {                                        
                     active_unit = turn_queue[queue_turn]    //set active instance to a variable for active unit
-                    active_unit.active_turn = 1             //put active flag of the current unit on         
+                    active_unit.active_turn = 1             //put active flag of the current unit on   
                     SCR_Choice_target_system()              //based on which active unit is on, chocie target system
                 } else 
                 {
@@ -113,10 +114,10 @@ if(animation==0)
             
             //add expiriance to the alive units
             j=0
-            temp=0
             temp_unit = 0
             for(i=0; i&lt;array_length_1d(start_army); i+=1)
             { 
+                temp=0
                 //check if unit is alive
                 if(start_army[i].hp&gt;0)
                 {
@@ -276,6 +277,9 @@ if(animation==0)
                 }
             }
         }
+        show_message("You are victorious")
+        Game_flow.max_level_user_reached += 1
+        room_goto("RM_TEST_ROOM") 
         break;
         case 2: 
         {
@@ -291,7 +295,7 @@ if(animation==0)
     //End animation Condition
     if(floor(active_unit.image_index) == 15)
     { 
-        if(attack_range&lt;&gt;2)
+        if(attack_range&lt;2)
             SCR_DMG_Calculation(active_unit, target_unit)
         else
             SCR_Heals_Calculation(active_unit, target_unit)
@@ -331,8 +335,10 @@ if(animation == 3)
 
 if(animation == 4)
 {
-//    show_message("You are victorious")
-//    room_goto("RM_TEST_ROOM") 
+    //evloution
+    //show_message("You are victorious")
+    //Game_flow.max_level_user_reached += 1
+    //room_goto("RM_TEST_ROOM")     
 }
 
 </string>

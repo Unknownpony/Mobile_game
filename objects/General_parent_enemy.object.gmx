@@ -39,10 +39,128 @@ debuff = 0
 def = 0
 effect = 0
 dmg_amp = 1
+debuff_counter = 0
+lore_button = 0
 switch (object_get_name(object_index))
 {
     //Green skin
+    //Goblins
+    //basic
+    case "Gremlin": 
+    {
+        max_hp = 50
+        hp = 50
+        ad = 10
+        ar = 0
+        md = 0
+        mr = 0
+        in = 30
+        //xp_to_level_up = 8
+        xp_worth = 6
+    } break;
+    //level 1
+    case "Goblin": 
+    {
+        max_hp = 75
+        hp = 75
+        ad = 20
+        ar = 0
+        md = 0
+        mr = 0
+        in = 50
+        //xp_to_level_up = 18
+        xp_worth = 18
+    } break;
+    case "Goblin_shaman": 
+    {
+        max_hp = 55
+        hp = 55
+        ad = 0
+        ar = 0
+        md = 15
+        mr = 0
+        in = 40
+        //xp_to_level_up = 18
+        xp_worth = 18
+    } break;
+    case "Kobold": 
+    {
+        max_hp = 95
+        hp = 95
+        ad = 25
+        ar = 0
+        md = 0
+        mr = 0
+        in = 45
+        //xp_to_level_up = 24
+        xp_worth = 24
+    } break;
+    //level 2
+        case "Goblin_champion": 
+    {
+        max_hp = 140
+        hp = 140
+        ad = 45
+        ar = 0
+        md = 0
+        mr = 0
+        in = 50
+        //xp_to_level_up = 54
+        xp_worth = 54
+    } break;    
+    case "Kobold_warrior": 
+    {
+        max_hp = 100
+        hp = 100
+        ad = 35
+        ar = 10
+        md = 0
+        mr = 0
+        in = 55
+        //xp_to_level_up = 48
+        xp_worth = 48
+    } break;
+    //level 3
+    case "Goblin_chief": 
+    {
+        max_hp = 180
+        hp = 180
+        ad = 70
+        ar = 15
+        md = 0
+        mr = 0
+        in = 50
+        xp_to_level_up = 96
+        xp_worth = 96
+    } break;
+    //Orcs
+    //basic
     case "Orc": 
+    {
+        max_hp = 120
+        hp = 120
+        ad = 30
+        ar = 0
+        md = 0
+        mr = 0
+        in = 50
+        //xp_to_level_up = 36
+        xp_worth = 36
+    } break;
+    //level 1
+    case "Orc_assassin": 
+    {
+        max_hp = 130
+        hp = 130
+        ad = 50
+        ar = 0
+        md = 0
+        mr = 0
+        in = 60
+        xp_to_level_up = 200
+        xp_worth = 10000000
+    } break;
+    case "Orc_barbarian": 
     {
         max_hp = 120
         hp = 120
@@ -54,7 +172,44 @@ switch (object_get_name(object_index))
         xp_to_level_up = 200
         xp_worth = 10000000
     } break;
+    case "Orc_brute": 
+    {
+        max_hp = 120
+        hp = 120
+        ad = 30
+        ar = 0
+        md = 0
+        mr = 0
+        in = 10
+        xp_to_level_up = 200
+        xp_worth = 10000000
+    } break;
+    case "Orc_mage": 
+    {
+        max_hp = 120
+        hp = 120
+        ad = 30
+        ar = 0
+        md = 0
+        mr = 0
+        in = 10
+        xp_to_level_up = 200
+        xp_worth = 10000000
+    } break;
+    //level 2 
     case "Orc_shaman": 
+    {
+        max_hp = 120
+        hp = 120
+        ad = 30
+        ar = 0
+        md = 0
+        mr = 0
+        in = 10
+        xp_to_level_up = 200
+        xp_worth = 10000000
+    } break;
+    case "Orc_warrior": 
     {
         max_hp = 90
         hp = 90
@@ -66,6 +221,58 @@ switch (object_get_name(object_index))
         xp_to_level_up = 200
         xp_worth = 80
     } break;
+    //level 3
+    case "Orc_chief": 
+    {
+        max_hp = 120
+        hp = 120
+        ad = 30
+        ar = 0
+        md = 0
+        mr = 0
+        in = 10
+        xp_to_level_up = 200
+        xp_worth = 10000000
+    } break;
+    case "Orc_warlord": 
+    {
+        max_hp = 120
+        hp = 120
+        ad = 30
+        ar = 0
+        md = 0
+        mr = 0
+        in = 10
+        xp_to_level_up = 200
+        xp_worth = 10000000
+    } break;
+    //boss
+    case "Orc_queen": 
+    {
+        max_hp = 120
+        hp = 120
+        ad = 30
+        ar = 0
+        md = 0
+        mr = 0
+        in = 10
+        xp_to_level_up = 200
+        xp_worth = 10000000
+    } break;
+    //Animals
+    //Insects
+    case "Giant_bee":
+    {
+        max_hp = 45
+        hp = 45
+        ad = 15
+        ar = 0
+        md = 0
+        mr = 0
+        in = 65
+        //xp_to_level_up = 30
+        xp_worth = 30
+    } break;    
     //Undead
     case "Lich": 
     {
@@ -194,36 +401,7 @@ if(focuse == 1)
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Put focuse on the instance
-
-if(focuse == 0)
-    focuse = 1
-     
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -241,16 +419,22 @@ if(focuse == 0)
           <argument>
             <kind>1</kind>
             <string>///Attack
-
-if(Battle_progress.animation == 0 and Battle_progress.active_unit.active_turn==1 and Battle_progress.active_unit.position&lt;9 and targeted == 1)
+if(select == 1)
 {
-    Battle_progress.everyone = 0
-    Battle_progress.target_unit = id
-    Battle_progress.animation = 1 
-    Battle_progress.queue_turn++
-    Battle_progress.active_unit.active_turn=0
-}    
- 
+    if(Battle_progress.animation == 0 and Battle_progress.active_unit.active_turn==1 and Battle_progress.active_unit.position&lt;9 and targeted == 1)
+    {
+        Battle_progress.everyone = 0
+        Battle_progress.target_unit = id
+        Battle_progress.animation = 1 
+        Battle_progress.queue_turn++
+        Battle_progress.active_unit.active_turn=0
+    } 
+} else 
+{
+    for(i=0; i&lt;array_length_1d(Battle_progress.start_enemy_army); i+=1)
+        Battle_progress.start_enemy_army[i].select = 0;
+    select = 1   
+}
 
 
 
@@ -282,17 +466,20 @@ if(Battle_progress.animation == 0 and Battle_progress.active_unit.active_turn==1
 
 if(Battle_progress.animation = 0)
 {
-    if(focuse == 1 and room_get_name(room) == "RM_Battle_Room" )
+    if(select == 1 and room_get_name(room) == "RM_Battle_Room" )
     {
         draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_half_body"),0,1120,0)   
         draw_set_font(FNT_Arial_15)
-        draw_text(1130,181,"HP: " + string(hp) + " / " + string(max_hp))      
-        draw_text(1130,201,"XP:  " + string(xp)) 
-        draw_text(1130,221,"AD:  " + string(ad)) 
-        draw_text(1130,241,"AR:  " + string(ar)) 
-        draw_text(1130,261,"MD:  " + string(md)) 
-        draw_text(1130,281,"MR:  " + string(mr)) 
-        draw_text(1130,301,"IN:  " + string(in))    
+        draw_text(1130,181,object_get_name(object_index))
+        draw_text(1130,201,"HP: " + string(hp) + " / " + string(max_hp))      
+        draw_text(1130,221,"XP:  " + string(xp)) 
+        draw_text(1130,241,"AD:  " + string(ad)) 
+        draw_text(1130,261,"AR:  " + string(ar)) 
+        draw_text(1130,281,"MD:  " + string(md)) 
+        draw_text(1130,301,"MR:  " + string(mr)) 
+        draw_text(1130,321,"IN:  " + string(in))
+        lore_button = collision_point( 1130, 340, Test_combat_buttons, false, true )
+        lore_button.visible = 1     
     }
     
     if(active_turn == 1)
@@ -300,15 +487,17 @@ if(Battle_progress.animation = 0)
         draw_rectangle_colour(x-5, y-5, x+sprite_width+5, y+sprite_height+5, c_black, c_black, c_black, c_black, true)  
     }   
     
-    if(focuse == 1 and targeted==1)  
+    if(Battle_progress.attack_range==1 and Battle_progress.every_enemy==1 and hp&gt;0)
+          draw_rectangle_colour(x-5, y-5, x+sprite_width+5, y+sprite_height+5, c_purple, c_purple, c_purple, c_purple, true)  
+    
+    if(select == 1 and targeted==1)  
     {
         draw_rectangle_colour(x-5, y-5, x+sprite_width+5, y+sprite_height+5, c_red, c_red, c_red, c_red, true) 
         if(Battle_progress.attack_range==1)
             Battle_progress.every_enemy=1
     }
     
-    if(Battle_progress.attack_range==1 and Battle_progress.every_enemy==1 and hp&gt;0)
-          draw_rectangle_colour(x-5, y-5, x+sprite_width+5, y+sprite_height+5, c_red, c_red, c_red, c_red, true)  
+    
 }
 </string>
           </argument>

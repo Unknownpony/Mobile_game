@@ -79,11 +79,8 @@ switch(object_get_name(Battle_progress.active_unit.object_index))
     //healers
     case "Acolyte":  
     case "Oracle":
-    case "Cleric": 
     case "Druid": 
-    case "Priest": 
     case "Archdruid": 
-    case "Bless_one":
     {
         switch (Battle_progress.active_unit.type_of_attack)
         {
@@ -95,8 +92,29 @@ switch(object_get_name(Battle_progress.active_unit.object_index))
             break;
             case 1: 
             {
-                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
-                Battle_progress.attack_range = 0
+                SCR_Target_one_teammate_range(Battle_progress.inst_id)
+                Battle_progress.attack_range = 2
+            }
+            break;
+        }
+    } break;
+    //healers AOE
+    case "Cleric": 
+    case "Priest": 
+    case "Bless_one":
+    {
+        switch (Battle_progress.active_unit.type_of_attack)
+        {
+            case 0: 
+            {
+                SCR_Target_all_teammates(Battle_progress.inst_id)
+                Battle_progress.attack_range = 3
+            }
+            break;
+            case 1: 
+            {
+                SCR_Target_all_teammates(Battle_progress.inst_id)
+                Battle_progress.attack_range = 3
             }
             break;
         }

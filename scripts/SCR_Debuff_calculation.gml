@@ -5,21 +5,26 @@ unit_statues = argument0
 //debuff
 switch (unit_statues.debuff)
 {
-    
     case 1:     //poison
     case 2:     //freeze
-        unit_statues.hp -= 20; break;
+        unit_statues.hp -= 10; 
+        unit_statues.debuff_counter -= 0
+        break;
     case 3: //fire
-        unit_statues.hp -= 20 - floor(unit_statues.hp * 0.05); break;
+        unit_statues.hp -= 20 - floor(unit_statues.hp * 0.05); 
+        unit_statues.debuff_counter -= 0
+        break;
     //Paralyse
     case 4: 
     {
         unit_statues.debuff = 0;
+        unit_statues.debuff_counter -= 0
         return 1;
     } break;
 }
 
-unit_statues.debuff = 0
+if(unit_statues.debuff_counter == 0)
+    unit_statues.debuff = 0
 
 if(unit_statues.hp <=0)
 {

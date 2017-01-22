@@ -2,7 +2,7 @@
 
 //This script check the fix position of the portret of units
 //It swap x and y position of those object
-if(select==1)
+if(select==1 and view_visible[0]==1 )
 {
     x=temp_x
     y=temp_y    
