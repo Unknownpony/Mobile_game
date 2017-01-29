@@ -8,8 +8,8 @@
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
-  <colour>12632256</colour>
-  <showcolour>-1</showcolour>
+  <colour>15787656</colour>
+  <showcolour>0</showcolour>
   <code>///Initial battle room
 
 //User Army
@@ -19,6 +19,7 @@
 //1 5
 position = 1
 n=0
+
 instance_create(0,0,Battle_progress)
 
 for (i=0; i&lt;2; i+=1)
@@ -187,13 +188,14 @@ for(i=0; i&lt;array_length_1d(Battle_progress.inst_id); i+=1)
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="BT_Back" x="1216" y="0" name="inst_167A7D97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="BT_Back" x="896" y="0" name="inst_167A7D97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Test_combat_buttons" x="0" y="460" name="inst_270B3DE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Test_combat_buttons" x="0" y="590" name="inst_39D63302" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_combat_buttons" x="0" y="580" name="inst_39D63302" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Test_combat_buttons" x="1120" y="460" name="inst_6BAFF54C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Test_combat_buttons" x="1120" y="590" name="inst_8D1878F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Test_combat_buttons" x="0" y="330" name="inst_2655F8D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Test_combat_buttons" x="1120" y="330" name="inst_2C0E03B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_combat_buttons" x="1120" y="580" name="inst_8D1878F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_combat_buttons" x="0" y="340" name="inst_2655F8D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_combat_buttons" x="1120" y="340" name="inst_2C0E03B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Test_rams" x="0" y="0" name="inst_B8F37260" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

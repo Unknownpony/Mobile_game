@@ -1078,16 +1078,16 @@ if(room_get_name(room) == "RM_Battle_Room")
         if(Battle_progress.animation == 0)    //if aniamtion isn't in progress
         {
             //Draw stats and portret of the obejct on left site of the room
-            draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_half_body"),0,0,0)   
+            draw_sprite(asset_get_index("SPR_" + object_get_name(object_index) + "_half_body"),0,0,25)   
             draw_set_font(FNT_Arial_15)
-            draw_text(10,181,object_get_name(object_index))   
-            draw_text(10,201,"HP: " + string(hp) + " / " + string(max_hp))      
-            draw_text(10,221,"XP:  " + string(xp) + " / " + string(xp_to_level_up))  
-            draw_text(10,241,"AD:  " + string(ad)) 
-            draw_text(10,261,"AR:  " + string(ar)) 
-            draw_text(10,281,"MD:  " + string(md)) 
-            draw_text(10,301,"MR:  " + string(mr)) 
-            draw_text(10,321,"IN:  " + string(in)) 
+            draw_text(45,201,object_get_name(object_index))   
+            draw_text(10,221,"HP: " + string(hp) + " / " + string(max_hp))      
+            draw_text(10,241,"XP: " + string(xp) + " / " + string(xp_to_level_up))  
+            draw_text(10,261,"AD: " + string(ad)) 
+            draw_text(90,261,"AR: " + string(ar)) 
+            draw_text(10,281,"MD: " + string(md)) 
+            draw_text(90,281,"MR: " + string(mr)) 
+            draw_text(45,301,"IN: " + string(in)) 
             lore_button = collision_point( 10, 340, Test_combat_buttons, false, true )
             lore_button.visible = 1 
             //if it's targeted draw green circle around object to indicate it was targeted

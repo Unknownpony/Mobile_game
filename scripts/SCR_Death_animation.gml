@@ -71,7 +71,13 @@ switch (object_get_name(test.object_index))
     case "Sharpshooter":  
     {
         audio_play_sound(SO_Female_death,10,false)
-    }break;    
+    }break;  
+    //Green skin
+    //Goblins  
+    case "Gremlin":
+    {
+        audio_play_sound(SO_Gremlin_death,10,false)
+    }break;
     case "Orc": 
     case "Orc_shaman": 
     case "Lich":

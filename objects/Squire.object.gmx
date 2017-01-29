@@ -3,7 +3,7 @@
   <spriteName>SPR_Squire_stand</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>General_parent_units</parentName>
   <maskName>&lt;undefined&gt;</maskName>

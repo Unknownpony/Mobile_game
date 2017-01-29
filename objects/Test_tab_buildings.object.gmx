@@ -84,7 +84,7 @@ switch (x)
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -109,38 +109,48 @@ switch (x)
 {
     case 0: 
     {
-        draw_set_colour(c_white)
-        draw_rectangle(x,y,x+256,y+100,false)
         draw_set_colour(c_black)
         draw_text(x+20,y+30,"Warriors")
+        if(view_visible[0] = 1)
+            image_blend = c_gray
+        else
+            image_blend = c_white
     } break;
     case 256: 
     {
-        draw_set_colour(c_white)
-        draw_rectangle(x,y,x+256,y+100,false)
         draw_set_colour(c_black)
         draw_text(x+20,y+30,"Fighters")
+        if(view_visible[1] = 1)
+            image_blend = c_gray
+        else
+            image_blend = c_white
     } break;
     case 512: 
     {
-        draw_set_colour(c_white)
-        draw_rectangle(x,y,x+256,y+100,false)
         draw_set_colour(c_black)
         draw_text(x+20,y+30,"Mages")
+        if(view_visible[2] = 1)
+            image_blend = c_gray
+        else
+            image_blend = c_white
     } break;
     case 768: 
     {
-        draw_set_colour(c_white)
-        draw_rectangle(x,y,x+256,y+100,false)
         draw_set_colour(c_black)
         draw_text(x+20,y+30,"Healers")
+        if(view_visible[3] = 1)
+            image_blend = c_gray
+        else
+            image_blend = c_white
     } break;
     case 1024: 
     {
-        draw_set_colour(c_white)
-        draw_rectangle(x,y,x+256,y+100,false)
         draw_set_colour(c_black)
         draw_text(x+20,y+30,"Rangers")
+        if(view_visible[4] = 1)
+            image_blend = c_gray
+        else
+            image_blend = c_white
     } break;
 }
  

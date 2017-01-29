@@ -16,6 +16,7 @@
       <sound>sound\SO_Female_death</sound>
       <sound>sound\SO_Male_death</sound>
       <sound>sound\SO_Orcs_death</sound>
+      <sound>sound\SO_Gremlin_death</sound>
     </sounds>
     <sounds name="Event sound effect">
       <sound>sound\SO_Evolution</sound>
@@ -34,6 +35,8 @@
       <sprite>sprites\Test_building_sprite</sprite>
       <sprite>sprites\Test_lore</sprite>
       <sprite>sprites\Test_lore_button</sprite>
+      <sprite>sprites\Test_rames</sprite>
+      <sprite>sprites\Test_inside</sprite>
     </sprites>
     <sprites name="Units">
       <sprites name="Warriors">
@@ -559,6 +562,7 @@
             <sprite>sprites\SPR_Orc_get_dmg</sprite>
             <sprite>sprites\SPR_Orc_dead</sprite>
             <sprite>sprites\SPR_Orc_attack</sprite>
+            <sprite>sprites\SPR_Orc_full_body</sprite>
           </sprites>
           <sprites name="Orc assassin">
             <sprite>sprites\SPR_Orc_assassin_portret</sprite>
@@ -567,6 +571,7 @@
             <sprite>sprites\SPR_Orc_assassin_get_dmg</sprite>
             <sprite>sprites\SPR_Orc_assassin_dead</sprite>
             <sprite>sprites\SPR_Orc_assassin_attack</sprite>
+            <sprite>sprites\SPR_Orc_assassin_full_body</sprite>
           </sprites>
           <sprites name="Orc barbarian">
             <sprite>sprites\SPR_Orc_barbarian_portret</sprite>
@@ -575,6 +580,7 @@
             <sprite>sprites\SPR_Orc_barbarian_get_dmg</sprite>
             <sprite>sprites\SPR_Orc_barbarian_dead</sprite>
             <sprite>sprites\SPR_Orc_barbarian_attack</sprite>
+            <sprite>sprites\SPR_Orc_barbarian_full_body</sprite>
           </sprites>
           <sprites name="Orc brute">
             <sprite>sprites\SPR_Orc_brute_portret</sprite>
@@ -583,6 +589,7 @@
             <sprite>sprites\SPR_Orc_brute_get_dmg</sprite>
             <sprite>sprites\SPR_Orc_brute_dead</sprite>
             <sprite>sprites\SPR_Orc_brute_attack</sprite>
+            <sprite>sprites\SPR_Orc_brute_full_body</sprite>
           </sprites>
           <sprites name="Orc chief">
             <sprite>sprites\SPR_Orc_chief_portret</sprite>
@@ -591,6 +598,7 @@
             <sprite>sprites\SPR_Orc_chief_get_dmg</sprite>
             <sprite>sprites\SPR_Orc_chief_dead</sprite>
             <sprite>sprites\SPR_Orc_chief_attack</sprite>
+            <sprite>sprites\SPR_Orc_chief_full_body</sprite>
           </sprites>
           <sprites name="Orc mage">
             <sprite>sprites\SPR_Orc_mage_portret</sprite>
@@ -599,6 +607,7 @@
             <sprite>sprites\SPR_Orc_mage_get_dmg</sprite>
             <sprite>sprites\SPR_Orc_mage_dead</sprite>
             <sprite>sprites\SPR_Orc_mage_attack</sprite>
+            <sprite>sprites\SPR_Orc_mage_full_body</sprite>
           </sprites>
           <sprites name="Orc queen">
             <sprite>sprites\SPR_Orc_queen_portret</sprite>
@@ -607,6 +616,7 @@
             <sprite>sprites\SPR_Orc_queen_get_dmg</sprite>
             <sprite>sprites\SPR_Orc_queen_dead</sprite>
             <sprite>sprites\SPR_Orc_queen_attack</sprite>
+            <sprite>sprites\SPR_Orc_queen_full_body</sprite>
           </sprites>
           <sprites name="Orc shaman">
             <sprite>sprites\SPR_Orc_shaman_portret</sprite>
@@ -615,6 +625,7 @@
             <sprite>sprites\SPR_Orc_shaman_get_dmg</sprite>
             <sprite>sprites\SPR_Orc_shaman_dead</sprite>
             <sprite>sprites\SPR_Orc_shaman_attack</sprite>
+            <sprite>sprites\SPR_Orc_shaman_full_body</sprite>
           </sprites>
           <sprites name="Orc warlord">
             <sprite>sprites\SPR_Orc_warlord_portret</sprite>
@@ -623,6 +634,7 @@
             <sprite>sprites\SPR_Orc_warlord_get_dmg</sprite>
             <sprite>sprites\SPR_Orc_warlord_dead</sprite>
             <sprite>sprites\SPR_Orc_warlord_attack</sprite>
+            <sprite>sprites\SPR_Orc_warlord_full_body</sprite>
           </sprites>
           <sprites name="Orc warrior">
             <sprite>sprites\SPR_Orc_warrior_portret</sprite>
@@ -631,6 +643,7 @@
             <sprite>sprites\SPR_Orc_warrior_get_dmg</sprite>
             <sprite>sprites\SPR_Orc_warrior_dead</sprite>
             <sprite>sprites\SPR_Orc_warrior_attack</sprite>
+            <sprite>sprites\SPR_Orc_warrior_full_body</sprite>
           </sprites>
         </sprites>
         <sprites name="Goblins">
@@ -650,6 +663,7 @@
             <sprite>sprites\SPR_Goblin_get_dmg</sprite>
             <sprite>sprites\SPR_Goblin_dead</sprite>
             <sprite>sprites\SPR_Goblin_attack</sprite>
+            <sprite>sprites\SPR_Goblin_full_body</sprite>
           </sprites>
           <sprites name="Goblin chief">
             <sprite>sprites\SPR_Goblin_chief_portret</sprite>
@@ -658,6 +672,7 @@
             <sprite>sprites\SPR_Goblin_chief_get_dmg</sprite>
             <sprite>sprites\SPR_Goblin_chief_dead</sprite>
             <sprite>sprites\SPR_Goblin_chief_attack</sprite>
+            <sprite>sprites\SPR_Goblin_chief_full_body</sprite>
           </sprites>
           <sprites name="Goblin champion">
             <sprite>sprites\SPR_Goblin_champion_portret</sprite>
@@ -666,6 +681,7 @@
             <sprite>sprites\SPR_Goblin_champion_get_dmg</sprite>
             <sprite>sprites\SPR_Goblin_champion_dead</sprite>
             <sprite>sprites\SPR_Goblin_champion_attack</sprite>
+            <sprite>sprites\SPR_Goblin_champion_full_body</sprite>
           </sprites>
           <sprites name="Goblin_shaman">
             <sprite>sprites\SPR_Goblin_shaman_portret</sprite>
@@ -674,6 +690,7 @@
             <sprite>sprites\SPR_Goblin_shaman_get_dmg</sprite>
             <sprite>sprites\SPR_Goblin_shaman_dead</sprite>
             <sprite>sprites\SPR_Goblin_shaman_attack</sprite>
+            <sprite>sprites\SPR_Goblin_shaman_full_body</sprite>
           </sprites>
           <sprites name="Kobold">
             <sprite>sprites\SPR_Kobold_portret</sprite>
@@ -682,6 +699,7 @@
             <sprite>sprites\SPR_Kobold_get_dmg</sprite>
             <sprite>sprites\SPR_Kobold_dead</sprite>
             <sprite>sprites\SPR_Kobold_attack</sprite>
+            <sprite>sprites\SPR_Kobold_full_body</sprite>
           </sprites>
           <sprites name="Kobold warrior">
             <sprite>sprites\SPR_Kobold_warrior_portret</sprite>
@@ -690,6 +708,7 @@
             <sprite>sprites\SPR_Kobold_warrior_get_dmg</sprite>
             <sprite>sprites\SPR_Kobold_warrior_dead</sprite>
             <sprite>sprites\SPR_Kobold_warrior_attack</sprite>
+            <sprite>sprites\SPR_Kobold_warrior_full_body</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -961,6 +980,7 @@
       <object>objects\Test_healers_buildings</object>
       <object>objects\Test_rangers_buildings</object>
       <object>objects\Test_lore_showing</object>
+      <object>objects\Test_rams</object>
     </objects>
     <objects name="Map objects">
       <object>objects\MO_Player</object>

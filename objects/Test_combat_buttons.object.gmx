@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -33,24 +33,24 @@ switch (x)
     {
         switch (y)
         {
-            case 330: 
+            case 340: 
                 sprite_index = Test_lore_button; 
                 visible = 0;
                 break;
             case 460: sprite_index = Test_attack_1; break;
-            case 590: sprite_index = Test_attack_2; break;
+            case 580: sprite_index = Test_attack_2; break;
         }         
     } break;
     case 1120:
     {
         switch (y)
         {
-            case 330: 
+            case 340: 
                 sprite_index = Test_lore_button; 
                 visible = 0;
                 break;
             case 460: sprite_index = Test_def; break;
-            case 590: sprite_index = Test_pass; break;
+            case 580: sprite_index = Test_pass; break;
         }         
     } break;
 }
@@ -84,11 +84,11 @@ if(Battle_progress.active_unit.position&lt;9)
         case 0: 
         {
             if(x==0 and y==460)
-                image_blend = c_gray  
+                image_blend = c_gray 
         }break;
         case 1:
         {
-            if(x==0 and y==590)
+            if(x==0 and y==580)
                 image_blend = c_gray 
         }break;
     }
@@ -127,18 +127,19 @@ if(Battle_progress.active_unit.position&lt;9)
         {
             switch (y)
             {
-                case 330: 
+                case 340: 
                 {
-                    if(lore==0)
-                        lore = instance_create(view_xview[view_current]+200,view_yview[view_current]+80,Test_lore_showing)   
-                    else
-                    {
-                        lore = 0
-                        with(Test_lore_showing)
+                    if(visible==1)  
+                        if(lore==0)
+                            lore = instance_create(view_xview[view_current]+200,view_yview[view_current]+80,Test_lore_showing)   
+                        else
                         {
-                            instance_destroy();
+                            lore = 0
+                            with(Test_lore_showing)
+                            {
+                                instance_destroy();
+                            }
                         }
-                    }
                 } break;
                 case 460: 
                 {
@@ -150,7 +151,7 @@ if(Battle_progress.active_unit.position&lt;9)
                         SCR_Choice_target_system() 
                     }
                 } break;
-                case 590: 
+                case 580: 
                 {
                     if(Battle_progress.active_unit.type_of_attack &lt;&gt; 1)
                     {
@@ -166,18 +167,19 @@ if(Battle_progress.active_unit.position&lt;9)
         {
             switch (y)
             {
-                case 330: 
+                case 340: 
                 {
-                    if(lore==0)
-                        lore = instance_create(view_xview[view_current]+200,view_yview[view_current]+80,Test_lore_showing)   
-                    else
-                    {
-                        lore = 0
-                        with(Test_lore_showing)
+                    if(visible==1)
+                        if(lore==0)
+                            lore = instance_create(view_xview[view_current]+200,view_yview[view_current]+80,Test_lore_showing)   
+                        else
                         {
-                            instance_destroy();
+                            lore = 0
+                            with(Test_lore_showing)
+                            {
+                                instance_destroy();
+                            }
                         }
-                    }
                 } break;
                 case 460:
                 {
@@ -192,7 +194,7 @@ if(Battle_progress.active_unit.position&lt;9)
                         show_message("Defence")
                     }
                 } break;
-                case 590:
+                case 580:
                 {
                     Battle_progress.everyone = 0
                     Battle_progress.queue_turn++
