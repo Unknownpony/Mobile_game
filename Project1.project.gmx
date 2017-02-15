@@ -11,6 +11,7 @@
       <sound>sound\SO_Slash</sound>
       <sound>sound\SO_Fire</sound>
       <sound>sound\SO_Fire_gun</sound>
+      <sound>sound\SO_Shield_bash</sound>
     </sounds>
     <sounds name="Get hit sound effect">
       <sound>sound\SO_Female_death</sound>
@@ -27,16 +28,8 @@
       <sprite>sprites\Test_battle</sprite>
       <sprite>sprites\Test_castle</sprite>
       <sprite>sprites\Test_army</sprite>
-      <sprite>sprites\Test_attack_1</sprite>
-      <sprite>sprites\Test_attack_2</sprite>
-      <sprite>sprites\Test_pass</sprite>
-      <sprite>sprites\Test_def</sprite>
       <sprite>sprites\Test_button_tab</sprite>
       <sprite>sprites\Test_building_sprite</sprite>
-      <sprite>sprites\Test_lore</sprite>
-      <sprite>sprites\Test_lore_button</sprite>
-      <sprite>sprites\Test_rames</sprite>
-      <sprite>sprites\Test_inside</sprite>
     </sprites>
     <sprites name="Units">
       <sprites name="Warriors">
@@ -48,6 +41,7 @@
           <sprite>sprites\SPR_Squire_attack</sprite>
           <sprite>sprites\SPR_Squire_dead</sprite>
           <sprite>sprites\SPR_Squire_get_dmg</sprite>
+          <sprite>sprites\SPR_Squire_special_attack</sprite>
         </sprites>
         <sprites name="Tier1">
           <sprites name="Knight">
@@ -58,6 +52,7 @@
             <sprite>sprites\SPR_Knight_attack</sprite>
             <sprite>sprites\SPR_Knight_dead</sprite>
             <sprite>sprites\SPR_Knight_get_dmg</sprite>
+            <sprite>sprites\SPR_Knight_special_attack</sprite>
           </sprites>
           <sprites name="Warrior">
             <sprite>sprites\SPR_Warrior_stand</sprite>
@@ -68,26 +63,18 @@
             <sprite>sprites\SPR_Warrior_dead</sprite>
             <sprite>sprites\SPR_Warrior_get_dmg</sprite>
           </sprites>
-          <sprites name="Young hero">
-            <sprite>sprites\SPR_Young_hero_stand</sprite>
-            <sprite>sprites\SPR_Young_hero_portret</sprite>
-            <sprite>sprites\SPR_Young_hero_full_body</sprite>
-            <sprite>sprites\SPR_Young_hero_half_body</sprite>
-            <sprite>sprites\SPR_Young_hero_attack</sprite>
-            <sprite>sprites\SPR_Young_hero_dead</sprite>
-            <sprite>sprites\SPR_Young_hero_get_dmg</sprite>
+          <sprites name="Adventurer">
+            <sprite>sprites\SPR_Adventurer_stand</sprite>
+            <sprite>sprites\SPR_Adventurer_portret</sprite>
+            <sprite>sprites\SPR_Adventurer_full_body</sprite>
+            <sprite>sprites\SPR_Adventurer_half_body</sprite>
+            <sprite>sprites\SPR_Adventurer_attack</sprite>
+            <sprite>sprites\SPR_Adventurer_dead</sprite>
+            <sprite>sprites\SPR_Adventurer_get_dmg</sprite>
+            <sprite>sprites\SPR_Adventurer_special_attack</sprite>
           </sprites>
         </sprites>
         <sprites name="Tier2">
-          <sprites name="Hero">
-            <sprite>sprites\SPR_Hero_stand</sprite>
-            <sprite>sprites\SPR_Hero_portret</sprite>
-            <sprite>sprites\SPR_Hero_full_body</sprite>
-            <sprite>sprites\SPR_Hero_half_body</sprite>
-            <sprite>sprites\SPR_Hero_attack</sprite>
-            <sprite>sprites\SPR_Hero_dead</sprite>
-            <sprite>sprites\SPR_Hero_get_dmg</sprite>
-          </sprites>
           <sprites name="Elementalist warrior">
             <sprite>sprites\SPR_Elementalist_warrior_stand</sprite>
             <sprite>sprites\SPR_Elementalist_warrior_portret</sprite>
@@ -105,6 +92,17 @@
             <sprite>sprites\SPR_Paladin_attack</sprite>
             <sprite>sprites\SPR_Paladin_dead</sprite>
             <sprite>sprites\SPR_Paladin_get_dmg</sprite>
+            <sprite>sprites\SPR_Paladin_special_attack</sprite>
+          </sprites>
+          <sprites name="Hero">
+            <sprite>sprites\SPR_Hero_stand</sprite>
+            <sprite>sprites\SPR_Hero_portret</sprite>
+            <sprite>sprites\SPR_Hero_full_body</sprite>
+            <sprite>sprites\SPR_Hero_half_body</sprite>
+            <sprite>sprites\SPR_Hero_attack</sprite>
+            <sprite>sprites\SPR_Hero_dead</sprite>
+            <sprite>sprites\SPR_Hero_get_dmg</sprite>
+            <sprite>sprites\SPR_Hero_special_attack</sprite>
           </sprites>
         </sprites>
         <sprites name="Tier3">
@@ -143,6 +141,7 @@
             <sprite>sprites\SPR_Holy_avenger_attack</sprite>
             <sprite>sprites\SPR_Holy_avenger_dead</sprite>
             <sprite>sprites\SPR_Holy_avenger_get_dmg</sprite>
+            <sprite>sprites\SPR_Holy_avenger_special_attack</sprite>
           </sprites>
           <sprites name="Gladiator">
             <sprite>sprites\SPR_Gladiator_stand</sprite>
@@ -152,6 +151,7 @@
             <sprite>sprites\SPR_Gladiator_attack</sprite>
             <sprite>sprites\SPR_Gladiator_dead</sprite>
             <sprite>sprites\SPR_Gladiator_get_dmg</sprite>
+            <sprite>sprites\SPR_Gladiator_special_attack</sprite>
           </sprites>
           <sprites name="Wall">
             <sprite>sprites\SPR_Wall_stand</sprite>
@@ -161,6 +161,7 @@
             <sprite>sprites\SPR_Wall_attack</sprite>
             <sprite>sprites\SPR_Wall_dead</sprite>
             <sprite>sprites\SPR_Wall_get_dmg</sprite>
+            <sprite>sprites\SPR_Wall_special_attack</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -754,6 +755,16 @@
       <sprite>sprites\SPR_Shot</sprite>
       <sprite>sprites\SPR_Evolve</sprite>
     </sprites>
+    <sprites name="UI">
+      <sprite>sprites\SPR_Battle_border</sprite>
+      <sprite>sprites\SPR_Inside_border</sprite>
+      <sprite>sprites\SPR_Basic_attack</sprite>
+      <sprite>sprites\SPR_Skill_attack</sprite>
+      <sprite>sprites\SPR_Pass</sprite>
+      <sprite>sprites\SPR_Def</sprite>
+      <sprite>sprites\SPR_Lore_layout</sprite>
+      <sprite>sprites\Test_lore_button</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\BG_menu</background>
@@ -812,142 +823,149 @@
     <font>fonts\FNT_Arial_36</font>
     <font>fonts\FNT_Gold</font>
     <font>fonts\FNT_Arial_15</font>
+    <font>fonts\FNT_Battle_font</font>
+    <font>fonts\FNT_Battle_font_22</font>
+    <font>fonts\FNT_Lore</font>
+    <font>fonts\FNT_Attack_description</font>
   </fonts>
   <objects name="objects">
-    <objects name="Player_units">
-      <objects name="Warriors">
-        <object>objects\Squire</object>
-        <objects name="Tier1">
-          <object>objects\Knight</object>
-          <object>objects\Warrior</object>
-          <object>objects\Young_hero</object>
+    <objects name="Battle_objects">
+      <object>objects\Battle_borders</object>
+      <objects name="Player_units">
+        <objects name="Warriors">
+          <object>objects\Squire</object>
+          <objects name="Tier1">
+            <object>objects\Knight</object>
+            <object>objects\Warrior</object>
+            <object>objects\Adventurer</object>
+          </objects>
+          <objects name="Tier2">
+            <object>objects\Elementalist_warrior</object>
+            <object>objects\Hero</object>
+            <object>objects\Paladin</object>
+          </objects>
+          <objects name="Tier3">
+            <object>objects\Nymph</object>
+            <object>objects\Dragon_slayer</object>
+            <object>objects\Sylph</object>
+            <object>objects\Holy_avenger</object>
+            <object>objects\Gladiator</object>
+            <object>objects\Wall</object>
+          </objects>
         </objects>
-        <objects name="Tier2">
-          <object>objects\Elementalist_warrior</object>
-          <object>objects\Hero</object>
-          <object>objects\Paladin</object>
+        <objects name="Fighters">
+          <object>objects\Fighter</object>
+          <objects name="Tier1">
+            <object>objects\Rouge</object>
+            <object>objects\Kung_Fu_Fighter</object>
+          </objects>
+          <objects name="Tier2">
+            <object>objects\Assassin</object>
+            <object>objects\Shaolin_nun</object>
+            <object>objects\Shaolin_monk</object>
+          </objects>
+          <objects name="Tier3">
+            <object>objects\Shadow_ninja</object>
+            <object>objects\Rebel</object>
+            <object>objects\Enlightened_one</object>
+            <object>objects\Ogre</object>
+          </objects>
         </objects>
-        <objects name="Tier3">
-          <object>objects\Nymph</object>
-          <object>objects\Dragon_slayer</object>
-          <object>objects\Sylph</object>
-          <object>objects\Holy_avenger</object>
-          <object>objects\Gladiator</object>
-          <object>objects\Wall</object>
+        <objects name="Mages">
+          <object>objects\Apprentice</object>
+          <objects name="Tier 1">
+            <object>objects\Mage</object>
+            <object>objects\Enchantress</object>
+          </objects>
+          <objects name="Tier 2">
+            <object>objects\Wizard</object>
+            <object>objects\Necromancer</object>
+            <object>objects\Sorceress</object>
+          </objects>
+          <objects name="Tier 3">
+            <object>objects\Great_white_wizard</object>
+            <object>objects\Pandemoniues</object>
+            <object>objects\Ancient_one</object>
+          </objects>
         </objects>
-      </objects>
-      <objects name="Fighters">
-        <object>objects\Fighter</object>
-        <objects name="Tier1">
-          <object>objects\Rouge</object>
-          <object>objects\Kung_Fu_Fighter</object>
+        <objects name="Healers">
+          <object>objects\Acolyte</object>
+          <objects name="Tier 1">
+            <object>objects\Oracle</object>
+            <object>objects\Cleric</object>
+          </objects>
+          <objects name="Tier 2">
+            <object>objects\Druid</object>
+            <object>objects\Priest</object>
+          </objects>
+          <objects name="Tier 3">
+            <object>objects\Archdruid</object>
+            <object>objects\Bless_one</object>
+          </objects>
         </objects>
-        <objects name="Tier2">
-          <object>objects\Assassin</object>
-          <object>objects\Shaolin_nun</object>
-          <object>objects\Shaolin_monk</object>
+        <objects name="Rangers">
+          <object>objects\Scout</object>
+          <objects name="Tier 1">
+            <object>objects\Guner</object>
+            <object>objects\Archer</object>
+            <object>objects\Thief</object>
+          </objects>
+          <objects name="Tier 2">
+            <object>objects\Marksman</object>
+            <object>objects\Hunter</object>
+            <object>objects\Bandit</object>
+          </objects>
+          <objects name="Tier 3">
+            <object>objects\Duelist</object>
+            <object>objects\Sharpshooter</object>
+            <object>objects\Sniper</object>
+            <object>objects\Destroyer</object>
+            <object>objects\Outlaw</object>
+          </objects>
         </objects>
-        <objects name="Tier3">
-          <object>objects\Shadow_ninja</object>
-          <object>objects\Rebel</object>
-          <object>objects\Enlightened_one</object>
-          <object>objects\Ogre</object>
-        </objects>
-      </objects>
-      <objects name="Mages">
-        <object>objects\Apprentice</object>
-        <objects name="Tier 1">
-          <object>objects\Mage</object>
-          <object>objects\Enchantress</object>
-        </objects>
-        <objects name="Tier 2">
-          <object>objects\Wizard</object>
-          <object>objects\Necromancer</object>
-          <object>objects\Sorceress</object>
-        </objects>
-        <objects name="Tier 3">
-          <object>objects\Great_white_wizard</object>
-          <object>objects\Pandemoniues</object>
-          <object>objects\Ancient_one</object>
-        </objects>
-      </objects>
-      <objects name="Healers">
-        <object>objects\Acolyte</object>
-        <objects name="Tier 1">
-          <object>objects\Oracle</object>
-          <object>objects\Cleric</object>
-        </objects>
-        <objects name="Tier 2">
-          <object>objects\Druid</object>
-          <object>objects\Priest</object>
-        </objects>
-        <objects name="Tier 3">
-          <object>objects\Archdruid</object>
-          <object>objects\Bless_one</object>
-        </objects>
-      </objects>
-      <objects name="Rangers">
-        <object>objects\Scout</object>
-        <objects name="Tier 1">
-          <object>objects\Guner</object>
-          <object>objects\Archer</object>
-          <object>objects\Thief</object>
-        </objects>
-        <objects name="Tier 2">
-          <object>objects\Marksman</object>
-          <object>objects\Hunter</object>
-          <object>objects\Bandit</object>
-        </objects>
-        <objects name="Tier 3">
-          <object>objects\Duelist</object>
-          <object>objects\Sharpshooter</object>
-          <object>objects\Sniper</object>
-          <object>objects\Destroyer</object>
-          <object>objects\Outlaw</object>
-        </objects>
-      </objects>
-      <objects name="General">
-        <object>objects\General_parent_units</object>
-        <object>objects\No_unit</object>
-      </objects>
-    </objects>
-    <objects name="Enemy units">
-      <objects name="Green Skin">
-        <objects name="Orcs">
-          <object>objects\Orc</object>
-          <object>objects\Orc_assassin</object>
-          <object>objects\Orc_barbarian</object>
-          <object>objects\Orc_brute</object>
-          <object>objects\Orc_chief</object>
-          <object>objects\Orc_mage</object>
-          <object>objects\Orc_queen</object>
-          <object>objects\Orc_shaman</object>
-          <object>objects\Orc_warlord</object>
-          <object>objects\Orc_warrior</object>
-        </objects>
-        <objects name="Goblins">
-          <object>objects\Gremlin</object>
-          <object>objects\Goblin</object>
-          <object>objects\Goblin_chief</object>
-          <object>objects\Goblin_champion</object>
-          <object>objects\Goblin_shaman</object>
-          <object>objects\Kobold</object>
-          <object>objects\Kobold_warrior</object>
+        <objects name="General">
+          <object>objects\General_parent_units</object>
+          <object>objects\No_unit</object>
         </objects>
       </objects>
-      <objects name="Undead">
-        <object>objects\Lich</object>
-      </objects>
-      <objects name="Dragons">
-        <object>objects\Blue_dragon</object>
-      </objects>
-      <objects name="Animals">
-        <objects name="Insects">
-          <object>objects\Giant_bee</object>
+      <objects name="Enemy units">
+        <objects name="Green Skin">
+          <objects name="Orcs">
+            <object>objects\Orc</object>
+            <object>objects\Orc_assassin</object>
+            <object>objects\Orc_barbarian</object>
+            <object>objects\Orc_brute</object>
+            <object>objects\Orc_chief</object>
+            <object>objects\Orc_mage</object>
+            <object>objects\Orc_queen</object>
+            <object>objects\Orc_shaman</object>
+            <object>objects\Orc_warlord</object>
+            <object>objects\Orc_warrior</object>
+          </objects>
+          <objects name="Goblins">
+            <object>objects\Gremlin</object>
+            <object>objects\Goblin</object>
+            <object>objects\Goblin_chief</object>
+            <object>objects\Goblin_champion</object>
+            <object>objects\Goblin_shaman</object>
+            <object>objects\Kobold</object>
+            <object>objects\Kobold_warrior</object>
+          </objects>
         </objects>
-      </objects>
-      <objects name="General">
-        <object>objects\General_parent_enemy</object>
+        <objects name="Undead">
+          <object>objects\Lich</object>
+        </objects>
+        <objects name="Dragons">
+          <object>objects\Blue_dragon</object>
+        </objects>
+        <objects name="Animals">
+          <objects name="Insects">
+            <object>objects\Giant_bee</object>
+          </objects>
+        </objects>
+        <objects name="General">
+          <object>objects\General_parent_enemy</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Buttons">
@@ -959,6 +977,7 @@
       <object>objects\BT_Start</object>
       <object>objects\BT_Tavern</object>
       <object>objects\BT_Test</object>
+      <object>objects\BT_Battle</object>
     </objects>
     <objects name="Game flow">
       <object>objects\Game_flow</object>
@@ -966,21 +985,19 @@
       <object>objects\Army_managment</object>
       <object>objects\Castle_managment</object>
       <object>objects\ScaleView</object>
+      <object>objects\Lore_layout</object>
     </objects>
     <objects name="TEST_OBJECTS">
       <object>objects\Test_button_battle</object>
       <object>objects\Test_button_castle</object>
       <object>objects\Test_button_army</object>
       <object>objects\Test_animation</object>
-      <object>objects\Test_combat_buttons</object>
       <object>objects\Test_tab_buildings</object>
       <object>objects\Test_warrior_buildings</object>
       <object>objects\Test_fighters_buildings</object>
       <object>objects\Test_mages_buildings</object>
       <object>objects\Test_healers_buildings</object>
       <object>objects\Test_rangers_buildings</object>
-      <object>objects\Test_lore_showing</object>
-      <object>objects\Test_rams</object>
     </objects>
     <objects name="Map objects">
       <object>objects\MO_Player</object>

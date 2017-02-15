@@ -5,13 +5,169 @@ switch(object_get_name(Battle_progress.active_unit.object_index))
 {
     //Warriors
     case "Squire": 
+    {
+        switch (Battle_progress.active_unit.type_of_attack)
+        {
+            case 0: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.attack_range = 0
+            }
+            break;
+            case 1: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.active_unit.effect = 1
+                Battle_progress.active_unit.physical_attack_scale = 0.3
+                Battle_progress.attack_range = 0
+            }
+            break;
+        }
+    } break;
     case "Knight": 
-    case "Young_hero":
-    case "Hero":
+    {
+        switch (Battle_progress.active_unit.type_of_attack)
+        {
+            case 0: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.attack_range = 0
+            }
+            break;
+            case 1: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.active_unit.effect = 1
+                Battle_progress.active_unit.physical_attack_scale = 0.4
+                Battle_progress.attack_range = 0
+            }
+            break;
+        }
+    } break;
     case "Paladin":
-    case "Holy_avenger":
+    {
+        switch (Battle_progress.active_unit.type_of_attack)
+        {
+            case 0: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.attack_range = 0
+            }
+            break;
+            case 1: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.active_unit.effect = 2
+                Battle_progress.active_unit.physical_attack_scale = 0
+                Battle_progress.active_unit.magical_attack_scale = 0
+                Battle_progress.target_unit.taunted_by = Battle_progress.active_unit
+                Battle_progress.attack_range = 0
+            }
+            break;
+        }
+    } break;    
     case "Gladiator":
+     {
+        switch (Battle_progress.active_unit.type_of_attack)
+        {
+            case 0: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.attack_range = 0
+            }
+            break;
+            case 1: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.active_unit.effect = 1
+                Battle_progress.active_unit.physical_attack_scale = 0.65
+                Battle_progress.attack_range = 0
+            }
+            break;
+        }
+    } break;
     case "Wall":
+    {
+        switch (Battle_progress.active_unit.type_of_attack)
+        {
+            case 0: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.attack_range = 0
+            }
+            break;
+            case 1: 
+            {
+                SCR_Target_one_enemy_range(Battle_progress.inst_id)
+                Battle_progress.active_unit.effect = 3
+                Battle_progress.active_unit.physical_attack_scale = 0
+                Battle_progress.active_unit.magical_attack_scale = 0
+                Battle_progress.target_unit.taunted_by = Battle_progress.active_unit
+                Battle_progress.attack_range = 0
+            }
+            break;
+        }
+    } break;
+    case "Adventurer":
+    {
+        switch (Battle_progress.active_unit.type_of_attack)
+        {
+            case 0: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.attack_range = 0
+            }
+            break;
+            case 1: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.active_unit.effect = 1
+                Battle_progress.active_unit.physical_attack_scale = 0.75
+                Battle_progress.attack_range = 0
+            }
+            break;
+        }
+    } break;
+    case "Hero":
+    {
+        switch (Battle_progress.active_unit.type_of_attack)
+        {
+            case 0: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.attack_range = 0
+            }
+            break;
+            case 1: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.active_unit.effect = 4
+                Battle_progress.active_unit.physical_attack_scale = 0.55
+                Battle_progress.attack_range = 0
+            }
+            break;
+        }
+    } break;
+    case "Holy_avenger":
+    {
+        switch (Battle_progress.active_unit.type_of_attack)
+        {
+            case 0: 
+            {
+                SCR_Target_one_enemy_melee(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.attack_range = 0
+            }
+            break;
+            case 1: 
+            {
+                SCR_Target_one_enemy_range(Battle_progress.active_unit.position, Battle_progress.inst_id)
+                Battle_progress.active_unit.effect = 4
+                Battle_progress.active_unit.physical_attack_scale = 0.70
+                Battle_progress.attack_range = 0
+            }
+            break;
+        }
+    } break;
     case "Warrior":
     case "Elementalist_warrior":
     case "Nymph":

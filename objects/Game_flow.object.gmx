@@ -80,9 +80,7 @@ start[1] = 100
 start[2] = 0
 start[3] = 0
 
-army[1,2] = start //Unit name
-
-
+army[1,2] = start
 
 </string>
           </argument>
@@ -110,6 +108,7 @@ army[1,2] = start //Unit name
 if(room_get_name(room) &lt;&gt; "RM_Battle_Room")
 {
     draw_set_font(FNT_Gold)
+    draw_set_colour(c_black)
     draw_text(550, 0, "Gold:" + string(gold))
     draw_text(730, 0, "Level:" + string(max_level_user_reached))
 }

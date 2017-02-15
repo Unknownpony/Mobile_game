@@ -41,7 +41,32 @@ new_turn = 1            //Flag for new turn
 turn_queue = 0          //Which array object is currently active in round
 start_army = 0          //Array of every player unit
 start_enemy_army = 0    //Array of every enemy unit
+
+draw_set_font(FNT_Battle_font) 
+draw_set_colour(make_colour_rgb(110,143,60)) //Set color for text in Battle room
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>224</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_another_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>11</kind>
+            <room>RM_TEST_ROOM</room>
           </argument>
         </arguments>
       </action>
@@ -90,7 +115,7 @@ if(animation==0)
             
             if(turn_queue[queue_turn].active_turn = 0)  //check if current active unit has active flag on, Start of unit
             {
-                if(SCR_Debuff_calculation(turn_queue[queue_turn]) &lt;&gt; 1)    //Debuff calculation
+                if(SCR_Debuff_calculation(turn_queue[queue_turn]) == 0)    //Debuff calculation
                 {                                        
                     active_unit = turn_queue[queue_turn]    //set active instance to a variable for active unit
                     active_unit.active_turn = 1             //put active flag of the current unit on   
@@ -279,7 +304,8 @@ if(animation==0)
         }
         show_message("You are victorious")
         Game_flow.max_level_user_reached += 1
-        room_goto("RM_TEST_ROOM") 
+        if(animation&lt;&gt;3)
+            room_goto("RM_TEST_ROOM") 
         break;
         case 2: 
         {
@@ -291,16 +317,19 @@ if(animation==0)
 } else if(animation == 1)
 {
     if(active_unit.sprite_index = asset_get_index("SPR_" + object_get_name(active_unit.object_index) + "_stand"))
+    {
+        active_unit.image_speed = 0.25
         SCR_Attack_animation()
+    }
     //End animation Condition
-    if(floor(active_unit.image_index) == 15)
+    if(floor(active_unit.image_index) == 3)
     { 
         if(attack_range&lt;2)
             SCR_DMG_Calculation(active_unit, target_unit)
         else
             SCR_Heals_Calculation(active_unit, target_unit)
         animation = 2 
-    }          
+    }  
 } 
 
 if(animation == 2)
@@ -330,17 +359,9 @@ if(animation == 3)
         {
             instance_destroy();
         }
+        alarm[0] = room_speed * 2;
     }    
 }
-
-if(animation == 4)
-{
-    //evloution
-    //show_message("You are victorious")
-    //Game_flow.max_level_user_reached += 1
-    //room_goto("RM_TEST_ROOM")     
-}
-
 </string>
           </argument>
         </arguments>
@@ -367,23 +388,31 @@ if(animation == 4)
 
 is_object=-4
 
-is_object = collision_point( mouse_x, mouse_y, General_parent_units, false, true ) 
+is_object = collision_point( mouse_x, mouse_y, Lore_layout, false, true )
+if(is_object==-4)
+    is_object = collision_point( mouse_x, mouse_y, BT_Battle, false, true )
+if(is_object==-4)
+    is_object = collision_point( mouse_x, mouse_y, General_parent_units, false, true )
 if(is_object==-4)
     is_object = collision_point( mouse_x, mouse_y, General_parent_enemy, false, true )
 if(is_object==-4)
-    is_object = collision_point( mouse_x, mouse_y, Test_combat_buttons, false, true ) 
-                          
-if(is_object==-4)
+    is_object = collision_point( mouse_x, mouse_y, BT_Battle, false, true ) 
+
+
+
+if(is_object==-4 or object_get_name(is_object.object_index)=="Lore_layout" or (object_get_name(is_object.object_index)=="BT_Battle" and (is_object.y = 580 or is_object.y = 460) and is_object.x = 1120))
 {
-    for(i=0; i&lt;array_length_1d(Battle_progress.inst_id); i+=1)
-        Battle_progress.inst_id[i].select=0
+    for(i=0; i&lt;array_length_1d(Battle_progress.start_army); i+=1)
+        Battle_progress.start_army[i].select=0
+    for(i=0; i&lt;array_length_1d(Battle_progress.start_enemy_army); i+=1)
+        Battle_progress.start_enemy_army[i].select=0
         
-    with(Test_lore_showing)
+    with(Lore_layout)
     {
         instance_destroy();
     }
     
-    with(Test_combat_buttons)
+    with(BT_Battle)
     {
         if(y == 340)
         {
@@ -418,8 +447,8 @@ if(is_object==-4)
             <kind>1</kind>
             <string>///Draw inside
 
-draw_sprite(Test_inside,0,0,0)
-draw_sprite(Test_inside,0,1120,0)
+draw_sprite(SPR_Inside_border,0,0,0)
+draw_sprite(SPR_Inside_border,0,1120,0)
 </string>
           </argument>
         </arguments>

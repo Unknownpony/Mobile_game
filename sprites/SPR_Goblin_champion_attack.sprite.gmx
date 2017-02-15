@@ -7,18 +7,18 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>16</bbox_left>
-  <bbox_right>143</bbox_right>
-  <bbox_top>16</bbox_top>
-  <bbox_bottom>140</bbox_bottom>
+  <bbox_left>24</bbox_left>
+  <bbox_right>215</bbox_right>
+  <bbox_top>24</bbox_top>
+  <bbox_bottom>211</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>144</width>
-  <height>144</height>
+  <width>216</width>
+  <height>216</height>
   <frames>
     <frame index="0">images\SPR_Goblin_champion_attack_0.png</frame>
     <frame index="1">images\SPR_Goblin_champion_attack_1.png</frame>

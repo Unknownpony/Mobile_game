@@ -14,6 +14,12 @@ check = 0
 //  2 6  |  10 14
 //  1 5  |   9 13
 //It's used for enemy AI script later on
+if(taunted_by<>0)
+{
+    taunted_by.targeted = 1
+}
+else
+{
 switch (pos)
 {
     case 13: 
@@ -548,4 +554,4 @@ switch (pos)
         }  
     }break;
 }
- 
+}

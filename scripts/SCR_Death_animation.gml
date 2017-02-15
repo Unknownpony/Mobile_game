@@ -9,7 +9,7 @@ switch (object_get_name(test.object_index))
     //Warriors
     case "Squire": 
     case "Knight": 
-    case "Young_hero":
+    case "Adventurer":
     case "Hero":
     case "Paladin":
     case "Holy_avenger":

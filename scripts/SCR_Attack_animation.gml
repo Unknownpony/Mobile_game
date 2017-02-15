@@ -3,6 +3,7 @@
 //attack_range:
 //0 - one enemy
 //1 - all enemy
+
 if(attack_range == 0)
 {
     SCR_Battle_animation(active_unit, target_unit)
@@ -30,4 +31,3 @@ if(attack_range == 0)
         }
     SCR_Heal_animation(active_unit, target_unit)           
 }
-

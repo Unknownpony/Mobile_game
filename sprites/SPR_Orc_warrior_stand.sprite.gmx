@@ -7,18 +7,18 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>77</bbox_left>
-  <bbox_right>133</bbox_right>
-  <bbox_top>37</bbox_top>
-  <bbox_bottom>143</bbox_bottom>
+  <bbox_left>115</bbox_left>
+  <bbox_right>200</bbox_right>
+  <bbox_top>56</bbox_top>
+  <bbox_bottom>215</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>144</width>
-  <height>144</height>
+  <width>216</width>
+  <height>216</height>
   <frames>
     <frame index="0">images\SPR_Orc_warrior_stand_0.png</frame>
   </frames>

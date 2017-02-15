@@ -10,7 +10,7 @@
   <bbox_left>44</bbox_left>
   <bbox_right>243</bbox_right>
   <bbox_top>4</bbox_top>
-  <bbox_bottom>610</bbox_bottom>
+  <bbox_bottom>599</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>300</width>
-  <height>620</height>
+  <height>600</height>
   <frames>
     <frame index="0">images\SPR_Shadow_ninja_full_body_0.png</frame>
   </frames>

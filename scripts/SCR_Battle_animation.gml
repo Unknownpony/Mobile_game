@@ -3,27 +3,81 @@
 active = argument0
 target = argument1
 animation = 0
-active.sprite_index = asset_get_index("SPR_" + object_get_name(active.object_index) + "_attack")
+
 if(is_array(target) == 1)
     for(ba_i=0; ba_i<array_length_1d(target); ba_i+=1)
     {
         target[ba_i].sprite_index = asset_get_index("SPR_" + object_get_name(target[ba_i].object_index) + "_get_dmg")
-        animation[ba_i] = instance_create(target[ba_i].x, target[ba_i].y, Test_animation)
+        switch (object_get_name(target[ba_i].object_index))
+        {
+            case "Gremlin": 
+                animation[ba_i] = instance_create(target[ba_i].x+108, target[ba_i].y+108, Test_animation); 
+                animation[ba_i].image_xscale = 0.5
+                animation[ba_i].image_yscale = 0.5
+                break;
+            case "Goblin":
+            case "Goblin_chief":
+            case "Goblin_champion":
+            case "Kobold":
+            case "Kobold_warrior": 
+            case "Giant_bee":
+                animation[ba_i] = instance_create(target[ba_i].x+54, target[ba_i].y+54, Test_animation);
+                animation[ba_i].image_xscale = 0.75
+                animation[ba_i].image_yscale = 0.75
+                break;
+            default: 
+            animation[ba_i] = instance_create(target[ba_i].x, target[ba_i].y, Test_animation);
+        }
     }
 else
 {
     target.sprite_index = asset_get_index("SPR_" + object_get_name(target.object_index) + "_get_dmg")
-    animation = instance_create(target.x, target.y, Test_animation)
+    switch (object_get_name(target.object_index))
+        {
+            case "Gremlin": 
+                animation = instance_create(target.x+108, target.y+108, Test_animation); 
+                animation.image_xscale = 0.5
+                animation.image_yscale = 0.5
+                break;
+            case "Goblin":
+            case "Goblin_chief":
+            case "Goblin_champion":
+            case "Kobold":
+            case "Kobold_warrior": 
+            case "Giant_bee":
+                animation = instance_create(target.x+54, target.y+54, Test_animation);
+                animation.image_xscale = 0.75
+                animation.image_yscale = 0.75
+                break;
+            default: 
+            animation = instance_create(target.x, target.y, Test_animation);
+        }
 }
 
 //sound
 switch (object_get_name(active.object_index))
 {
-    //Sword
     case "Squire": 
+    {
+        switch (active.type_of_attack)
+        {
+            case 0: 
+                active.sprite_index = asset_get_index("SPR_" + object_get_name(active.object_index) + "_attack")
+                active.attack_scale = 1
+                audio_play_sound(SO_Slash,10,false)
+                animation.sprite_index = SPR_Slash
+            break;
+            case 1: 
+                active.sprite_index = asset_get_index("SPR_" + object_get_name(active.object_index) + "_special_attack")
+                active.attack_scale = 0.4
+                audio_play_sound(SO_Shield_bash,10,false)
+                animation.sprite_index = SPR_Smash
+            break;
+        }        
+    }break;
     case "Knight":
     case "Warrior":
-    case "Young_hero":
+    case "Adventurer":
     case "Elementalist_warrior":
     case "Hero":
     case "Paladin":
@@ -35,6 +89,7 @@ switch (object_get_name(active.object_index))
     case "Shadow_ninja":
     case "Rebel":
     {
+        active.sprite_index = asset_get_index("SPR_" + object_get_name(active.object_index) + "_attack")
         audio_play_sound(SO_Slash,10,false)
         animation.sprite_index = SPR_Slash        
     }break;
@@ -97,6 +152,14 @@ switch (object_get_name(active.object_index))
     case "Enlightened_one":
     case "Shaolin_nun":
     {
+        audio_play_sound(SO_Mace,10,false)
+        animation.sprite_index = SPR_Smash
+    }break; 
+    case "Gremlin":
+    case "Goblin":
+    case "Giant_bee":
+    {
+        active.sprite_index = asset_get_index("SPR_" + object_get_name(active.object_index) + "_attack")
         audio_play_sound(SO_Mace,10,false)
         animation.sprite_index = SPR_Smash
     }break; 

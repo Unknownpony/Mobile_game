@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>300</width>
-  <height>610</height>
+  <height>600</height>
   <frames>
     <frame index="0">images\SPR_Mage_full_body_0.png</frame>
   </frames>

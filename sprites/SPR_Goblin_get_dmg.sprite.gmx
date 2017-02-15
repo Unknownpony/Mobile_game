@@ -7,18 +7,18 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>76</bbox_left>
-  <bbox_right>134</bbox_right>
-  <bbox_top>68</bbox_top>
-  <bbox_bottom>139</bbox_bottom>
+  <bbox_left>114</bbox_left>
+  <bbox_right>202</bbox_right>
+  <bbox_top>102</bbox_top>
+  <bbox_bottom>209</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>144</width>
-  <height>144</height>
+  <width>216</width>
+  <height>216</height>
   <frames>
     <frame index="0">images\SPR_Goblin_get_dmg_0.png</frame>
   </frames>
